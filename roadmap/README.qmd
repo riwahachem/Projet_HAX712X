@@ -1,6 +1,7 @@
-# Lien du site
+# Analyse du trafic velomagg de Montpellier
 
 # Description du projet
+
 
 # Choix des packages
 - Folium : map -> OSMNX pour accéder aux données de OpenStreetMap
@@ -9,6 +10,17 @@
 - Scipy : proba
 - Pooch : télécharger les données efficacement 
 
+# Choix des données
+- fichier 2022 : 
+
 #
+
+# Répartition des tâches
+- Extraction des données 
+- Programmer l'affichage d'une map selon les données entrées
+- Implémenter une vidéo montrant l'évolution du trafic de vélo sur toute une journée
+- Documenter l'ensemble des fonctions et des classes créées 
+- Gestion et développement du site 
+
 
 
