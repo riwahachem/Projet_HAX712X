@@ -1,1 +1,14 @@
-# Description of the project 
+# Lien du site
+
+# Description du projet
+
+# Choix des packages
+- Folium : map -> OSMNX pour accéder aux données de OpenStreetMap
+- Numpy : extraction/ manipulation des données 
+- Panda : lire les fichiers csv
+- Scipy : proba
+- Pooch : télécharger les données efficacement 
+
+#
+
+
