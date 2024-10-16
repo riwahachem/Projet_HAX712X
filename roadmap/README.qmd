@@ -19,6 +19,7 @@
 - Extraction des données 
 - Programmer l'affichage d'une map selon les données entrées
 - Implémenter une vidéo montrant l'évolution du trafic de vélo sur toute une journée
+- Créer un package map
 - Documenter l'ensemble des fonctions et des classes créées 
 - Gestion et développement du site 
 
