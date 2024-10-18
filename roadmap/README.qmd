@@ -9,6 +9,7 @@
 - Pandas : lire les fichiers csv
 - Scipy : proba
 - Pooch : télécharger les données efficacement 
+- Os : 
 
 # Choix des données
 - fichier 2022 : 
