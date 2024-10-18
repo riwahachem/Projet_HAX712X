@@ -4,3 +4,6 @@
 
 # Auteurs 
 - [riwahachem](https://github.com/riwahachem)
+- [LamiaOulebsir](https://github.com/LamiaOulebsir)
+- [Wahelelm](https://github.com/Wahelelm)
+- [LucienDuigou](https://github.com/LucienDuigou)
