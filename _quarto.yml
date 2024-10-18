@@ -18,4 +18,6 @@ project:
 format:
   html:
     mermaid: true
-
+    theme: spacelab
+    css: styles.css
+    toc: true
