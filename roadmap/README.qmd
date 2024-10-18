@@ -20,7 +20,8 @@ Ce projet a pour objectif de visualiser les trajets effectués avec les vélos �
 
 # Choix des données :
 - TAM_MMM_CoursesVelomagg_2022.csv :
-Cette table de données répertoirie les trajets effectués via la branche Vélomagg de la Tam dans Montpellier sur l'année 2022. Nous faisons le choix de cette année car c'est la table qui possède le plus de données, ce qui nous intéresse le plus afin de faire de la prévision du traffic des pistes cyclabes de Montpellier notemment pour réduire les intervalles de confiances du pourcentage du traffic pour un trajet donné.
+Cette table de données répertoirie les trajets effectués via la branche Vélomagg de la Tam dans Montpellier sur l'année 2022. 
+Nous faisons le choix de cette année car c'est la table qui possède le plus de données, ce qui nous intéresse le plus afin de faire de la prévision du traffic des pistes cyclabes de Montpellier notemment pour réduire les intervalles de confiances du pourcentage du traffic pour un trajet donné.
       
 
 
