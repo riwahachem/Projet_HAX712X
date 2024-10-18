@@ -1,9 +1,15 @@
 # Analyse du trafic velomagg de Montpellier
 
 # Description du projet
-
+Ce projet a pour objectif de visualiser les trajets effectués avec les vélos à Montpellier en utilisant des données fournies dans un fichier CSV. 
 
 # Choix des packages
+- Pandas : J’utilise le package pandas pour lire et manipuler les données du fichier CSV contenant les informations des trajets de vélos.
+- Folium : J’utilise le package folium pour créer une carte interactive et afficher les routes entre les stations de vélos. Ce package permet de visualiser des données géographiques dans un navigateur web.
+- OSMNX : J’utilise le package osmnx pour extraire et manipuler des réseaux routiers directement à partir d'OpenStreetMap. Je l’utilise notamment pour calculer les routes entre deux points.
+- Geopy (Nominatim) : J'utilise ce package pour convertir les noms des stations de vélos en coordonnées géographiques. Cela permet de géocoder les stations de départ et d'arrivée en utilisant OpenStreetMap via le service Nominatim.
+
+
 - Folium : map -> OSMNX pour accéder aux données de OpenStreetMap
 - Numpy : extraction/ manipulation des données 
 - Pandas : lire les fichiers csv
