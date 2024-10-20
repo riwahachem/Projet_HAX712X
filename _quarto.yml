@@ -1,26 +1,16 @@
 project:
   type: website
-  render:
-  - index.qmd
-  website:
-  back-to-top-navigation: true
-  page-navigation: true # true not working in website
   title: "Analyse du trafic velomagg de Montpellier"
-  site-url: https://riwahachem.github.io/Projet_HAX712X/
-  repo-url: https://github.com/riwahachem/Projet_HAX712X
-  repo-actions: [source, issue]
+
+site:
+  title: "ATVM : Analyse du trafic velomagg de Montpellier"
+  url: https://riwahachem.github.io/Projet_HAX712X/
   navbar:
     title: "ATVM"
-    background: primary
-    search: true
-    left:
-      - sidebar : trafic
-      - sidebar : itinéraire
-      - sidebar : trafic journalier
-    #sidebar:
+  repo-url: https://github.com/riwahachem/Projet_HAX712X
+  repo-actions: [source, issue]
+
 format:
   html:
-    mermaid: true
     theme: spacelab
-    css: styles.css
-    toc: true
+    mermaid: {}
