@@ -13,6 +13,11 @@ project:
     title: "ATVM"
     background: primary
     search: true
+    left:
+      - sidebar : trafic
+      - sidebar : itinéraire
+      - sidebar : trafic journalier
+    #sidebar:
 format:
   html:
     mermaid: true
