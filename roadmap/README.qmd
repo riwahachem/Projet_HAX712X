@@ -1,3 +1,37 @@
-# Description of the project 
+# Analyse du trafic velomagg de Montpellier
 
-## Gantt diagram
+# Description du projet
+Ce projet a pour objectif de visualiser les trajets effectués avec les vélos à Montpellier en utilisant des données fournies dans un fichier CSV. 
+
+# Choix des packages
+- Pandas : J’utilise le package pandas pour lire et manipuler les données du fichier CSV contenant les informations des trajets de vélos.
+- Folium : J’utilise le package folium pour créer une carte interactive et afficher les routes entre les stations de vélos. Ce package permet de visualiser des données géographiques dans un navigateur web.
+- OSMNX : J’utilise le package osmnx pour extraire et manipuler des réseaux routiers directement à partir d'OpenStreetMap. Je l’utilise notamment pour calculer les routes entre deux points.
+- Geopy (Nominatim) : J'utilise ce package pour convertir les noms des stations de vélos en coordonnées géographiques. Cela permet de géocoder les stations de départ et d'arrivée en utilisant OpenStreetMap via le service Nominatim.
+
+
+- Folium : map -> OSMNX pour accéder aux données de OpenStreetMap
+- Numpy : extraction/ manipulation des données 
+- Pandas : lire les fichiers csv
+- Scipy : proba
+- Pooch : télécharger les données efficacement 
+- Os : 
+
+
+# Choix des données :
+- TAM_MMM_CoursesVelomagg_2022.csv :
+Cette table de données répertoirie les trajets effectués via la branche Vélomagg de la Tam dans Montpellier sur l'année 2022. 
+Nous faisons le choix de cette année car c'est la table qui possède le plus de données, ce qui nous intéresse le plus afin de faire de la prévision du traffic des pistes cyclabes de Montpellier notemment pour réduire les intervalles de confiances du pourcentage du traffic pour un trajet donné.
+      
+
+
+# Répartition des tâches
+- Extraction des données 
+- Programmer l'affichage d'une map selon les données entrées
+- Implémenter une vidéo montrant l'évolution du trafic de vélo sur toute une journée
+- Créer un package map
+- Documenter l'ensemble des fonctions et des classes créées 
+- Gestion et développement du site 
+
+
+

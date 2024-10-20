@@ -3,8 +3,22 @@ project:
   render:
   - index.qmd
   - roadmap/README.qmd
-website:
+  - roadmap/gantt_diagram.md
+  website:
+  back-to-top-navigation: true
+  page-navigation: true # true not working in website
+  title: "Analyse du trafic velomagg de Montpellier"
+  site-url: https://riwahachem.github.io/Projet_HAX712X/
+  repo-url: https://github.com/riwahachem/Projet_HAX712X
+  repo-actions: [source, issue]
+  navbar:
+    title: "Analyse du trafic velomagg"
+    background: primary
+    search: true
+>>>>>>> e782b858da6a379918783ccb3dcc863894cd0c7c
 format:
   html:
     mermaid: true
-
+    theme: spacelab
+    css: styles.css
+    toc: true

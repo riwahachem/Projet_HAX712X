@@ -21,4 +21,3 @@ gantt
             Mid-term    :crit, 2024-10-25, 1d
         section Final
             Oral presentation    :crit, 2024-12-13, 1d
-
