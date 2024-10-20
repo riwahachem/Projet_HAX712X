@@ -2,8 +2,6 @@ project:
   type: website
   render:
   - index.qmd
-  - roadmap/README.qmd
-  - roadmap/gantt_diagram.md
   website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
@@ -12,10 +10,9 @@ project:
   repo-url: https://github.com/riwahachem/Projet_HAX712X
   repo-actions: [source, issue]
   navbar:
-    title: "Analyse du trafic velomagg"
+    title: "ATVM"
     background: primary
     search: true
->>>>>>> e782b858da6a379918783ccb3dcc863894cd0c7c
 format:
   html:
     mermaid: true
