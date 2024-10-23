@@ -17,8 +17,8 @@ gantt
             Meeting :after MER_ART, 2024-12-04, 1d
             Meeting :after MER_ART, 2024-12-11, 1d
         section Developement
-            Main code, tests, web dev :2024-10-25, 2024-12-04
-            Oral : 2024-12-04, 2024-12-11 
+            Main code, tests, web developpement :2024-10-25, 2024-12-04
+            Oral training : 2024-12-04, 2024-12-11 
         section Deadlines
             ! Last push   :milestone, crit, 2024-12-10, 1d
             Mid-term    :crit, 2024-10-25, 1d
