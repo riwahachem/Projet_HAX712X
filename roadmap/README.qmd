@@ -14,7 +14,7 @@ Nous souhaitons créer une carte interactive permettant de cliquer sur un point 
 	- Vert pour un trafic faible,
 	- Orange pour un trafic modéré,
 	- Rouge pour un trafic élevé.
-
+L'objectif est d'avoir un mode interactif où l'utilisateur peut choisir la date, l'heure et le trajet souhaité. Ensuite, la carte se charge avec les informations pertinentes.
 
 - Folium : map -> OSMNX pour accéder aux données de OpenStreetMap
 - Numpy : extraction/ manipulation des données 
