@@ -10,7 +10,7 @@ Ce projet a pour objectif de visualiser les trajets effectués avec les vélos �
 - Geopy (Nominatim) : Nous utilisons ce package pour convertir les noms des stations de vélos en coordonnées géographiques. Cela permet de géocoder les stations de départ et d'arrivée en utilisant OpenStreetMap via le service Nominatim.
 - Numpy : Nous utilisons le package Numpy pour extraire et manipuler nos données.
 - Pooch : Nous utilisons ce package pour télécharger les données efficacement.
-- Scipy : Nous utilisons ce package afin de calculer des probabilités.
+- Scipy : Nous utilisons ce package pour les calculs avancés de probabilités et pour modéliser les comportements de trafic afin de prévoir des trajectoires cyclistes optimisées.
 
 # MAP
 Nous souhaitons créer une carte interactive permettant de cliquer sur un point A et un point B. Ensuite, elle génère le chemin le plus optimal tout en prédisant le trafic (temps de trajet). Un code couleur sera utilisé pour indiquer le niveau de trafic :
