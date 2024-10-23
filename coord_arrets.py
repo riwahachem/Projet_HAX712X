@@ -15,12 +15,8 @@ def get_station_coord(nom):
         return loc
     except:
         return None
-coordonnees_manquantes = {
-# Rien a mettre juste essayer de modifier le fichier Excel
-}
 # On recupere les coordonnees de chaque station
 station_coord = {station: get_station_coord(station) for station in stations}
-
 # On affiche les premieres coordonnees pour verif
 print(station_coord)
 print (get_station_coord("Faculte des Sciences"))
