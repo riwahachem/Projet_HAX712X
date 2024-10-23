@@ -4,10 +4,15 @@
 Ce projet a pour objectif de visualiser les trajets effectués avec les vélos à Montpellier en utilisant des données fournies dans un fichier CSV. 
 
 # Choix des packages
-- Pandas : J’utilise le package pandas pour lire et manipuler les données du fichier CSV contenant les informations des trajets de vélos.
-- Folium : J’utilise le package folium pour créer une carte interactive et afficher les routes entre les stations de vélos. Ce package permet de visualiser des données géographiques dans un navigateur web.
-- OSMNX : J’utilise le package osmnx pour extraire et manipuler des réseaux routiers directement à partir d'OpenStreetMap. Je l’utilise notamment pour calculer les routes entre deux points.
-- Geopy (Nominatim) : J'utilise ce package pour convertir les noms des stations de vélos en coordonnées géographiques. Cela permet de géocoder les stations de départ et d'arrivée en utilisant OpenStreetMap via le service Nominatim.
+- Pandas : Nous utilisons le package pandas pour lire et manipuler les données du fichier CSV contenant les informations des trajets de vélos.
+- Folium : Nous utilisons le package folium pour créer une carte interactive et afficher les routes entre les stations de vélos. Ce package permet de visualiser des données géographiques dans un navigateur web.
+- OSMNX : Nous utilisons le package osmnx pour extraire et manipuler des réseaux routiers directement à partir d'OpenStreetMap. Nous l'utilisons notamment pour calculer les routes entre deux points.
+- Geopy (Nominatim) : Nous utilisons ce package pour convertir les noms des stations de vélos en coordonnées géographiques. Cela permet de géocoder les stations de départ et d'arrivée en utilisant OpenStreetMap via le service Nominatim.
+
+# MAP : Nous souhaitons créer une carte interactive permettant de cliquer sur un point A et un point B. Ensuite, elle génère le chemin le plus optimal tout en prédisant le trafic (temps de trajet). Un code couleur sera utilisé pour indiquer le niveau de trafic :
+      - Vert pour un trafic faible,
+	- Orange pour un trafic modéré,
+	- Rouge pour un trafic élevé.
 
 
 - Folium : map -> OSMNX pour accéder aux données de OpenStreetMap
