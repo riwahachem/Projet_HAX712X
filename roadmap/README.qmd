@@ -1,26 +1,27 @@
 # Analyse du Trafic Velomagg de Montpellier (ATVM)
 
-# Description du projet / Objectif
+## Description du projet / Objectif
 Ce projet a pour objectif de visualiser les trajets effectués avec les vélos à Montpellier en utilisant des données fournies dans un fichier CSV. 
 Notre objectif est de créer un site web permettant dans un premier temps de visualiser le trafic dans les rues de Montpellier en ayant le choix du jour que l'on souhaite visualiser. La fluctuation sera représentée via un code couleur allant d'un trafic fluide (pour un cycliste) à un trafic saturé. 
 Dans un second temps, nous souhaiterons pouvoir réaliser une vidéo animée représentant les trajets cyclistes qui se sont déroulés sur une journée que l'on aura préalablement déterminé.
 Enfin, pour aller plus loin, nous aimerions pouvoir réaliser une prédiction du trafic sur les prochains jours/semaines, via des études statistiques.
 Ensuite, suivant la saisie d'une date, d'un départ, d'une arrivée et d'une plage horaire d'un usager, nous aimerions afficher le trajet le plus optimal dessiné sur une carte de Montpellier, évitant le trafic saturé (qui sera également affiché sur la carte).
 Un code couleur sera utilisé pour indiquer le niveau de trafic :
-	- Vert pour un trafic faible,
-	- Orange pour un trafic modéré,
-	- Rouge pour un trafic élevé.
+
+- Vert pour un trafic faible,
+- Orange pour un trafic modéré,
+- Rouge pour un trafic élevé.
 
 
-Page d'accueil du site :
+#### Page d'accueil du site :
 
 ![](ATVM (titre projet).png){width="75%" fig-align="center"}
 
-Onglet itinéraire (Pour aller plus loin) :
+#### Onglet itinéraire (Pour aller plus loin) :
 
 ![](ATVM (titre projet)-2.png){width="75%" fig-align="center"}
 
-# Choix des packages
+## Choix des packages
 - Pandas : Nous utiliserons le package pandas pour lire et manipuler les données du fichier CSV contenant les informations des trajets de vélos.
 - Folium : Nous utiliserons le package folium pour créer une carte interactive et afficher les routes entre les stations de vélos. Ce package permet de visualiser des données géographiques dans un navigateur web.
 - OSMNX : Nous utiliserons le package osmnx pour extraire et manipuler des réseaux routiers directement à partir d'OpenStreetMap. Nous l'utiliserons notamment pour calculer les routes entre deux points.
@@ -30,25 +31,28 @@ Onglet itinéraire (Pour aller plus loin) :
 - Scipy : Nous utiliserons ce package pour les calculs avancés de probabilités et pour modéliser les comportements de trafic afin de prévoir des trajectoires cyclistes optimisées.
 - OS : Nous utiliserons ce package pour faciliter l'interaction avec le système d'exploitation.
 
-# Choix des données :
+## Choix des données :
 - TAM_MMM_CoursesVelomagg_2022.csv :
 Cette table de données répertorie les trajets effectués via la branche Vélomagg de la Tam dans Montpellier sur l'année 2022. 
 Nous faisons le choix de cette année car c'est la table qui possède le plus de données, ce qui nous intéresse le plus afin de faire de la prévision du trafic des pistes cyclables de Montpellier notamment pour réduire les intervalles de confiances du pourcentage du trafic pour un trajet donné.
 - Nous aimerions également utiliser les données piétonnes pour visualiser le trafic (plus de fluidité lorsqu'il y a moins de piétons).
       
-# Répartition des tâches
+## Répartition des tâches
 Branche map :
-	- Extraction des données 
-	- Programmer l'affichage d'une map selon les données entrées
-	- Création d'un package map
+
+- Extraction des données 
+- Programmer l'affichage d'une map selon les données entrées
+- Création d'un package map
 
 Branche video :
-	- Implémentation d'une vidéo montrant l'évolution du trafic de vélo sur toute une journée
-	- Création d'un package vidéo
+
+- Implémentation d'une vidéo montrant l'évolution du trafic de vélo sur toute une journée
+- Création d'un package vidéo
 
 Branche gh-pages :
-	- Gestion et développement du site 
-	- Documentation des fonctions et des classes créées 
+
+- Gestion et développement du site 
+- Documentation des fonctions et des classes créées 
 
 
 
