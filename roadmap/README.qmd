@@ -9,8 +9,9 @@ Ce projet a pour objectif de visualiser les trajets effectués avec les vélos �
 - OSMNX : Nous utilisons le package osmnx pour extraire et manipuler des réseaux routiers directement à partir d'OpenStreetMap. Nous l'utilisons notamment pour calculer les routes entre deux points.
 - Geopy (Nominatim) : Nous utilisons ce package pour convertir les noms des stations de vélos en coordonnées géographiques. Cela permet de géocoder les stations de départ et d'arrivée en utilisant OpenStreetMap via le service Nominatim.
 
-# MAP : Nous souhaitons créer une carte interactive permettant de cliquer sur un point A et un point B. Ensuite, elle génère le chemin le plus optimal tout en prédisant le trafic (temps de trajet). Un code couleur sera utilisé pour indiquer le niveau de trafic :
-      - Vert pour un trafic faible,
+# MAP
+Nous souhaitons créer une carte interactive permettant de cliquer sur un point A et un point B. Ensuite, elle génère le chemin le plus optimal tout en prédisant le trafic (temps de trajet). Un code couleur sera utilisé pour indiquer le niveau de trafic :
+	- Vert pour un trafic faible,
 	- Orange pour un trafic modéré,
 	- Rouge pour un trafic élevé.
 
