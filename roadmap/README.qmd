@@ -36,7 +36,8 @@ Nous faisons le choix de cette année car c'est la table qui possède le plus de
 # Objectif
 
 Notre objectif est de créer un site web permettant dans un premier temps de visualiser le trafic dans les rues de Montpellier en ayant le choix du jour et de la plage horaire que l'on souhaite visualiser. la fluctuation sera reprrésentée via un code couleur allant d'un trafic pratiquable (pour un cycliste) à un trafic plein. 
-Dans un second temps, nous souhaiterions pouvoir réaliser une vidéo animée représentant les trajets cyclistes qui se sont déroulées sur une journée que l'on aura préalablement déterminé. 
+Dans un second temps, nous souhaiterions pouvoir réaliser une vidéo animée représentant les trajets cyclistes qui se sont déroulées sur une journée que l'on aura préalablement déterminé.
+Enfin, pour aller plus loin, nous aimerions pouvoir réaliser une prédiction du traffic sur les prochains jours/semaines, via des études statistiques, pour ensuite proposer, suivant la saisie d'une date d'un départ, d'une arrivée et d'une plage horaire d'un usager souhaitant effectuer un trajet dans les rues de Montpellier avec Velomagg, proposer le trajet le plus recommandé déssiné sur une carte de Montpellier, évitant le trafic plein (qui sera également affiché sur la carte)
 
 
 Page d'acceuil du site :
