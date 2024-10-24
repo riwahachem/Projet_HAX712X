@@ -4,7 +4,7 @@ import pandas as pd
 from geopy.geocoders import Nominatim
 
 # Charger le fichier CSV
-file_path = 'C:/Users/welma/HAX712X_Wahel/Projet_HAX712X/TAM_MMM_CoursesVelomagg.csv'
+file_path = 'C:/Users/welma/HAX712X_Wahel/Projet_HAX712X/data/TAM_MMM_CoursesVelomagg.csv'
 data = pd.read_csv(file_path)
 
 # Nettoyage des noms de colonnes
