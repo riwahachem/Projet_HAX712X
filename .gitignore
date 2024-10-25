@@ -1,5 +1,6 @@
 # Fichier .gitignore
 .pdf
 .json
+/cache/
 # .html
 
