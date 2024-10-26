@@ -30,6 +30,7 @@ Un code couleur sera utilisé pour indiquer le niveau du trafic :
 - Pooch : Nous utiliserons ce package pour télécharger les données efficacement.
 - Scipy : Nous utiliserons ce package pour les calculs avancés de probabilités et pour modéliser les comportements du trafic afin de prévoir des trajectoires cyclistes optimisées.
 - OS : Nous utiliserons ce package pour faciliter l'interaction avec le système d'exploitation.
+- Matplotlib :
 
 ## Choix des données :
 - TAM_MMM_CoursesVelomagg_2021.csv :
