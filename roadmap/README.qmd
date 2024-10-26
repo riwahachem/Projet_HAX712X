@@ -56,6 +56,7 @@ Branche gh-pages :
 Branche AnalyseDeDonnées :
 
 - Extraction des données
+-Visualisation des données
 - Manipulation des données
 
 
