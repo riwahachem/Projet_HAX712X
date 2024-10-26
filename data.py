@@ -1,4 +1,6 @@
 
+import pandas as pd
+
 #importation des données csv des courses velomagg durant l'année 2021
 url="https://data.montpellier3m.fr/sites/defaukt/files/ressources/TAM_MMM_CoursesVelomagg_2021.csv"
 path_target="../data/CoursesVelomagg_2021.csv"
@@ -7,7 +9,7 @@ pooch.retrieve(url, path=path, fname=fname, known_hash=None)
 df_CoursesVelomagg_2021=pd.read_csv("../data/CoursesVelomagg_2021.csv")
 df_CoursesVelomagg_traité=df_CoursesVelomagg_2021.dropna()
 
-filename = 'TAM_MMM_CoursesVelomagg_2021.csv'
+data_2021=pd.read_excel('TAM_MMM_CoursesVelomagg_2021.xlsx')
 
 def data(date, heure, depart, arrivee) :
   L=[]
