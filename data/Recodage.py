@@ -1,5 +1,4 @@
 import pandas as pd
-# A integrer dans ma methode map_ameliore.py
 # Charger le fichier CSV
 file_path = 'C:/Users/welma/HAX712X_Wahel/Projet_HAX712X/data/TAM_MMM_CoursesVelomagg.csv'
 data = pd.read_csv(file_path)
