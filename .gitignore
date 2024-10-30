@@ -1,3 +1,5 @@
 .pdf
 *README_files*
 roadmap/README.html
+/.quarto/
+.html
