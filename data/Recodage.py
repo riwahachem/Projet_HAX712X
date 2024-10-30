@@ -13,6 +13,6 @@ def corriger_encodage(station_name):
         return station_name
 
 # Exemple d'utilisation
-noms_de_stations = ["PÃ©rols Etang de l'Or", "PrÃ©s d'ArÃ¨nes", 'ComÃ©die']
+noms_de_stations = ["PÃ©rols Etang de l'Or"]
 for nom in noms_de_stations:
     print(f"Avant : {nom}, Après : {corriger_encodage(nom)}")
