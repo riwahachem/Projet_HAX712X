@@ -1,5 +1,6 @@
 numpy
-pandas
-osmnx
-folium
 pooch
+pandas==2.2.3
+osmnx==1.9.4
+folium==0.17.0
+geopy==2.4.1
