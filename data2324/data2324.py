@@ -12,6 +12,7 @@ df['Departure'] = pd.to_datetime(df['Departure'], errors='coerce')
 df['Return'] = pd.to_datetime(df['Return'], errors='coerce')
 df.dropna(subset=['Covered distance (m)', 'Duration (sec.)', 'Departure', 'Return'], inplace=True)
 
+# Entrer une date et afficher les trajets correspendant à cette date.
 # Demander à l'utilisateur d'entrer une date
 date_input = input("Veuillez entrer une date (format AAAA-MM-JJ) pour voir les trajets de cette journée : ")
 
