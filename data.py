@@ -10,6 +10,7 @@ df_CoursesVelomagg_2021=pd.read_csv("../data/CoursesVelomagg_2021.csv")
 df_CoursesVelomagg_traité=df_CoursesVelomagg_2021.dropna()
 
 data_2021=pd.read_excel('TAM_MMM_CoursesVelomagg_2021.xlsx')
+filename = 'TAM_MMM_CoursesVelomagg_2022.csv'
 
 def data(date, heure, depart, arrivee) :
   L=[]
