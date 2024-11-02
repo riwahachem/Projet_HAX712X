@@ -32,6 +32,12 @@ if date_filter is not pd.NaT:
 else:
     print("La date saisie est invalide. Veuillez entrer une date au format AAAA-MM-JJ.")
 
+#prédire le nombre de trajets pour le jour suivant
+# nombre de trajets effectués pour chaque jour.
+# autre variables pouvant influencer le nombre de trajets:Les conditions météorologiques.
+
+
+
 
 # Calculer les statistiques descriptives
 statistiques_descriptives = df[['Covered distance (m)', 'Duration (sec.)']].describe()
