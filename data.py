@@ -44,17 +44,18 @@ def trajets_jour(j,m,a):
                             L.append([x[5],x[6]])
     M=[]
     for i in L:
-        v=0
         c=0
         n=0
+        k=0
         for j in L:
             if j==i:
                 c+=1
-        for k in M:
-            if i==[k[0],k[1]]:
-                n=1
+        if len(M)>0:
+            while n==0 and k<len(M):
+                if i==[M[k][0],M[k][1]]:
+                    n=1 
+                k+=1 
         if n==0:
             i.append(c)
             M.append(i)
-            v+=1
     return M
