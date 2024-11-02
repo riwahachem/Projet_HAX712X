@@ -1,6 +1,10 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+#packages pour la prédiction...
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
 
 
 # Charger le fichier de données 
