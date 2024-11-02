@@ -12,6 +12,10 @@ df['Departure'] = pd.to_datetime(df['Departure'], errors='coerce')
 df['Return'] = pd.to_datetime(df['Return'], errors='coerce')
 df.dropna(subset=['Covered distance (m)', 'Duration (sec.)', 'Departure', 'Return'], inplace=True)
 
+# Demander à l'utilisateur d'entrer une date
+date_input = input("Veuillez entrer une date (format AAAA-MM-JJ) pour voir les trajets de cette journée : ")
+
+
 # Calculer les statistiques descriptives
 statistiques_descriptives = df[['Covered distance (m)', 'Duration (sec.)']].describe()
 print("Statistiques descriptives :")
