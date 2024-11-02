@@ -15,6 +15,18 @@ df.dropna(subset=['Covered distance (m)', 'Duration (sec.)', 'Departure', 'Retur
 # Demander à l'utilisateur d'entrer une date
 date_input = input("Veuillez entrer une date (format AAAA-MM-JJ) pour voir les trajets de cette journée : ")
 
+# Filtrer le DataFrame pour obtenir les trajets correspondant à la date saisie
+date_filter = pd.to_datetime(date_input, errors='coerce')
+if date_filter is not pd.NaT:
+    trajets_date = df[df['Departure'].dt.date == date_filter.date()]
+    if trajets_date.empty:
+        print(f"Aucun trajet trouvé pour le {date_input}.")
+    else:
+        print(f"Trajets effectués le {date_input} :")
+        print(trajets_date[['Departure', 'Return', 'Covered distance (m)', 'Duration (sec.)']])
+else:
+    print("La date saisie est invalide. Veuillez entrer une date au format AAAA-MM-JJ.")
+
 
 # Calculer les statistiques descriptives
 statistiques_descriptives = df[['Covered distance (m)', 'Duration (sec.)']].describe()
