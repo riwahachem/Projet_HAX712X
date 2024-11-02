@@ -1,3 +1,0 @@
----
-title: "ATVM : Analyse du trafic velomagg de Montpellier"
----
