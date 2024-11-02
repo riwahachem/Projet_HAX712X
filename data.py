@@ -59,3 +59,31 @@ def trajets_jour(j,m,a):
             i.append(c)
             M.append(i)
     return M
+
+def determination_jour(j,m,a):
+    nombre_jour=0
+    for i in range(1,m):
+        if i%2==0 :
+            if i==2:
+                nombre_jour+=28
+            elif i==8:
+                nombre_jour+=31
+            elif i==10 :
+                nombre_jour+=31
+            elif i==12 :
+                nombre_jour+=31
+            else :
+                nombre_jour+=30
+        if i%2==1:
+            if i==9:
+                nombre_jour+=30
+            elif i==11:
+                nombre_jour+=30
+            else :
+                nombre_jour+=31
+    nombre_jour+=j
+    jour=5+(nombre_jour%7)
+    if jour>=7:
+        return jour-7
+    else :
+        return jour
