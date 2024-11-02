@@ -59,6 +59,7 @@ def trajets_jour(j,m,a):
             i.append(c)
             M.append(i)
     return M
+  
 
 def determination_jour(j,m,a):
     nombre_jour=0
@@ -87,3 +88,32 @@ def determination_jour(j,m,a):
         return jour-7
     else :
         return jour
+      
+
+def stats_jour(j,m,a):
+    L=[]
+    jour=determination_jour(j, m, a)
+    with open (filename) as f:
+        for ligne in f: 
+            if ligne.split(',')[2]!='Departure':
+                x=ligne.split(',')
+                if determination_jour(int(x[2].split('-')[2].split(' ')[0]),int(x[2].split('-')[1]),int(x[2].split('-')[0]))==jour:
+                    L.append([x[5],x[6]])
+    nombre_trajet=len(L)
+    M=[]
+    for i in L:
+        c=0
+        n=0
+        k=0
+        for j in L:
+            if j==i:
+                c+=1
+        if len(M)>0:
+            while n==0 and k<len(M):
+                if i==[M[k][0],M[k][1]]:
+                    n=1 
+                k+=1 
+        if n==0:
+            i.append(c/nombre_trajet)
+            M.append(i)
+    return M
