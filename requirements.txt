@@ -1,7 +1,7 @@
 numpy
 scipy
 matplotlib
-pooch
+pooch==1.0.6
 pandas==2.2.3
 osmnx==1.9.4
 folium==0.17.0
