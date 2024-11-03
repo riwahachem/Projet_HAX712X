@@ -1,4 +1,6 @@
 numpy
+scipy
+matplotlib
 pooch
 pandas==2.2.3
 osmnx==1.9.4
