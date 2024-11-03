@@ -3,7 +3,7 @@ print(pooch.__version__)
 import pandas as pd
 
 # Définir le chemin vers le répertoire où on souhaite stocker les fichiers
-data_dir = pooch.os_cache("dataset") #  un cache pour stocker les fichiers
+data_dir = pooch.os_cache("dataset")  # utiliser un cache pour stocker les fichiers
 
 # Dictionnaire avec les fichiers et leurs URL
 files = {
