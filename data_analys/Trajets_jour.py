@@ -13,6 +13,7 @@ df = pd.read_csv(chemin_fichier)
 
 # Nettoyer et convertir les dates
 df['Departure'] = pd.to_datetime(df['Departure'], errors='coerce')
+df.dropna(subset=['Departure'], inplace=True)
 df['Return'] = pd.to_datetime(df['Return'], errors='coerce')
 df.dropna(subset=['Covered distance (m)', 'Duration (sec.)', 'Departure', 'Return'], inplace=True)
 
@@ -50,7 +51,14 @@ plt.ylabel('Durée (sec.)')
 plt.grid(True)
 plt.show()
 
+# Créer une nouvelle colonne avec seulement la date (sans heure)
+df['Date'] = df['Departure'].dt.date
+
 #prédire le nombre de trajets pour le jour suivant
 # Calculer le nombre de trajets par jour
 trajets_par_jour = df.groupby('Date').size().reset_index(name='Nombre_de_trajets')
+
+# Créer les variables d'entraînement pour le modèle
+trajets_par_jour['Jour_precedent'] = trajets_par_jour['Nombre_de_trajets'].shift(1)
+trajets_par_jour.dropna(inplace=True)  
 
