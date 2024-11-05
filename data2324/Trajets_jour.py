@@ -8,7 +8,7 @@ from sklearn.metrics import r2_score
 
 
 # Charger le fichier de données 
-chemin_fichier =  r'C:\Users\Clara\Desktop\dossier Projet\TAM_MMM_CoursesVelomagg.csv' 
+chemin_fichier =  r'TAM_MMM_CoursesVelomagg.csv' 
 df = pd.read_csv(chemin_fichier)
 
 # Nettoyer et convertir les dates
