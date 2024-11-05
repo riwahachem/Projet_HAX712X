@@ -32,11 +32,6 @@ if date_filter is not pd.NaT:
 else:
     print("La date saisie est invalide. Veuillez entrer une date au format AAAA-MM-JJ.")
 
-#prédire le nombre de trajets pour le jour suivant
-# nombre de trajets effectués pour chaque jour.
-# autre variables pouvant influencer le nombre de trajets:Les conditions météorologiques.
-
-
 
 
 # Calculer les statistiques descriptives
@@ -54,3 +49,8 @@ plt.xlabel('Distance Parcourue (m)')
 plt.ylabel('Durée (sec.)')
 plt.grid(True)
 plt.show()
+
+#prédire le nombre de trajets pour le jour suivant
+# Calculer le nombre de trajets par jour
+trajets_par_jour = df.groupby('Date').size().reset_index(name='Nombre_de_trajets')
+
