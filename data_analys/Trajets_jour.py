@@ -43,7 +43,7 @@ else:
 statistiques_descriptives = df[['Covered distance (m)', 'Duration (sec.)']].describe()
 print("Statistiques descriptives :")
 print(statistiques_descriptives)
-display(statistiques_descriptives)  # Utiliser display pour afficher les résultats
+
 
 # Visualisation avec un swarm plot
 print("figure ")
