@@ -1,3 +1,4 @@
+
 import osmnx as ox
 import pandas as pd
 
@@ -20,3 +21,4 @@ station_coord = {station: get_station_coord(station) for station in stations}
 # On affiche les premieres coordonnees pour verif
 print(station_coord)
 print (get_station_coord("Faculte des Sciences"))
+

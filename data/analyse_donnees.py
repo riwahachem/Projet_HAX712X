@@ -16,5 +16,3 @@ new_donnees = donnees.dropna()
 new_donnees = new_donnees.drop_duplicates()
 
 #print(donnees['Departure'])
-
-
