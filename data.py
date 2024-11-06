@@ -120,11 +120,11 @@ def stats_jour(j,m,a):
             M.append(i)
     return M
 
-lundi=stats_jour(17,1,2022)
-mardi=stats_jour(18,1,2022)
-mercredi=stats_jour(19,1,2022)
-jeudi=stats_jour(13,1,2022)
-vendredi=stats_jour(14,1,2022)
-samedi=stats_jour(15,1,2022)
-dimanche=stats_jour(16,1,2022)
-semaine=[lundi,mardi,mercredi,jeudi,vendredi,samedi,dimanche]
+#lundi=stats_jour(17,1,2022)
+#mardi=stats_jour(18,1,2022)
+#mercredi=stats_jour(19,1,2022)
+#jeudi=stats_jour(13,1,2022)
+#vendredi=stats_jour(14,1,2022)
+#samedi=stats_jour(15,1,2022)
+#dimanche=stats_jour(16,1,2022)
+#semaine=[lundi,mardi,mercredi,jeudi,vendredi,samedi,dimanche]
