@@ -51,6 +51,9 @@ plt.ylabel('Durée (sec.)')
 plt.grid(True)
 plt.show()"""
 
+# Limiter l'échantillon pour améliorer la lisibilité
+sample_df = df.sample(500, random_state=42)
+
 # Créer le plot
 plt.figure(figsize=(12, 8))
 sns.stripplot( 
