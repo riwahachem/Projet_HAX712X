@@ -41,7 +41,7 @@ print("Statistiques descriptives :")
 print(statistiques_descriptives)
 
 
-# Visualisation avec un swarm plot
+"""# Visualisation avec un swarm plot
 print("figure ")
 plt.figure(figsize=(12, 6))
 sns.stripplot(x='Covered distance (m)', y='Duration (sec.)', data=df.sample(500), alpha=0.7)
@@ -49,9 +49,31 @@ plt.title('Swarm Plot de la Durée des Trajets par Distance Parcourue')
 plt.xlabel('Distance Parcourue (m)')
 plt.ylabel('Durée (sec.)')
 plt.grid(True)
+plt.show()"""
+
+# Créer le plot
+plt.figure(figsize=(12, 8))
+sns.stripplot( 
+    x='Covered distance (m)', 
+    y='Duration (sec.)', 
+    data=sample_df, 
+    #hue='Festive Color',
+    palette=colors,
+    alpha=0.7, 
+    size=5,  # Taille de base des points
+    jitter=0.5,
+    legend =False   # Jitter horizontal pour espacer les points
+)
+
+# Déco du plot
+plt.title('Durée des Trajets par Distance Parcourue')
+plt.xlabel('Distance Parcourue (m)')
+plt.ylabel('Durée (sec.)')
+plt.grid(True, linestyle='--', alpha=0.3)
+
 plt.show()
 
-# Créer une nouvelle colonne avec seulement la date (sans heure)
+"""# Créer une nouvelle colonne avec seulement la date (sans heure)
 df['Date'] = df['Departure'].dt.date
 
 #prédire le nombre de trajets pour le jour suivant
@@ -60,5 +82,5 @@ trajets_par_jour = df.groupby('Date').size().reset_index(name='Nombre_de_trajets
 
 # Créer les variables d'entraînement pour le modèle
 trajets_par_jour['Jour_precedent'] = trajets_par_jour['Nombre_de_trajets'].shift(1)
-trajets_par_jour.dropna(inplace=True)  
+trajets_par_jour.dropna(inplace=True)"""
 
