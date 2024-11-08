@@ -1,5 +1,4 @@
 import pandas as pd
-# A integrer dans ma methode map_ameliore.py
 # Charger le fichier CSV
 file_path = 'C:/Users/welma/HAX712X_Wahel/Projet_HAX712X/data/TAM_MMM_CoursesVelomagg.csv'
 data = pd.read_csv(file_path)
@@ -14,6 +13,6 @@ def corriger_encodage(station_name):
         return station_name
 
 # Exemple d'utilisation
-noms_de_stations = ["PÃ©rols Etang de l'Or", "PrÃ©s d'ArÃ¨nes", 'ComÃ©die']
+noms_de_stations = ["PÃ©rols Etang de l'Or"]
 for nom in noms_de_stations:
     print(f"Avant : {nom}, Après : {corriger_encodage(nom)}")
