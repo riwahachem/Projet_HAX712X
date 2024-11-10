@@ -31,7 +31,7 @@ print("Statistiques descriptives :")
 
 #créer une copie de la table pour eviter de modifier l'original 
 df_kde=df.copy()
-#Appliquer la transformation logarithmique a la colonne Duration
+#Appliquer la transformation logarithmique a la colonne Duration afin de réduire la plage des valeurs
 df_kde['Log_Duration']=np.log1p(df_kde['Duration (sec.)'])
 
 #Tracer la distribution kde(Kernel density estimate)
