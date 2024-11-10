@@ -28,14 +28,18 @@ df.dropna(subset=['Covered distance (m)', 'Duration (sec.)', 'Departure', 'Retur
 # Calculer les statistiques descriptives
 statistiques_descriptives = df[['Covered distance (m)', 'Duration (sec.)']].describe()
 print("Statistiques descriptives :")
-display(statistiques_descriptives)  # Utiliser display pour afficher les résultats
 
-# Visualisation avec un strip plot
-plt.figure(figsize=(12, 6))
-sns.stripplot(x='Covered distance (m)', y='Duration (sec.)', data=df.sample(500), alpha=0.7)
-plt.title('Swarm Plot de la Durée des Trajets par Distance Parcourue')
-plt.xlabel('Distance Parcourue (m)')
-plt.ylabel('Durée (sec.)')
-plt.grid(True)
+#créer une copie de la table pour eviter de modifier l'original 
+df_kde=df.copy()
+#Appliquer la transformation logarithmique a la colonne Duration
+df_kde['Log_Duration']=np.log1p(df_kde['Duration (sec.)'])
+
+#Tracer la distribution kde(Kernel density estimate)
+fig,ax = plt.subplots(1,1,figsize(10,5))
+sns.kdeplot(df_kde['Log_Duration'], ax=ax,fill=True,cut=0,bw_adjust=0.5)
+ax.set_xlabel("Logarithme de la durée (sec)")
+ax.set_ylabel("Densité de probabilité")
+ax.set_title("Estimation de la densité de la durée des trajets")
+plt.tight_layout()
 plt.show()
 ```
