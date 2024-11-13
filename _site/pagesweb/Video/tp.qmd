@@ -1,8 +1,7 @@
 ---
 title: Trafic VéloMagg journalier
 format:html
+execute:
+    echo: false
+    output: true
 ---
-
-```{python}
-#code video
-```

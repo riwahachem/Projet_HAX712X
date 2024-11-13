@@ -29,6 +29,6 @@ website:
         - pagesweb/Video/tp.qmd
 format:
   html:
-    theme: spacelab
-    css: styles.css
+    theme: flatly
+    #css: styles.css
     toc: true
