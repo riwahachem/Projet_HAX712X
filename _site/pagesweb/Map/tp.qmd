@@ -1,9 +1,0 @@
----
-title: Prédiction du traffic VéloMagg
-format:html
-execute:
-    echo: false
-    output: true
----
-
-#```{python}
