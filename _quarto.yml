@@ -13,6 +13,20 @@ website:
     title: "ATVM"
     background : primary
     search : true
+    left:
+      - sidebar:map
+      - sidebar:video
+  sidebar:
+    - id: map
+      title: "MAP"
+      collapse-level: 3
+      contents: 
+        - pagesweb/Map/tp.qmd
+    - id: video
+      title: "Video"
+      collapse-level: 3
+      contents: 
+        - pagesweb/Video/tp.qmd
 format:
   html:
     theme: spacelab

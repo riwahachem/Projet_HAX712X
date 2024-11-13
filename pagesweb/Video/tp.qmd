@@ -1,0 +1,7 @@
+---
+title: Trafic VéloMagg journalier
+format:html
+execute:
+    echo: false
+    output: true
+---
