@@ -1,3 +1,20 @@
 ---
 title: "ATVM : Analyse du trafic VéloMagg de Montpellier"
 ---
+
+## 🚴‍♂️  Bienvenue sur **ATVM** !
+
+**ATVM**  est un projet dédié à l’étude des données liées aux vélos du réseau VéloMagg de la Métropole de Montpellier. 
+
+Dans le cadre de ce projet, nous nous sommes concentrés sur :  
+- 🗂 **Collecte et traitement des données**   
+- 📊 **Analyses statistiques** 
+- 📈 **Visualisations interactives** 
+
+###  Installer le package ATVM 
+
+Pour installer ce package, utilisez simplement la commande suivante dans votre terminal :  
+
+```{python}
+pip install git+https://github.com/riwahachem/atvm
+```
