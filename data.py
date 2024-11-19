@@ -155,7 +155,19 @@ def intensity_jour(j,m,a):
             M.append(i)
     return M
 
-
+def intensity_jour_total(j,m,a):
+    N=0
+    for filename in archives :
+        with open(filename,'r') as f:
+            json_data = f.read()
+            data = json.loads(json_data)
+            for i in range(len(data)):
+                if int(data[i].get("dateObserved").split('-')[0])==a:
+                    if int(data[i].get("dateObserved").split('-')[1])==m:
+                        if int(data[i].get("dateObserved").split('-')[2][0]+data[i].get("dateObserved").split('-')[2][1])==j:
+                            if data[i].get("intensity")!=None:
+                                N+=data[i].get("intensity")
+    return N
 
 
 
