@@ -26,89 +26,55 @@ def corriger_encodage(station_name):
 data['Departure station'] = data['Departure station'].apply(corriger_encodage)
 data['Return station'] = data['Return station'].apply(corriger_encodage)
 
-# Extraction des stations uniques corrigées
-stations_uniques = pd.concat([data['Departure station'], data['Return station']]).unique()
-stations_uniques = [station for station in stations_uniques if isinstance(station, str)]
-stations_uniques = [station.replace("FacdesSciences", "Faculté des sciences") for station in stations_uniques]
+# Exclure les stations spécifiques non pertinentes
+stations_exclues = ["AtelierTAM", "Station SAV", "Smoove_Test"]
+data = data[~data['Departure station'].isin(stations_exclues)]
+data = data[~data['Return station'].isin(stations_exclues)]
 
-# Initialiser le géocodeur et charger le JSON existant
-geolocator = Nominatim(user_agent="velomagg_locator")
+# Charger le fichier JSON existant
 try:
     with open("station_coords.json", "r") as infile:
         coordonnees_stations = json.load(infile)
 except FileNotFoundError:
     coordonnees_stations = {}
 
-def get_station_coordinates(station_name):
-    if not isinstance(station_name, str):
-        return None
-    options = [
-        f"{station_name}, Montpellier, France",
-        f"{station_name.replace('-', ' ')}, Montpellier, France",
-        f"{station_name.split('-')[0]}, Montpellier, France",
-        f"{station_name.split('-')[-1]}, Montpellier, France",
-        f"{station_name}, France"
-    ]
-    if "Fac" in station_name:
-        options.append(station_name.replace("Fac", "Faculté") + ", Montpellier, France")
-
-    for query in options:
-        try:
-            location = geolocator.geocode(query)
-            if location:
-                return {"latitude": location.latitude, "longitude": location.longitude}
-        except Exception as e:
-            print(f"Erreur pour {query}: {e}")
-        time.sleep(1)
-    return None
-
-# Boucle pour obtenir et sauvegarder les coordonnées
-for station in stations_uniques:
-    if station not in coordonnees_stations:
-        coords = get_station_coordinates(station)
-        if coords:
-            coordonnees_stations[station] = coords
-            print(f"Coordonnées trouvées pour {station}: {coords}")
-        else:
-            print(f"Coordonnées non trouvées pour {station}")
-        
-        # Sauvegarde en cours de traitement
-        with open("station_coords.json", "w") as outfile:
-            json.dump(coordonnees_stations, outfile)
-        time.sleep(1)  # Pause pour éviter les limites de requêtes
-
 # Génération de la carte
 ville = "Montpellier, France"
 G = ox.graph_from_place(ville, network_type="all")
 m = folium.Map(location=[43.6114, 3.8767], zoom_start=13)
 
-# Extraction des trajets
-data_traité = pd.read_csv("C:/Users/welma/HAX712X_Wahel/Projet_HAX712X/data/TAM_MMM_CoursesVelomagg.csv").dropna()
-trajets = data_traité[['Departure', 'Departure station', 'Return station', 'Duration (sec.)', 'Covered distance (m)']]
-liste_trajet = trajets
-
-# Nettoyage des colonnes
-liste_trajet.loc[:, 'Departure station'] = liste_trajet['Departure station'].apply(corriger_encodage)
-liste_trajet.loc[:, 'Return station'] = liste_trajet['Return station'].apply(corriger_encodage)
-
-# Interaction avec l'utilisateur
-date = input("Veuillez choisir une date : ")
-trajets_du_jour = liste_trajet[liste_trajet['Departure'].str.startswith(date)]
+# Interaction avec l'utilisateur pour choisir la date et le nombre de trajets
+date = input("Veuillez choisir une date (format YYYY-MM-DD) : ")
+trajets_du_jour = data[data['Departure'].str.startswith(date)]
 nombre_trajets = len(trajets_du_jour)
 
-print("Nous avons ", nombre_trajets, "trajets à cette date.")
+print(f"Nous avons trouvé {nombre_trajets} trajets à cette date.")
+
+# Demander à l'utilisateur combien de trajets afficher
+nb_trajets_max = min(nombre_trajets, nombre_trajets)  # Pas de limite imposée
+try:
+    nb_trajets_a_afficher = int(input(f"Combien de trajets voulez-vous afficher (entre 1 et {nb_trajets_max}) ? "))
+    if nb_trajets_a_afficher > nb_trajets_max or nb_trajets_a_afficher < 1:
+        raise ValueError("Nombre hors limites.")
+except (ValueError, TypeError):
+    print("Entrée invalide, affichage de 10 trajets par défaut.")
+    nb_trajets_a_afficher = 10
+
+print(f"{nb_trajets_a_afficher} trajets seront affichés et calculés.")
 
 # Définir une fonction pour choisir la couleur en fonction de la distance
 def couleur_par_distance(distance):
     if distance < 1000:  # Moins de 1 km
         return 'green'
-    elif distance < 5000:  # Moins de 5 km
+    elif distance < 2000:  # Moins de 5 km
         return 'blue'
+    elif distance < 3000:  # Moins de 5 km
+        return 'orange'
     else:  # Plus de 5 km
         return 'red'
 
-# J'affiche les trajets de la journée sur la carte
-for i in range(min(nombre_trajets, 50)):  # Limiter à 20 trajets maximum
+# Afficher les trajets de la journée sur la carte
+for i in range(nb_trajets_a_afficher):
     trajet = trajets_du_jour.iloc[i]
     depart_station = trajet['Departure station']
     retour_station = trajet['Return station']
@@ -151,7 +117,8 @@ legend_html = """
             padding: 10px; font-size: 14px;">
     <h4 style="margin: 0;">Légende des Couleurs</h4>
     <p><span style="color: green;">&#9679;</span> Moins de 1 km</p>
-    <p><span style="color: blue;">&#9679;</span> Entre 1 km et 5 km</p>
+    <p><span style="color: blue;">&#9679;</span> Entre 1 km et 2 km</p>
+    <p><span style="color: orange;">&#9679;</span> Entre 2 km et 3 km</p>
     <p><span style="color: red;">&#9679;</span> Plus de 5 km</p>
 </div>
 """
