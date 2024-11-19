@@ -260,7 +260,7 @@ def poids_heure(j,m,a):
 #vendredi_intensity = intensity_jour_stats(26,4,2024)
 #samedi_intensity = intensity_jour_stats(27,4,2024)
 #dimanche_intensity = intensity_jour_stats(28,4,2024)
-#semaine_pieton = [lundi_intensity,mardi_intensity,mercredi_intensity,jeudi_intensity,vendredi_intensity,samedi_intensity,dimanche_intensity]
+#semaine_intensity = [lundi_intensity,mardi_intensity,mercredi_intensity,jeudi_intensity,vendredi_intensity,samedi_intensity,dimanche_intensity]
 
 
 #lundi_heure=poids_heure(17, 1, 2022)
