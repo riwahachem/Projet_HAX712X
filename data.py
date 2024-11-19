@@ -89,9 +89,9 @@ def données_jour_semaine(j,m,a):
     return L,M,W
 
 def stats_jour(j,m,a):
-    T=copy.deepcopy(trajet_jour_semaine(j,m,a)[0])
-    M=copy.deepcopy(trajet_jour_semaine(j,m,a)[1])
-    W=copy.deepcopy(trajet_jour_semaine(j,m,a)[2])
+    T=copy.deepcopy(données_jour_semaine(j,m,a)[0])
+    M=copy.deepcopy(données_jour_semaine(j,m,a)[1])
+    W=copy.deepcopy(données_jour_semaine(j,m,a)[2])
     L=[[i,0] for i in W]
     n=len(M)
     for x in T:
@@ -100,7 +100,18 @@ def stats_jour(j,m,a):
             L[j][1]+=1/n
     return L
 
-
+def stat_heure_jour(j,m,a):
+    L=[0 for i in range(24)]
+    t=0
+    with open(filename) as f:
+        for ligne in f :
+            x=ligne.split(',')
+            if x[2]!='Departure':
+                if [int(x[2].split('-')[0]),int(x[2].split('-')[1]),int(x[2].split('-')[2].split(' ')[0])]==[a,m,j]:
+                    L[int(x[2].split('-')[2].split(' ')[1].split(':')[0])]+=1
+                    t+=1
+    L=[j/t for j in L]
+    return L
 
 #lundi=stats_jour_semaine(17,1,2022)
 #mardi=stats_jour_semaine(18,1,2022)
