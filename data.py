@@ -5,6 +5,28 @@ import copy
 
 filename="TAM_MMM_CoursesVelomagg_2022.csv"
 
+archives =['MMM_EcoCompt_ED223110495_archive.json','MMM_EcoCompt_ED223110496_archive.json','MMM_EcoCompt_ED223110497_archive.json',
+           'MMM_EcoCompt_ED223110500_archive.json','MMM_EcoCompt_ED223110501_archive.json','MMM_EcoCompt_X2H19070220_archive.json',
+           'MMM_EcoCompt_X2H20042632_archive.json','MMM_EcoCompt_X2H20042633_archive.json','MMM_EcoCompt_X2H20042634_archive.json',
+           'MMM_EcoCompt_X2H20042635_archive.json','MMM_EcoCompt_X2H20063161_archive.json','MMM_EcoCompt_X2H20063162_archive.json',
+           'MMM_EcoCompt_X2H20063163_archive.json','MMM_EcoCompt_X2H20063164_archive.json','MMM_EcoCompt_X2H20104132_archive.json',
+           'MMM_EcoCompt_X2H21070341_archive.json','MMM_EcoCompt_X2H21070342_archive.json','MMM_EcoCompt_X2H21070343_archive.json',
+           'MMM_EcoCompt_X2H21070344_archive.json','MMM_EcoCompt_X2H21070345_archive.json','MMM_EcoCompt_X2H21070346_archive.json',
+           'MMM_EcoCompt_X2H21070347_archive.json','MMM_EcoCompt_X2H21070348_archive.json','MMM_EcoCompt_X2H21070349_archive.json',
+           'MMM_EcoCompt_X2H21070350_archive.json','MMM_EcoCompt_X2H21070351_archive.json','MMM_EcoCompt_X2H21111120_archive.json',
+           'MMM_EcoCompt_X2H21111121_archive.json','MMM_EcoCompt_X2H22043029_archive.json','MMM_EcoCompt_X2H22043030_archive.json',
+           'MMM_EcoCompt_X2H22043031_archive.json','MMM_EcoCompt_X2H22043032_archive.json','MMM_EcoCompt_X2H22043033_archive.json',
+           'MMM_EcoCompt_X2H22043034_archive.json','MMM_EcoCompt_X2H22043035_archive.json','MMM_EcoCompt_X2H22104765_archive.json',
+           'MMM_EcoCompt_X2H22104766_archive.json','MMM_EcoCompt_X2H22104767_archive.json','MMM_EcoCompt_X2H22104768_archive.json',
+           'MMM_EcoCompt_X2H22104769_archive.json','MMM_EcoCompt_X2H22104770_archive.json','MMM_EcoCompt_X2H22104771_archive.json',
+           'MMM_EcoCompt_X2H22104772_archive.json','MMM_EcoCompt_X2H22104773_archive.json','MMM_EcoCompt_X2H22104774_archive.json',
+           'MMM_EcoCompt_X2H22104775_archive.json','MMM_EcoCompt_X2H22104776_archive.json','MMM_EcoCompt_X2H22104777_archive.json',
+           'MMM_EcoCompt_XTH19101158_archive.json','MMM_EcoCompt_XTH21015106_archive.json','MMM_EcoCompt_XTH24072390_archive.json',
+           'MMM_EcoCompt_XTH24072390_archive_01_06_2024.json','MMM_EcoCompt_X2H19070220_2020.json','MMM_EcoCompt_X2H20042632_2020.json',
+           'MMM_EcoCompt_X2H20042633_2020.json','MMM_EcoCompt_X2H20042634_2020.json','MMM_EcoCompt_X2H20042635_2020.json',
+           'MMM_EcoCompt_X2H20063161_2020.json','MMM_EcoCompt_X2H20063162_2020.json','MMM_EcoCompt_X2H20063163_2020.json',
+           'MMM_EcoCompt_X2H20063164_2020.json','MMM_EcoCompt_XTH19101158_2020.json']
+
 
 def trajets_jour(j,m,a):
     if j<10:
@@ -101,6 +123,8 @@ def stats_jour(j,m,a):
             j=W.index([x[5],x[6]])
             L[j][1]+=1/n
     return L
+
+
 
 def stat_heure_jour(j,m,a):
     L=[0 for i in range(24)]
