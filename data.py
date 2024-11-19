@@ -113,7 +113,7 @@ def données_jour_semaine(j,m,a):
                         W.append([x[5],x[6]])
     return L,M,W
 
-def stats_jour(j,m,a):
+def stats_jour_semaine(j,m,a):
     T=copy.deepcopy(données_jour_semaine(j,m,a)[0])
     M=copy.deepcopy(données_jour_semaine(j,m,a)[1])
     W=copy.deepcopy(données_jour_semaine(j,m,a)[2])
