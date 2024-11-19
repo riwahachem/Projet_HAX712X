@@ -169,6 +169,40 @@ def intensity_jour_total(j,m,a):
                                 N+=data[i].get("intensity")
     return N
 
+def intensity_jour_stats(j,m,a):
+    N=[]
+    L=[]
+    jour=determination_jour(j, m, a)
+    for filename in archives :
+        with open(filename,'r') as f:
+            json_data=f.read()
+            data=json.loads(json_data)
+            for i in range(len(data)):
+                if data[i].get("intensity")!=None:
+                    jour_data=int(data[i].get("dateObserved").split('-')[2][0]+data[i].get("dateObserved").split('-')[2][1]),int(data[i].get("dateObserved").split('-')[1]),int(data[i].get("dateObserved").split('-')[0])
+                    if determination_jour(jour_data[0],jour_data[1],jour_data[2])==jour:
+                        L.append([data[i].get("intensity"),data[i].get("location").get('coordinates')])
+    M=[]
+    for i in L:
+        n=0
+        c=i[0]
+        p=0
+        k=0
+        for j in L:
+            if j[1]==i[1]:
+                c+=j[0]
+                n+=1
+        if len(M)>0:
+            while p==0 and k<len(M):
+                if i[1]==M[k][1]:
+                    p=1 
+                k+=1 
+        if p==0:
+            i[0]=c/n 
+            N.append(n)
+            M.append(i)
+    return [M,N]
+
 
 
 def stat_heure_jour(j,m,a):
