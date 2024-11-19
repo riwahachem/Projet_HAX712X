@@ -247,6 +247,15 @@ def poids_heure(j,m,a):
 #dimanche=stats_jour_semaine(16,1,2022)
 #semaine=[lundi,mardi,mercredi,jeudi,vendredi,samedi,dimanche]
 
+#lundi_intensity = intensity_jour_stats(22,4,2024)
+#mardi_intensity = intensity_jour_stats(23,4,2024)
+#mercredi_intensity = intensity_jour_stats(24,4,2024)
+#jeudi_intensity = intensity_jour_stats(25,4,2024)
+#vendredi_intensity = intensity_jour_stats(26,4,2024)
+#samedi_intensity = intensity_jour_stats(27,4,2024)
+#dimanche_intensity = intensity_jour_stats(28,4,2024)
+#semaine_pieton = [lundi_intensity,mardi_intensity,mercredi_intensity,jeudi_intensity,vendredi_intensity,samedi_intensity,dimanche_intensity]
+
 #lundi_heure=poids_heure(17, 1, 2022)
 #mardi_heure=poids_heure(18, 1, 2022)
 #mercredi_heure=poids_heure(19, 1, 2022)
