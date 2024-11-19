@@ -69,10 +69,18 @@ def trajets_jour(j,m,a):
 
 def determination_jour(j,m,a):
     nombre_jour=0
+    for k in range(2020,a):
+        if k%4==0:
+            nombre_jour+=366
+        else :
+            nombre_jour+=365
     for i in range(1,m):
         if i%2==0 :
             if i==2:
-                nombre_jour+=28
+                if a%4==0:
+                    nombre_jour+=29
+                else :
+                    nombre_jour+=28
             elif i==8:
                 nombre_jour+=31
             elif i==10 :
@@ -89,7 +97,7 @@ def determination_jour(j,m,a):
             else :
                 nombre_jour+=31
     nombre_jour+=j
-    jour=5+(nombre_jour%7)
+    jour=2+(nombre_jour%7)
     if jour>=7:
         return jour-7
     else :
