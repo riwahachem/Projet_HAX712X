@@ -113,6 +113,26 @@ def stat_heure_jour(j,m,a):
     L=[j/t for j in L]
     return L
 
+def poids_heure(j,m,a):
+    M=[]
+    P=[0 for i in range(0,24)]
+    L=[]
+    with open(filename) as f:
+        for ligne in f:
+            x=ligne.split(',')
+            if x[2]!='Departure':
+                if determination_jour(int(x[2].split('-')[2].split(' ')[0]),int(x[2].split('-')[1]),int(x[2].split('-')[0]))==determination_jour(j,m,a):
+                    if [int(x[2].split('-')[0]),int(x[2].split('-')[1]),int(x[2].split('-')[2].split(' ')[0])] not in L:
+                        L.append([int(x[2].split('-')[0]),int(x[2].split('-')[1]),int(x[2].split('-')[2].split(' ')[0])])
+    for k in L:
+        M.append(stat_heure_jour(k[2],k[1],k[0]))
+    for i in range(0,24):
+        for k in M:
+            P[i]+=k[i]
+    P=[j/len(M) for j in P]
+    return P
+
+
 #lundi=stats_jour_semaine(17,1,2022)
 #mardi=stats_jour_semaine(18,1,2022)
 #mercredi=stats_jour_semaine(19,1,2022)
