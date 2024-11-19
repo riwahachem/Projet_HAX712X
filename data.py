@@ -69,10 +69,18 @@ def trajets_jour(j,m,a):
 
 def determination_jour(j,m,a):
     nombre_jour=0
+    for k in range(2020,a):
+        if k%4==0:
+            nombre_jour+=366
+        else :
+            nombre_jour+=365
     for i in range(1,m):
         if i%2==0 :
             if i==2:
-                nombre_jour+=28
+                if a%4==0:
+                    nombre_jour+=29
+                else :
+                    nombre_jour+=28
             elif i==8:
                 nombre_jour+=31
             elif i==10 :
@@ -89,7 +97,7 @@ def determination_jour(j,m,a):
             else :
                 nombre_jour+=31
     nombre_jour+=j
-    jour=5+(nombre_jour%7)
+    jour=2+(nombre_jour%7)
     if jour>=7:
         return jour-7
     else :
@@ -239,14 +247,14 @@ def poids_heure(j,m,a):
     return P
 
 
-#lundi=stats_jour_semaine(17,1,2022)
-#mardi=stats_jour_semaine(18,1,2022)
-#mercredi=stats_jour_semaine(19,1,2022)
-#jeudi=stats_jour_semaine(13,1,2022)
-#vendredi=stats_jour_semaine(14,1,2022)
-#samedi=stats_jour_semaine(15,1,2022)
-#dimanche=stats_jour_semaine(16,1,2022)
-#semaine=[lundi,mardi,mercredi,jeudi,vendredi,samedi,dimanche]
+#lundi_trajet=stats_jour_semaine(17,1,2022)
+#mardi_trajet=stats_jour_semaine(18,1,2022)
+#mercredi_trajet=stats_jour_semaine(19,1,2022)
+#jeudi_trajet=stats_jour_semaine(13,1,2022)
+#vendredi_trajet=stats_jour_semaine(14,1,2022)
+#samedi_trajet=stats_jour_semaine(15,1,2022)
+#dimanche_trajet=stats_jour_semaine(16,1,2022)
+#semaine_trajet=[lundi_trajet,mardi_trajet,mercredi_trajet,jeudi_trajet,vendredi_trajet,samedi_trajet,dimanche_trajet]
 
 #lundi_intensity = intensity_jour_stats(22,4,2024)
 #mardi_intensity = intensity_jour_stats(23,4,2024)
