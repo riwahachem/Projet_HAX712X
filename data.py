@@ -88,6 +88,19 @@ def données_jour_semaine(j,m,a):
                         W.append([x[5],x[6]])
     return L,M,W
 
+def stats_jour(j,m,a):
+    T=copy.deepcopy(trajet_jour_semaine(j,m,a)[0])
+    M=copy.deepcopy(trajet_jour_semaine(j,m,a)[1])
+    W=copy.deepcopy(trajet_jour_semaine(j,m,a)[2])
+    L=[[i,0] for i in W]
+    n=len(M)
+    for x in T:
+        if [int(x[2].split('-')[2].split(' ')[0]),int(x[2].split('-')[1]),int(x[2].split('-')[0])] in M:
+            j=W.index([x[5],x[6]])
+            L[j][1]+=1/n
+    return L
+
+
 
 #lundi=stats_jour_semaine(17,1,2022)
 #mardi=stats_jour_semaine(18,1,2022)
