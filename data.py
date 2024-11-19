@@ -2,6 +2,7 @@
 import pandas as pd
 import numpy as np
 import copy
+import json
 
 filename="TAM_MMM_CoursesVelomagg_2022.csv"
 
