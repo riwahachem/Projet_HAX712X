@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import copy
 
+filename="TAM_MMM_CoursesVelomagg_2022.csv"
+
 
 def trajets_jour(j,m,a):
     if j<10:
@@ -141,3 +143,12 @@ def poids_heure(j,m,a):
 #samedi=stats_jour_semaine(15,1,2022)
 #dimanche=stats_jour_semaine(16,1,2022)
 #semaine=[lundi,mardi,mercredi,jeudi,vendredi,samedi,dimanche]
+
+#lundi_heure=poids_heure(17, 1, 2022)
+#mardi_heure=poids_heure(18, 1, 2022)
+#mercredi_heure=poids_heure(19, 1, 2022)
+#jeudi_heure=poids_heure(13, 1, 2022)
+#vendredi_heure=poids_heure(14, 1, 2022)
+#samedi_heure=poids_heure(15, 1, 2022)
+#dimanche_heure=poids_heure(16, 1, 2022)
+#semaine_heure=[lundi_heure,mardi_heure,mercredi_heure,jeudi_heure,vendredi_heure,samedi_heure,dimanche_heure]
