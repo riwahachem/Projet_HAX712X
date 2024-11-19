@@ -125,6 +125,39 @@ def stats_jour(j,m,a):
     return L
 
 
+def intensity_jour(j,m,a):
+    L=[]
+    for filename in archives :
+        with open(filename,'r') as f:
+            json_data = f.read()
+            data = json.loads(json_data)
+            for i in range(len(data)):
+                if int(data[i].get("dateObserved").split('-')[0])==a:
+                    if int(data[i].get("dateObserved").split('-')[1])==m:
+                        if int(data[i].get("dateObserved").split('-')[2][0]+data[i].get("dateObserved").split('-')[2][1])==j:
+                            if data[i].get("intensity")!=None:
+                                L.append([data[i].get("intensity"),data[i].get("location").get('coordinates')])
+    M=[]
+    for i in L:
+        c=i[0]
+        n=0
+        k=0
+        for j in L:
+            if j[1]==i[1]:
+                c+=j[0]
+        if len(M)>0:
+            while n==0 and k<len(M):
+                if i[1]==M[k][1]:
+                    n=1 
+                k+=1 
+        if n==0:
+            i[0]=c
+            M.append(i)
+    return M
+
+
+
+
 
 def stat_heure_jour(j,m,a):
     L=[0 for i in range(24)]
