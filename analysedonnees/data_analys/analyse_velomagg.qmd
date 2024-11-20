@@ -12,34 +12,30 @@ execute:
 
 ```{python}
 import pandas as pd
-import seaborn as sns
+import geopandas as gpd
 import matplotlib.pyplot as plt
-from IPython.display import display
+from shapely.geometry import Point
+import plotly.express as px
 
-#Charger le fichier de données :
-chemin_fichier = r'C:\Users\Clara\Desktop\dossier Projet\TAM_MMM_CoursesVelomagg.csv' 
-df = pd.read_csv(chemin_fichier)
+# Charger les données des compteurs
+compteurs_df = pd.read_csv(r"C:\Users\Clara\Desktop\dossier projet\MMM_MMM_GeolocCompteurs.csv")
 
-# Nettoyer et convertir les dates
-df['Departure'] = pd.to_datetime(df['Departure'], errors='coerce')
-df['Return'] = pd.to_datetime(df['Return'], errors='coerce')
-df.dropna(subset=['Covered distance (m)', 'Duration (sec.)', 'Departure', 'Return'], inplace=True)
+# Charger les données des quartiers
+quartiers_gdf = gpd.read_file(r"C:\Users\Clara\Desktop\dossier projet\VilleMTP_MTP_Quartiers.json")
 
-# Calculer les statistiques descriptives
-statistiques_descriptives = df[['Covered distance (m)', 'Duration (sec.)']].describe()
-print("Statistiques descriptives :")
 
-#créer une copie de la table pour eviter de modifier l'original 
-df_kde=df.copy()
-#Appliquer la transformation logarithmique a la colonne Duration afin de réduire la plage des valeurs
-df_kde['Log_Duration']=np.log1p(df_kde['Duration (sec.)'])
+# Convertir les latitudes et longitudes en géométrie de points
+compteurs_gdf = gpd.GeoDataFrame(compteurs_df, 
+                                  geometry=[Point(xy) for xy in zip(compteurs_df['Longitude'], compteurs_df['Latitude'])],
+                                  crs="EPSG:4326")
+# Reprojection des données des quartiers en EPSG:4326 (si nécessaire)
+quartiers_gdf = quartiers_gdf.to_crs("EPSG:4326")
 
-#Tracer la distribution kde(Kernel density estimate)
-fig,ax = plt.subplots(1,1,figsize(10,5))
-sns.kdeplot(df_kde['Log_Duration'], ax=ax,fill=True,cut=0,bw_adjust=0.5)
-ax.set_xlabel("Logarithme de la durée (sec)")
-ax.set_ylabel("Densité de probabilité")
-ax.set_title("Estimation de la densité de la durée des trajets")
-plt.tight_layout()
-plt.show()
+# Joindre les compteurs aux quartiers
+compteurs_with_quartier = gpd.sjoin(compteurs_gdf, quartiers_gdf, how="left", predicate="within")
+
+#calculer le volume de traffic par quartier
+traffic_by_quartier=compteurs_with_quartier.groupby('name').size().reset_index(name='Volume de traffic')
+print("colonne")
+print(traffic_by_quartier.columns)
 ```
