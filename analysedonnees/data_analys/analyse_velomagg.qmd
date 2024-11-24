@@ -12,30 +12,33 @@ execute:
 
 ```{python}
 import pandas as pd
-import geopandas as gpd
+import seaborn as sns
 import matplotlib.pyplot as plt
-from shapely.geometry import Point
+import numpy as np
 import plotly.express as px
 
-# Charger les données des compteurs
-compteurs_df = pd.read_csv(r"C:\Users\Clara\Desktop\dossier projet\MMM_MMM_GeolocCompteurs.csv")
 
-# Charger les données des quartiers
-quartiers_gdf = gpd.read_file(r"C:\Users\Clara\Desktop\dossier projet\VilleMTP_MTP_Quartiers.json")
+# Charger le fichier de données 
+df = pd.read_csv("C:\\Users\\Clara\\Desktop\\dossier Projet\\TAM_MMM_CoursesVelomagg.csv")
+print(df)
 
+# Convertir la colonne 'Departure' en type datetime (ajuste le nom de la colonne si nécessaire)
+df['Departure'] = pd.to_datetime(df['Departure'], errors='coerce')
 
-# Convertir les latitudes et longitudes en géométrie de points
-compteurs_gdf = gpd.GeoDataFrame(compteurs_df, 
-                                  geometry=[Point(xy) for xy in zip(compteurs_df['Longitude'], compteurs_df['Latitude'])],
-                                  crs="EPSG:4326")
-# Reprojection des données des quartiers en EPSG:4326 (si nécessaire)
-quartiers_gdf = quartiers_gdf.to_crs("EPSG:4326")
+# Filtrer les lignes avec des dates valides
+df = df.dropna(subset=['Departure'])
 
-# Joindre les compteurs aux quartiers
-compteurs_with_quartier = gpd.sjoin(compteurs_gdf, quartiers_gdf, how="left", predicate="within")
+# Ajouter une colonne pour les jours
+df['Day'] = df['Departure'].dt.date  # Extraire la date sans l'heure
 
-#calculer le volume de traffic par quartier
-traffic_by_quartier=compteurs_with_quartier.groupby('name').size().reset_index(name='Volume de traffic')
-print("colonne")
-print(traffic_by_quartier.columns)
+# Calculer le nombre de trajets par jour
+daily_rides = df.groupby('Day').size().reset_index(name='Number of Rides')
+
+# Créer un graphique interactif
+fig = px.bar(daily_rides, x='Day', y='Number of Rides', title='Nombre total de trajets par jour',
+             labels={'Day': 'Jour', 'Number of Rides': 'Nombre de trajets'},
+             text='Number of Rides')  # Affiche les valeurs sur les barres
+
+fig.update_layout(xaxis_title='Jour', yaxis_title='Nombre de trajets', showlegend=False)
+fig.show()
 ```
