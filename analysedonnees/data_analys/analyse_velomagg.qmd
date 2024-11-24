@@ -20,7 +20,6 @@ import plotly.express as px
 
 # Charger le fichier de données 
 df = pd.read_csv("C:\\Users\\Clara\\Desktop\\dossier Projet\\TAM_MMM_CoursesVelomagg.csv")
-print(df)
 
 # Convertir la colonne 'Departure' en type datetime (ajuste le nom de la colonne si nécessaire)
 df['Departure'] = pd.to_datetime(df['Departure'], errors='coerce')
@@ -33,6 +32,10 @@ df['Day'] = df['Departure'].dt.date  # Extraire la date sans l'heure
 
 # Calculer le nombre de trajets par jour
 daily_rides = df.groupby('Day').size().reset_index(name='Number of Rides')
+
+# Statistiques descriptives
+print("\nStatistiques descriptives des trajets par jour:")
+print(daily_rides['Number of Rides'].describe())
 
 # Créer un graphique interactif
 fig = px.bar(daily_rides, x='Day', y='Number of Rides', title='Nombre total de trajets par jour',
