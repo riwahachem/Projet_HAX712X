@@ -113,7 +113,7 @@ trajets_valides_calcules = [chemin for chemin in chemins if chemin is not None]
 print(f"Nombre de trajets valides calculés : {len(trajets_valides_calcules)}")
 
 # Créer des objets graphiques pour les points et les lignes
-points = [ax.plot([], [], 'o', color='blue')[0] for _ in trajets_valides_calcules]  # Points visibles sur fond noir
+points = [ax.plot([], [], 'o', color='cyan')[0] for _ in trajets_valides_calcules]  # Points visibles sur fond noir
 lignes = [ax.plot([], [], '-', color='white', linewidth=1)[0] for _ in trajets_valides_calcules]  # Lignes visibles
 
 # Fonction d'initialisation de l'animation
