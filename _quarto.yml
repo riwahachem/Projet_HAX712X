@@ -21,13 +21,11 @@ website:
     - id: map
       title: "MAP"
       collapse-level: 3
-      contents: 
-        - pagesweb/Map/tp.qmd
+      contents: pagesweb/Map/tp.qmd
     - id: video
       title: "Video"
       collapse-level: 3
-      contents: 
-        - pagesweb/Video/tp.qmd
+      contents: pagesweb/Video/tp.qmd
     - id: docs
       title: "Documentation"
       collapse-level: 3

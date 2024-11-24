@@ -15,6 +15,6 @@ Dans le cadre de ce projet, nous nous sommes concentrés sur :
 
 Pour installer ce package, utilisez simplement la commande suivante dans votre terminal :  
 
-```{python}
+```{python eval=false}
 pip install git+https://github.com/riwahachem/atvm
 ```
