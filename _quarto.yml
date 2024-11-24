@@ -2,6 +2,9 @@ project:
   type: website
   render:
     - index.qmd
+    #- pagesweb/Map/tp.qmd
+    - pagesweb/Video/tp.qmd
+    - doc/_build/html/index.html
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
@@ -21,11 +24,11 @@ website:
     - id: map
       title: "MAP"
       collapse-level: 3
-      contents: pagesweb/Map/tp.qmd
     - id: video
       title: "Video"
       collapse-level: 3
-      contents: pagesweb/Video/tp.qmd
+      contents: 
+      - pagesweb/Video/tp.qmd
     - id: docs
       title: "Documentation"
       collapse-level: 3
@@ -35,4 +38,5 @@ format:
     theme: flatly
     #css: styles.css
     toc: true
+
   

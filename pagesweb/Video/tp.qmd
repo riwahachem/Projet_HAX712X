@@ -1,8 +1,7 @@
 ---
 title: Trafic VéloMagg journalier
-format:html
 ---
 
 ## Les stations VéloMagg de Montpellier  
 
-<iframe src="../vis/map_stations.html" width="100%" height="600"></iframe>
+<iframe src="../Video/map_stations.html" width="100%" height="600"></iframe>

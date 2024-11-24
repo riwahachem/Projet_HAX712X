@@ -3,7 +3,7 @@ import osmnx as ox
 import folium
 import os
 
-output_path = os.path.join(os.path.dirname(__file__), "../vis/map_stations.html")
+output_path = os.path.join(os.path.dirname(__file__), "../../pagesweb/Video/map_stations.html")
 
 montpellier = "Montpellier, France"
 
