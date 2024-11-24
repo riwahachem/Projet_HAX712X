@@ -1,4 +1,3 @@
-# Fichier .gitignore
 .pdf
 .json
 /cache/
@@ -7,3 +6,5 @@
 roadmap/README.html
 /.quarto/
 .env
+_site/
+doc/_build/
