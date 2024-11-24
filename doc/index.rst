@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Bienvenue dans la documentation du projet ATVM !
-================================
+================================================
 
 .. toctree::
    :maxdepth: 2
