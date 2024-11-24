@@ -3,16 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ATVM's documentation!
+Bienvenue dans la documentation du projet ATVM !
 ================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contenu :
 
 
 
-Indices and tables
+Indices et tables
 ==================
 
 * :ref:`genindex`

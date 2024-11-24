@@ -16,6 +16,7 @@ website:
     left:
       - sidebar:map
       - sidebar:video
+      - sidebar:docs
   sidebar:
     - id: map
       title: "MAP"
@@ -27,6 +28,10 @@ website:
       collapse-level: 3
       contents: 
         - pagesweb/Video/tp.qmd
+    - id: docs
+      title: "Documentation"
+      collapse-level: 3
+      contents: doc/_build/html/index.html
 format:
   html:
     theme: flatly
