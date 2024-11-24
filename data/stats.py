@@ -1,8 +1,7 @@
 import pandas as pd
 
-# Méthodes associées
+#Charge le fichier CSV contenant les données des trajets.
 def charger_donnees(file_path):
-    """Charge le fichier CSV contenant les données des trajets."""
     return pd.read_csv(file_path).dropna()
 
 def corriger_encodage(station_name):
@@ -12,14 +11,14 @@ def corriger_encodage(station_name):
         print(f"Erreur d'encodage pour {station_name}: {e}")
         return station_name
 
+#Corrige les adresses des stations en nettoyant les caractères.
 def corriger_adresses(data):
-    """Corrige les adresses des stations en nettoyant les caractères."""
     data['Departure station'] = data['Departure station'].apply(corriger_encodage)
     data['Return station'] = data['Return station'].apply(corriger_encodage)
     return data
 
+#Calcule les statistiques sur les trajets.
 def calculer_statistiques(trajets):
-    """Calcule les statistiques sur les trajets."""
     distance_totale = trajets['Covered distance (m)'].sum() / 1000  # Convertir en km
     temps_total = trajets['Duration (sec.)'].sum() / 60  # Convertir en minutes
     nombre_de_trajets = len(trajets)
@@ -35,23 +34,25 @@ def calculer_statistiques(trajets):
         "Nombre total de trajets": nombre_de_trajets
     }
 
+# Retourne le nombre de trajets par station de départ.
 def trajets_par_station(trajets):
-    """Retourne le nombre de trajets par station de départ."""
     return trajets.groupby('Departure station').size()
 
+# Retourne le nombre de trajets par jour.
 def trajets_par_jour(trajets):
-    """Retourne le nombre de trajets par jour."""
     trajets['Date'] = pd.to_datetime(trajets['Departure']).dt.date
     return trajets.groupby('Date').size()
 
+
+# Affiche les statistiques calculées.
 def afficher_statistiques(stats):
-    """Affiche les statistiques calculées."""
     print("\n--- Statistiques des Trajets ---")
     for key, value in stats.items():
         print(f"{key}: {value:.2f} {'km' if 'Distance' in key else 'minutes' if 'Temps' in key else ''}")
 
+
+# Affiche les dates disponibles et permet à l'utilisateur de choisir une date.
 def choisir_date(data):
-    """Affiche les dates disponibles et permet à l'utilisateur de choisir une date."""
     dates_disponibles = data['Departure'].str[:10].unique()  # Extraire les dates uniques
     print("\nDates disponibles :")
     for date in dates_disponibles:
@@ -64,14 +65,16 @@ def choisir_date(data):
         else:
             print("Date invalide, veuillez réessayer.")
 
+
+# Affiche le nombre de trajets par station de départ.
 def afficher_nombre_trajets_par_station(trajets):
-    """Affiche le nombre de trajets par station de départ."""
     print("\n--- Nombre de Trajets par Station de Départ ---")
     trajets_par_station_resultat = trajets_par_station(trajets)
     print(trajets_par_station_resultat)
 
+
+# Affiche le nombre de trajets par jour.
 def afficher_nombre_trajets_par_jour(trajets):
-    """Affiche le nombre de trajets par jour."""
     print("\n--- Nombre de Trajets par Jour ---")
     trajets_par_jour_resultat = trajets_par_jour(trajets)
     print(trajets_par_jour_resultat)
