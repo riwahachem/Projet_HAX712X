@@ -14,7 +14,7 @@ Dans le cadre de ce projet, nous nous sommes concentrés sur :
 - 📊 **Analyses statistiques**  
 - 📈 **Visualisations interactives**  
 
-###  Installer le package ATVM 
+##  Installer le package ATVM 
 
 Pour installer ce package, utilisez simplement la commande suivante dans votre terminal :  
 
