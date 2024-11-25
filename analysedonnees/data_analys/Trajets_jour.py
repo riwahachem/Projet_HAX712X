@@ -29,7 +29,5 @@ fig = px.bar(daily_rides, x='Day', y='Number of Rides', title='Nombre total de t
 fig.update_layout(xaxis_title='Jour', yaxis_title='Nombre de trajets', showlegend=False)
 fig.show()
 
-# Créer les variables d'entraînement pour le modèle
-trajets_par_jour['Jour_precedent'] = trajets_par_jour['Nombre_de_trajets'].shift(1)
-trajets_par_jour.dropna(inplace=True)"""
+
 
