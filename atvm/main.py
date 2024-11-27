@@ -1,4 +1,4 @@
-from atvm.io import url_courses_24, url_zip, path_csv_target, path_zip_target
+from atvm.io import url_courses_24, url_zip, url_EcoCompt_zip, path_csv_target, path_zip_target, path_EcoCompt_zip_target
 from atvm.io.Load import LoadData
 
 def main():
@@ -31,6 +31,26 @@ def main():
             print("Aucun fichier CSV trouvé dans l'archive.")
     else:
         print("Aucun fichier extrait de l'archive.")
+
+    print("\nTéléchargement et extraction de la deuxième archive ZIP...")
+    loader_eco_zip = LoadData(url=url_EcoCompt_zip, target_name=path_EcoCompt_zip_target)
+    extracted_dir_zip2 = path_EcoCompt_zip_target.replace(".zip", "_extracted")
+    extracted_files_zip2 = loader_eco_zip.extract_zip(extract_to=extracted_dir_zip2)
+
+    if extracted_files_zip2:
+        print(f"Fichiers extraits de la deuxième archive : {extracted_files_zip2}")
+
+        # Charger un fichier CSV extrait (si disponible)
+        csv_files_zip2 = [f for f in extracted_files_zip2 if f.endswith(".csv")]
+        if csv_files_zip2:
+            df_zip2 = loader_eco_zip.save_as_df(file_path=csv_files_zip2[0])
+            if df_zip2 is not None:
+                print("Données extraites de la deuxième archive :")
+                print(df_zip2.head())
+        else:
+            print("Aucun fichier CSV trouvé dans la deuxième archive.")
+    else:
+        print("Aucun fichier extrait de la deuxième archive.")
 
 if __name__ == "__main__":
     main()
