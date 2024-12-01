@@ -1,8 +1,88 @@
-
+#%%
+''' éxécution préliminaire '''
 import pandas as pd
-import numpy as np
 import copy 
 import json
+import osmnx as ox
+import folium
+import networkx as nx
+from geopy.geocoders import Nominatim
+import time
+import re 
+from unidecode import unidecode
+
+# Chemin vers le fichier CSV
+file_path = "TAM_MMM_CoursesVelomagg_2022.csv"
+data = pd.read_csv(file_path)
+
+# Correction des noms de stations
+def corriger_encodage(station_name):
+    if isinstance(station_name, str):
+        try:
+            station_name = station_name.encode('latin1').decode('utf-8')
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            station_name = unidecode(station_name)
+        station_name = re.sub(r'^\d+\s*', '', station_name).strip()  # Supprime les numéros en début
+        return station_name
+    return station_name
+
+data['Departure station'] = data['Departure station'].apply(corriger_encodage)
+data['Return station'] = data['Return station'].apply(corriger_encodage)
+
+# Extraction des stations uniques corrigées
+stations_uniques = pd.concat([data['Departure station'], data['Return station']]).unique()
+stations_uniques = [station for station in stations_uniques if isinstance(station, str)]
+stations_uniques = [station.replace("FacdesSciences", "Faculté des sciences") for station in stations_uniques]
+
+# Initialiser le géocodeur et charger le JSON existant
+geolocator = Nominatim(user_agent="velomagg_locator")
+try:
+    with open("station_coords.json", "r") as infile:
+        coordonnees_stations = json.load(infile)
+except FileNotFoundError:
+    coordonnees_stations = {}
+    
+def get_station_coordinates(station_name):
+    if not isinstance(station_name, str):
+        return None
+    options = [
+        f"{station_name}, Montpellier, France",
+        f"{station_name.replace('-', ' ')}, Montpellier, France",
+        f"{station_name.split('-')[0]}, Montpellier, France",
+        f"{station_name.split('-')[-1]}, Montpellier, France",
+        f"{station_name}, France"
+    ]
+    if "Fac" in station_name:
+        options.append(station_name.replace("Fac", "Faculté") + ", Montpellier, France")
+
+    for query in options:
+        try:
+            location = geolocator.geocode(query)
+            if location:
+                return {"latitude": location.latitude, "longitude": location.longitude}
+        except Exception as e:
+            print(f"Erreur pour {query}: {e}")
+        time.sleep(1)
+    return None
+
+# Boucle pour obtenir et sauvegarder les coordonnées
+for station in stations_uniques:
+    if station not in coordonnees_stations:
+        coords = get_station_coordinates(station)
+        if coords:
+            coordonnees_stations[station] = coords
+            print(f"Coordonnées trouvées pour {station}: {coords}")
+        else:
+            print(f"Coordonnées non trouvées pour {station}")
+        
+        # Sauvegarde en cours de traitement
+        with open("station_coords.json", "w") as outfile:
+            json.dump(coordonnees_stations, outfile)
+        time.sleep(1)  # Pause pour éviter les limites de requêtes
+
+#%%
+''' création des fonctions permettants d'obtenir toutes les données utiles '''
+
 
 filename = 'TAM_MMM_CoursesVelomagg_2022.csv'
 
@@ -208,7 +288,7 @@ def intensity_jour_stats(j,m,a):
             i[0]=c/n 
             N.append(n)
             M.append(i)
-    return [M,N]
+    return M
 
 def stat_heure_jour(j,m,a):
     L=[0 for i in range(24)]
@@ -242,6 +322,107 @@ def poids_heure(j,m,a):
     P=[j/len(M) for j in P]
     return P
 
+def route_prediction_jour(jour):
+    for i in jour :
+        if len(i[0][0])>1:
+            c=i[0][0].split(' ')[1]
+            i[0][0]=i[0][0].split(' ')[2:]
+            for j in i[0][0]:
+                c=c+' '+j
+            i[0][0]=c
+        if len(i[0][1])>1:
+            c=i[0][1].split(' ')[1]
+            i[0][1]=i[0][1].split(' ')[2:]
+            for j in i[0][1]:
+                c=c+' '+j
+            i[0][1]=c
+        if i[0][0]=='FacdesSciences':
+            i[0][0]='Fac des Sciences'
+        elif i[0][0]=='ComÃƒÂ©die':
+            i[0][0]='Comédie'
+        elif i[0][0]=='PÃƒÂ¨re Soulas':
+            i[0][0]='Père Soulas'
+        elif i[0][0]=="PÃƒÂ©rols Etang de l'Or":
+            i[0][0]="Pérols Etang de l'Or"
+        elif i[0][0]=="PrÃƒÂ©s d'ArÃƒÂ¨nes":
+            i[0][0]="Prés d'Arènes"
+        elif i[0][0]=='Jeu de Mail des AbbÃƒÂ©s':
+            i[0][0]='Jeu de Mail des Abbés'
+        elif i[0][0]=='HÃƒÂ´tel de Ville':
+            i[0][0]='Hôtel de ville'
+        elif i[0][0]=='CitÃƒÂ© Mion':
+            i[0][0]='Cité Mion'
+        elif i[0][0]=='HÃƒÂ´tel du DÃƒÂ©partement':
+            i[0][0]='Hôtel du Département'
+        elif i[0][0]=='MÃƒÂ©diathÃƒÂ¨que Emile Zola':
+            i[0][0]='Médiathèque Emile Zola'
+        elif i[0][0]=='EuromÃƒÂ©decine':
+            i[0][0]='Euromédecine'
+        elif i[0][0]=='Albert 1er - CathÃƒÂ©drale':
+            i[0][0]='Albert 1er - Cathédrale'
+        if i[0][1]=='FacdesSciences':
+            i[0][1]='Fac des Sciences'
+        elif i[0][1]=='ComÃƒÂ©die':
+            i[0][1]='Comédie'
+        elif i[0][1]=='PÃƒÂ¨re Soulas':
+            i[0][1]='Père Soulas'
+        elif i[0][1]=="PÃƒÂ©rols Etang de l'Or":
+            i[0][1]="Pérols Etang de l'Or"
+        elif i[0][1]=="PrÃƒÂ©s d'ArÃƒÂ¨nes":
+            i[0][1]="Prés d'Arènes"
+        elif i[0][1]=='Jeu de Mail des AbbÃƒÂ©s':
+            i[0][1]='Jeu de Mail des Abbés'
+        elif i[0][1]=='HÃƒÂ´tel de Ville':
+            i[0][1]='Hôtel de ville'
+        elif i[0][1]=='CitÃƒÂ© Mion':
+            i[0][1]='Cité Mion'
+        elif i[0][1]=='HÃƒÂ´tel du DÃƒÂ©partement':
+            i[0][1]='Hôtel du Département'
+        elif i[0][1]=='MÃƒÂ©diathÃƒÂ¨que Emile Zola':
+            i[0][1]='Médiathèque Emile Zola'
+        elif i[0][1]=='EuromÃƒÂ©decine':
+            i[0][1]='Euromédecine'
+        elif i[0][1]=='Albert 1er - CathÃƒÂ©drale':
+            i[0][1]='Albert 1er - Cathédrale'
+            
+    ville = "Montpellier, France"
+    G = ox.graph_from_place(ville, network_type="all")
+    m = folium.Map(location=[43.6114, 3.8767], zoom_start=13)
+            
+    A=[]
+    B=[]
+    for i in jour :
+        if i[0][1]!="Pérols Etang de l'Or":
+            depart_station = i[0][0]
+            retour_station = i[0][1] 
+            
+            if depart_station in coordonnees_stations and retour_station in coordonnees_stations:
+                # Récupérer les coordonnées des stations
+                coords_depart = coordonnees_stations[depart_station]
+                coords_retour = coordonnees_stations[retour_station]
+                
+                # Trouver les nœuds les plus proches dans le graphe
+                depart_node = ox.distance.nearest_nodes(G, coords_depart['longitude'], coords_depart['latitude'])
+                retour_node = ox.distance.nearest_nodes(G, coords_retour['longitude'], coords_retour['latitude'])
+        
+                # Calculer le chemin le plus court
+                route = nx.shortest_path(G, source=depart_node, target=retour_node, weight='length')
+                
+                # Tracer la route sur la carte avec la couleur dynamique
+                route_coords = [(G.nodes[node]['y'], G.nodes[node]['x']) for node in route]
+                
+                for j in range(len(route_coords)):
+                    if j<len(route_coords)-1:
+                        x=[route_coords[j],route_coords[j+1]]
+                        if x not in A:
+                            A.append(x)
+                            B.append([x,i[1]])
+                        else :
+                            k=A.index(x)
+                            B[k][1]+=i[1]
+    return B
+
+#%%
 
 #lundi_trajet=stats_jour_semaine(17,1,2022)
 #mardi_trajet=stats_jour_semaine(18,1,2022)
@@ -271,3 +452,114 @@ def poids_heure(j,m,a):
 #samedi_heure=poids_heure(15, 1, 2022)
 #dimanche_heure=poids_heure(16, 1, 2022)
 #semaine_heure=[lundi_heure,mardi_heure,mercredi_heure,jeudi_heure,vendredi_heure,samedi_heure,dimanche_heure]
+
+#lundi_map=route_prediction_jour(lundi_trajet)
+#mardi_map=route_prediction_jour(mardi_trajet)
+#mercredi_map=route_prediction_jour(mercredi_trajet)
+#jeudi_map=route_prediction_jour(jeudi_trajet)
+#vendredi_map=route_prediction_jour(vendredi_trajet)
+#samedi_map=route_prediction_jour(samedi_trajet)
+#dimanche_map=route_prediction_jour(dimanche_trajet)
+#semaine_carte=[lundi_map,mardi_map,mercredi_map,jeudi_map,vendredi_map,samedi_map,dimanche_map]
+
+#%%
+''' fonctions permettants de générer les carte de prédiction '''
+
+def couleur_intensity(nombre):
+    if 0<=nombre<250:
+        return 'green'
+    if 250<=nombre <500:
+        return 'blue'
+    elif 500<=nombre<=1000:
+        return 'orange'
+    else :
+        return 'red'
+
+def couleur_intensity_heure(nombre):
+    if 0<=nombre<5:
+        return 'green'
+    elif 5<=nombre<10:
+        return 'blue'
+    elif 10<=nombre<20:
+        return 'orange'
+    else :
+        return 'red'
+
+def carte_prediction_jour(j,m,a):
+    jour=determination_jour(j,m,a)
+    coord=copy.deepcopy(semaine_carte[jour-1])
+    intensity=semaine_intensity[jour-1]
+    ville = "Montpellier, France"
+    G = ox.graph_from_place(ville, network_type="all")
+    m = folium.Map(location=[43.6114, 3.8767], zoom_start=13)
+    for i in coord:
+        n=i[1]
+        for k in intensity:
+            if abs(i[0][0][0]-(k[1][1]))<=0.0022500022500023:
+                if abs(i[0][0][1]-k[1][0])<=0.0031819975307699:
+                    n+=k[0]
+        couleur=couleur_intensity(n)
+        folium.PolyLine(locations=i[0], color=couleur, weight=5, opacity=0.7).add_to(m)
+    legend_html = """
+    <div style="position: fixed; 
+                bottom: 50px; left: 50px; width: 200px; height: auto; 
+                background-color: white; opacity: 0.8; z-index: 1000; border:2px solid grey; 
+                padding: 10px; font-size: 14px;">
+        <h4 style="margin: 0;">Légende des Couleurs</h4>
+        <p><span style="color: green;">&#9679;</span> Intensité inférieure à 250 </p>
+        <p><span style="color: blue;">&#9679;</span> Intensité entre 250 et 500</p>
+        <p><span style="color: orange;">&#9679;</span> Intensité entre 500 et 1000 </p>
+        <p><span style="color: red;">&#9679;</span> Intensité supérieure à 1000</p>
+    </div>
+    """
+
+    m.get_root().html.add_child(folium.Element(legend_html))
+    
+    name=semaine[jour-1]
+
+    #Sauvegarder la carte dans un fichier HTML
+    m.save('carte_prediction_'+name+'.html')
+
+    # Afficher un message pour indiquer que la carte est prête
+    print("La carte a été sauvegardée sous 'carte_prediction_"+name+".html'. Ouvrez ce fichier dans votre navigateur pour afficher la carte.")
+    
+    
+    
+def carte_prediction_jour_heure(j,m,a,h):
+    jour=determination_jour(j,m,a)
+    heure=int(h.split('h')[0])
+    coord=copy.deepcopy(semaine_carte[jour-1])
+    coord=[[[i[0][0],i[0][1]],i[1]*lundi_heure[heure]] for i in coord]
+    intensity=copy.deepcopy(semaine_intensity[jour-1])
+    intensity=[[i[0]*lundi_heure[heure],[i[1][0],i[1][1]]]for i in intensity]
+    ville = "Montpellier, France"
+    G = ox.graph_from_place(ville, network_type="all")
+    m = folium.Map(location=[43.6114, 3.8767], zoom_start=13)
+    for i in coord:
+        n=i[1]
+        for k in intensity:
+            if abs(i[0][0][0]-(k[1][1]))<=0.0022500022500023:
+                if abs(i[0][0][1]-k[1][0])<=0.0031819975307699:
+                    n+=k[0]
+        couleur=couleur_intensity_heure(n)
+        folium.PolyLine(locations=i[0], color=couleur, weight=5, opacity=0.7).add_to(m)
+    legend_html = """
+    <div style="position: fixed; 
+                bottom: 50px; left: 50px; width: 200px; height: auto; 
+                background-color: white; opacity: 0.8; z-index: 1000; border:2px solid grey; 
+                padding: 10px; font-size: 14px;">
+        <h4 style="margin: 0;">Légende des Couleurs</h4>
+        <p><span style="color: green;">&#9679;</span> Intensité inférieure à 5 </p>
+        <p><span style="color: blue;">&#9679;</span> Intensité entre 5 et 10 </p>
+        <p><span style="color: orange;">&#9679;</span> Intensité entre 10 et 20 </p>
+        <p><span style="color: red;">&#9679;</span> Intensité supérieure à 20 </p>
+    </div>
+    """
+
+    m.get_root().html.add_child(folium.Element(legend_html))
+
+    #Sauvegarder la carte dans un fichier HTML
+    name=semaine[jour-1]+'_'+str(heure)+'h'
+    m.save('carte_prediction_'+name+'.html')
+    # Afficher un message pour indiquer que la carte est prête
+    print("La carte a été sauvegardée sous 'carte_prediction_",name,".html'. Ouvrez ce fichier dans votre navigateur pour afficher la carte.")
