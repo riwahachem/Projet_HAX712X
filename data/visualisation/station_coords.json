@@ -4,8 +4,8 @@
         "longitude": 3.8681402
     },
     "Plan Cabanes": {
-        "latitude": 43.6085775513785,
-        "longitude": 3.868993606906652
+        "latitude": 43.60849965,
+        "longitude": 3.8686109690469426
     },
     "Albert 1er - Cath\u00e9drale": {
         "latitude": 43.6148176,
@@ -24,8 +24,8 @@
         "longitude": 3.8733067
     },
     "Corum": {
-        "latitude": 43.6144479,
-        "longitude": 3.8821386
+        "latitude": 43.614366,
+        "longitude": 3.8820279797979755
     },
     "Aiguelongue": {
         "latitude": 43.6331438,
@@ -64,16 +64,16 @@
         "longitude": 3.9212018171142855
     },
     "Vert Bois": {
-        "latitude": 43.6346967,
-        "longitude": 3.8676724
+        "latitude": 43.6354897,
+        "longitude": 3.8717792916498994
     },
     "Occitanie": {
-        "latitude": 43.6346454,
-        "longitude": 3.8483947
+        "latitude": 43.6343466,
+        "longitude": 3.8486780499999984
     },
     "Louis Blanc": {
-        "latitude": 43.6147682,
-        "longitude": 3.8780174
+        "latitude": 43.6146919,
+        "longitude": 3.8782052427712976
     },
     "Charles Flahault": {
         "latitude": 43.6184031,
@@ -108,12 +108,8 @@
         "longitude": 3.8687709
     },
     "Renouvier": {
-        "latitude": 43.6031881,
-        "longitude": 3.8678316
-    },
-    "P\u00e9rols Etang de l'Or": {
-        "latitude": 43.5577067,
-        "longitude": 3.9638908
+        "latitude": 43.60358,
+        "longitude": 3.8678865
     },
     "Com\u00e9die": {
         "latitude": 43.60918635,
@@ -124,8 +120,8 @@
         "longitude": 3.874061
     },
     "Tonnelles": {
-        "latitude": 43.6131179,
-        "longitude": 3.8388166
+        "latitude": 43.6140875,
+        "longitude": 3.83801455899281
     },
     "H\u00f4tel de Ville": {
         "latitude": 43.5985194,
@@ -148,8 +144,8 @@
         "longitude": 3.8811936
     },
     "Beaux-Arts": {
-        "latitude": 43.6167043,
-        "longitude": 3.8849862
+        "latitude": 43.6164388,
+        "longitude": 3.8803169
     },
     "Jardin de la Lironde": {
         "latitude": 43.6058517,
@@ -176,8 +172,8 @@
         "longitude": 3.871080728556718
     },
     "Rondelet": {
-        "latitude": 43.6030505,
-        "longitude": 3.8757891
+        "latitude": 43.6041463,
+        "longitude": 3.874830799999999
     },
     "Foch": {
         "latitude": 43.6109947,
@@ -208,24 +204,24 @@
         "longitude": 3.8895111
     },
     "Parvis Jules Ferry - Gare Saint-Roch": {
-        "latitude": 43.6042456,
-        "longitude": 3.8803219
+        "latitude": 43.6044684,
+        "longitude": 3.8805334613561584
     },
     "Deux Ponts - Gare Saint-Roch": {
         "latitude": 43.604359,
         "longitude": 3.8810025
     },
     "Cit\u00e9 Mion": {
-        "latitude": 43.6004995,
-        "longitude": 3.8846823
+        "latitude": 43.6011431,
+        "longitude": 3.8844511
     },
     "Eurom\u00e9decine": {
         "latitude": 43.638938749999994,
         "longitude": 3.827694941374258
     },
     "Perols etang or": {
-        "latitude": 43.5577067,
-        "longitude": 3.9638908
+        "latitude": 43.557606500000006,
+        "longitude": 3.9635697029805312
     },
     "Facult\u00e9 des sciences": {
         "latitude": 43.632161999999994,
