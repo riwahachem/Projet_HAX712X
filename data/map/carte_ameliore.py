@@ -4,6 +4,17 @@ Module pour la génération d'une carte interactive basée sur des trajets de v�
 Ce script utilise des données CSV contenant les trajets de vélos partagés, corrige les noms des stations,
 calcule les trajets les plus courts en utilisant un graphe routier d'OSMNX, et affiche les trajets sur une carte interactive.
 
+Dépendances :
+- osmnx
+- folium
+- networkx
+- json
+- pandas
+- geopy
+- time
+- sys
+- os
+
 Auteur :
     El Mazzouji Wahel
 """
@@ -11,38 +22,19 @@ import osmnx as ox
 import folium
 import networkx as nx
 import pandas as pd
-from unidecode import unidecode
 from geopy.geocoders import Nominatim
 import json
 import time
-import re
+import sys
+import os
 
+# Ajouter le dossier parent (data) au chemin
+sys.path.append(os.path.abspath("C:/Users/welma/HAX712X_WAHEL/Projet_HAX712X/data"))
+
+from traitement_donnees.utils import corriger_encodage
 # Chemin vers le fichier CSV
 file_path = 'C:/Users/welma/HAX712X_Wahel/Projet_HAX712X/data/TAM_MMM_CoursesVelomagg.csv'
 data = pd.read_csv(file_path)
-
-# Correction des noms de stations
-def corriger_encodage(station_name):
-    """
-    Corrige les problèmes d'encodage des noms de stations.
-
-    Cette fonction tente de convertir un encodage incorrect en UTF-8 et
-    supprime les numéros en début de nom de station, si présents.
-
-    Args:
-        station_name (str): Nom de la station à corriger.
-
-    Returns:
-        str: Nom de la station corrigé.
-    """
-    if isinstance(station_name, str):
-        try:
-            station_name = station_name.encode('latin1').decode('utf-8')
-        except (UnicodeEncodeError, UnicodeDecodeError):
-            station_name = unidecode(station_name)
-        station_name = re.sub(r'^\d+\s*', '', station_name).strip()  # Supprime les numéros en début
-        return station_name
-    return station_name
 
 data['Departure station'] = data['Departure station'].apply(corriger_encodage)
 data['Return station'] = data['Return station'].apply(corriger_encodage)

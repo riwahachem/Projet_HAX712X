@@ -1,15 +1,50 @@
-import pandas as pd
+"""
+Module pour l'analyse et la visualisation des trajets de vélos à Montpellier.
 
+Ce script permet de charger un fichier CSV contenant des données de trajets, de nettoyer les données, de calculer des statistiques sur les trajets,
+et d'afficher des informations sur les trajets par station et par jour. 
+L'utilisateur peut interagir avec le programme pour explorer ces statistiques de manière interactive.
+
+Fonctionnalités principales :
+- Chargement des données depuis un fichier CSV.
+- Correction des adresses des stations.
+- Calcul des statistiques sur les trajets, telles que :
+- Distance totale et moyenne parcourue (en km).
+- Temps total et moyen de trajet (en minutes).
+- Nombre total de trajets.
+- Affichage du nombre de trajets par station de départ.
+- Affichage du nombre de trajets par jour.
+- Interaction avec l'utilisateur pour choisir une date spécifique et afficher des statistiques détaillées.
+
+Entrée :
+- Le chemin vers un fichier CSV contenant des données de trajets.
+
+Sortie :
+- Statistiques sur les trajets calculées pour une date choisie.
+- Affichage des trajets par station de départ ou par jour.
+- Fonctionnalité interactive pour naviguer dans les données.
+
+Dépendances :
+- pandas
+- sys
+- os
+
+Auteur : Wahel El Mazzouji
+"""
+
+
+
+import pandas as pd
+import sys
+import os
+
+# Ajouter le dossier parent (data) au chemin
+sys.path.append(os.path.abspath("C:/Users/welma/HAX712X_WAHEL/Projet_HAX712X/data"))
+
+from traitement_donnees.utils import corriger_encodage
 #Charge le fichier CSV contenant les données des trajets.
 def charger_donnees(file_path):
     return pd.read_csv(file_path).dropna()
-
-def corriger_encodage(station_name):
-    try:
-        return station_name.encode('latin1').decode('utf-8')
-    except UnicodeEncodeError as e:
-        print(f"Erreur d'encodage pour {station_name}: {e}")
-        return station_name
 
 #Corrige les adresses des stations en nettoyant les caractères.
 def corriger_adresses(data):

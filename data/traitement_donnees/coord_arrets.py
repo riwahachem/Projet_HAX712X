@@ -1,24 +1,53 @@
+"""
+Module pour récupérer les coordonnées géographiques des stations de vélos à Montpellier.
+
+Ce script prend un fichier CSV contenant des données de stations de vélos, corrige les encodages des noms de stations, 
+puis obtient les coordonnées géographiques de chaque station unique à l'aide de l'API Nominatim de Geopy.
+
+Les étapes du processus sont les suivantes :
+- Lecture des données depuis un fichier CSV contenant des stations de vélos.
+- Correction des encodages des noms de stations avec la fonction `corriger_encodage`.
+- Extraction des stations uniques et suppression des doublons.
+- Renommage des stations spécifiques (par exemple, "FacdesSciences" devient "Faculté des sciences").
+- Exclusion de certaines stations de la liste des stations à traiter.
+- Recherche des coordonnées géographiques des stations uniques en utilisant le service de géocodage de Nominatim.
+- Sauvegarde des coordonnées obtenues dans un fichier JSON.
+- Affichage du nombre de stations avec coordonnées et de celles qui ont été exclues.
+
+Entrées :
+- Un fichier CSV (`TAM_MMM_CoursesVelomagg.csv`) contenant des informations sur les stations de vélos.
+- La fonction `corriger_encodage` pour corriger les noms de stations.
+
+Sorties :
+- Un fichier JSON (`station_coords.json`) contenant les coordonnées géographiques des stations de vélos qui ont été géocodées avec succès.
+
+Exclusions :
+- Certaines stations comme "Smoove_Test", "AtelierTAM", "Station SAV", et "Pérols Etang de l'Or" sont explicitement exclues.
+
+Dépendances :
+- pandas
+- geopy
+- json
+- time
+- sys
+- os
+
+Auteur : Wahel El Mazzouji
+"""
 import pandas as pd
-from unidecode import unidecode
 from geopy.geocoders import Nominatim
 import json
 import time
-import re
+import sys
+import os
 
+# Ajouter le dossier parent (data) au chemin
+sys.path.append(os.path.abspath("C:/Users/welma/HAX712X_WAHEL/Projet_HAX712X/data"))
+
+from traitement_donnees.utils import corriger_encodage
 # Chemin vers le fichier CSV
 file_path = 'C:/Users/welma/HAX712X_Wahel/Projet_HAX712X/data/TAM_MMM_CoursesVelomagg.csv'
 data = pd.read_csv(file_path)
-
-# Correction des noms de stations
-def corriger_encodage(station_name):
-    if isinstance(station_name, str):
-        try:
-            station_name = station_name.encode('latin1').decode('utf-8')
-        except (UnicodeEncodeError, UnicodeDecodeError):
-            station_name = unidecode(station_name)
-        station_name = re.sub(r'^\d+\s*', '', station_name).strip()  # Supprime les numéros en début
-        return station_name
-    return station_name
 
 data['Departure station'] = data['Departure station'].apply(corriger_encodage)
 data['Return station'] = data['Return station'].apply(corriger_encodage)

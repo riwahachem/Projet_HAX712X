@@ -1,3 +1,37 @@
+"""
+Module pour analyser les trajets de vélos à Montpellier à partir d'un fichier CSV.
+
+Ce script permet de charger un fichier CSV contenant des données de trajets, de les analyser, et de créer des visualisations graphiques des trajets par jour et par heure, en tenant compte de la pondération des trajets effectués entre 0h et 3h.
+
+Etapes du traitement :
+- Lecture du fichier CSV contenant les données des trajets.
+- Conversion de la colonne 'Departure' en format datetime et extraction des informations sur la date, l'heure et le jour de la semaine.
+- Pondération des trajets effectués entre 0h et 3h pour ajuster l'impact de ces trajets sur les analyses globales.
+- Création d'un histogramme représentant le nombre total de trajets effectués chaque jour.
+- Création d'un graphique en courbes représentant la répartition des trajets par jour de la semaine et par heure, avec une pondération.
+- Sauvegarde des graphiques générés dans le dossier './images/'.
+
+Entrée :
+- Le chemin vers un fichier CSV contenant les données des trajets avec la colonne 'Departure' pour la date et l'heure du départ du trajet.
+
+Sortie :
+- Des graphiques sauvegardés dans le dossier './images/' :
+- Un histogramme représentant le nombre de trajets par jour.
+- Un graphique en courbes représentant la répartition des trajets par heure.
+  
+Le script crée automatiquement un dossier './images/' pour sauvegarder les graphiques si ce dossier n'existe pas déjà.
+
+Dépendances :
+- pandas
+- matplotlib
+- numpy
+- os
+
+Auteur : Wahel El Mazzouji
+"""
+
+
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import os

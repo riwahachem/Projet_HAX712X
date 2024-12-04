@@ -1,3 +1,26 @@
+"""
+Module pour la génération d'une carte interactive des stations de vélos à Montpellier.
+
+Ce script crée une carte interactive de la ville de Montpellier en utilisant la bibliothèque Folium.
+Il récupère les informations géographiques de la ville via OpenStreetMap (OSM) et les stations de vélos
+via l'API de la ville de Montpellier. Les stations de vélos sont affichées avec des marqueurs contenant
+des informations sur la disponibilité des vélos et des places de stationnement.
+
+Le processus comprend les étapes suivantes :
+- Récupération des coordonnées géographiques de Montpellier et du polygone des limites de la ville.
+- Création d'une carte centrée sur Montpellier avec les limites de la ville tracées sous forme de polygone.
+- Récupération des données JSON des stations de vélos via une API externe et sauvegarde dans un fichier.
+- Ajout de marqueurs sur la carte pour chaque station de vélos, incluant des informations détaillées dans un popup.
+- Sauvegarde de la carte résultante sous forme de fichier HTML pour affichage dans un navigateur.
+
+Dépendances :
+- osmnx
+- folium
+- requests
+- json
+
+Auteur : Wahel El Mazzouji
+"""
 import osmnx as ox
 import folium
 import requests

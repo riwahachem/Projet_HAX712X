@@ -1,27 +1,42 @@
+"""
+Module pour la génération d'une carte interactive entre deux stations.
+
+Ce script permet à l'utilisateur de visualiser le chemin le plus court entre deux stations de vélos à Montpellier. 
+Il utilise des données CSV contenant les trajets de vélos partagés, les coordonnées des stations stockées dans un fichier JSON, 
+et un graphe routier OSMNX pour calculer le chemin optimal.
+
+Dépendances :
+- osmnx
+- folium
+- networkx
+- json
+- pandas
+- geopy
+- time
+- sys
+- os
+
+Auteur :
+    El Mazzouji Wahel
+"""
 import osmnx as ox
 import folium
 import networkx as nx
 import pandas as pd
-from unidecode import unidecode
 from geopy.geocoders import Nominatim
 import json
 import time
-import re
+import sys
+import os
+
+# Ajouter le dossier parent (data) au chemin
+sys.path.append(os.path.abspath("C:/Users/welma/HAX712X_WAHEL/Projet_HAX712X/data"))
+
+from traitement_donnees.utils import corriger_encodage
 
 # Chemin vers le fichier CSV
 file_path = 'C:/Users/welma/HAX712X_Wahel/Projet_HAX712X/data/TAM_MMM_CoursesVelomagg.csv'
 data = pd.read_csv(file_path)
-
-# Correction des noms de stations
-def corriger_encodage(station_name):
-    if isinstance(station_name, str):
-        try:
-            station_name = station_name.encode('latin1').decode('utf-8')
-        except (UnicodeEncodeError, UnicodeDecodeError):
-            station_name = unidecode(station_name)
-        station_name = re.sub(r'^\d+\s*', '', station_name).strip()  # Supprime les numéros en début
-        return station_name
-    return station_name
 
 data['Departure station'] = data['Departure station'].apply(corriger_encodage)
 data['Return station'] = data['Return station'].apply(corriger_encodage)
