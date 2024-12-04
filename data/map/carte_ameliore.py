@@ -1,3 +1,12 @@
+"""
+Module pour la génération d'une carte interactive basée sur des trajets de vélos.
+
+Ce script utilise des données CSV contenant les trajets de vélos partagés, corrige les noms des stations,
+calcule les trajets les plus courts en utilisant un graphe routier d'OSMNX, et affiche les trajets sur une carte interactive.
+
+Auteur :
+    El Mazzouji Wahel
+"""
 import osmnx as ox
 import folium
 import networkx as nx
@@ -14,6 +23,18 @@ data = pd.read_csv(file_path)
 
 # Correction des noms de stations
 def corriger_encodage(station_name):
+    """
+    Corrige les problèmes d'encodage des noms de stations.
+
+    Cette fonction tente de convertir un encodage incorrect en UTF-8 et
+    supprime les numéros en début de nom de station, si présents.
+
+    Args:
+        station_name (str): Nom de la station à corriger.
+
+    Returns:
+        str: Nom de la station corrigé.
+    """
     if isinstance(station_name, str):
         try:
             station_name = station_name.encode('latin1').decode('utf-8')
@@ -64,6 +85,15 @@ print(f"{nb_trajets_a_afficher} trajets seront affichés et calculés.")
 
 # Définir une fonction pour choisir la couleur en fonction de la distance
 def couleur_par_distance(distance):
+    """
+    Associe une couleur à un trajet en fonction de sa distance.
+
+    Args:
+        distance (float): Distance du trajet en mètres.
+
+    Returns:
+        str: Couleur associée au trajet ('green', 'blue', 'orange', 'red').
+    """
     if distance < 1000:  # Moins de 1 km
         return 'green'
     elif distance < 2000:  # Moins de 5 km
