@@ -2,8 +2,8 @@ project:
   type: website
   render:
     - index.qmd
-    #- pagesweb/Map/tp.qmd
     - pagesweb/Video/tp.qmd
+    - pagesweb/Map/tp.qmd
     - doc/_build/html/index.html
 website:
   back-to-top-navigation: true
@@ -22,17 +22,20 @@ website:
       - sidebar:docs
   sidebar:
     - id: map
-      title: "MAP"
+      title: "Info trafic"
       collapse-level: 3
+      contents: 
+      - pagesweb/Map/tp.qmd
     - id: video
-      title: "Video"
+      title: "Visualisation"
       collapse-level: 3
       contents: 
       - pagesweb/Video/tp.qmd
     - id: docs
       title: "Documentation"
       collapse-level: 3
-      contents: doc/_build/html/index.html
+      contents: 
+      - doc/_build/html/index.html
 format:
   html:
     theme: flatly
