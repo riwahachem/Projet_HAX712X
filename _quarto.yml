@@ -38,6 +38,8 @@ website:
       - doc/_build/html/index.html
 format:
   html:
+    execute:
+      enabled: true
     theme: flatly
     #css: styles.css
     toc: true
