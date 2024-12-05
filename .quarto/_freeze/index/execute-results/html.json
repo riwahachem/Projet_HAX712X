@@ -1,0 +1,12 @@
+{
+  "hash": "377c57a771560fff695c08e932f10e2f",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"ATVM : Analyse du trafic VéloMagg de Montpellier\"\n---\n\n## 🚴‍♂️  Bienvenue sur **ATVM** !\n\n**ATVM**  est un projet dédié à l’étude des données liées aux vélos du réseau VéloMagg de la Métropole de Montpellier. \n\nDans le cadre de ce projet, nous nous sommes concentrés sur :  \n- 🗂 **Collecte et traitement des données**   \n- 📊 **Analyses statistiques** \n- 📈 **Visualisations interactives** \n\n###  Installer le package ATVM \n\nPour installer ce package, utilisez simplement la commande suivante dans votre terminal :  \n\n::: {#5ee31f1f .cell execution_count=1}\n``` {.python .cell-code}\npip install git+https://github.com/riwahachem/atvm\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nCollecting git+https://github.com/riwahachem/atvm\r\n  Cloning https://github.com/riwahachem/atvm to /private/var/folders/wy/vw7_f9451_93hr0fwlwy7v6m0000gn/T/pip-req-build-m7441gr5\r\n  Running command git clone --filter=blob:none --quiet https://github.com/riwahachem/atvm /private/var/folders/wy/vw7_f9451_93hr0fwlwy7v6m0000gn/T/pip-req-build-m7441gr5\r\n  remote: Repository not found.\r\n  fatal: repository 'https://github.com/riwahachem/atvm/' not found\r\n  error: subprocess-exited-with-error\r\n  \r\n  × git clone --filter=blob:none --quiet https://github.com/riwahachem/atvm /private/var/folders/wy/vw7_f9451_93hr0fwlwy7v6m0000gn/T/pip-req-build-m7441gr5 did not run successfully.\r\n  │ exit code: 128\r\n  ╰─> See above for output.\r\n  \r\n  note: This error originates from a subprocess, and is likely not a problem with pip.\r\nerror: subprocess-exited-with-error\r\n\r\n× git clone --filter=blob:none --quiet https://github.com/riwahachem/atvm /private/var/folders/wy/vw7_f9451_93hr0fwlwy7v6m0000gn/T/pip-req-build-m7441gr5 did not run successfully.\r\n│ exit code: 128\r\n╰─> See above for output.\r\n\r\nnote: This error originates from a subprocess, and is likely not a problem with pip.\r\nNote: you may need to restart the kernel to use updated packages.\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

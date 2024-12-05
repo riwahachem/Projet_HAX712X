@@ -1,0 +1,77 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Analyse du trafic VéloMagg à Montpellier\"\n",
+        "author: \"   \"\n",
+        "format: html\n",
+        "execute:\n",
+        "  echo: true  # Affiche le code\n",
+        "  output: true  # Affiche les résultats du code\n",
+        "---\n",
+        "\n",
+        "\n",
+        "\n",
+        "## Chargement des données et traitement initial\n"
+      ],
+      "id": "11a90864"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import seaborn as sns\n",
+        "import matplotlib.pyplot as plt\n",
+        "import numpy as np\n",
+        "import plotly.express as px\n",
+        "\n",
+        "\n",
+        "# Charger le fichier de données \n",
+        "#df = pd.read_csv(\"C:\\\\Users\\\\Clara\\\\Desktop\\\\dossier Projet\\\\TAM_MMM_CoursesVelomagg.csv\")\n",
+        "#df =pd.read_csv(\"C:\\\\Users\\\\Clara\\\\Desktop\\\\dossier Projet\\\\TAM_MMM_CoursesVelomagg_2022.csv\")\n",
+        "df =pd.read_csv(\"C:\\\\Users\\\\Clara\\\\Desktop\\\\dossier Projet\\\\TAM_MMM_CoursesVelomagg_2023.csv\")\n",
+        "\n",
+        "# Convertir la colonne 'Departure' en type datetime (ajuste le nom de la colonne si nécessaire)\n",
+        "df['Departure'] = pd.to_datetime(df['Departure'], errors='coerce')\n",
+        "\n",
+        "# Filtrer les lignes avec des dates valides\n",
+        "df = df.dropna(subset=['Departure'])\n",
+        "\n",
+        "# Ajouter une colonne pour les jours\n",
+        "df['Day'] = df['Departure'].dt.date  # Extraire la date sans l'heure\n",
+        "\n",
+        "# Calculer le nombre de trajets par jour\n",
+        "daily_rides = df.groupby('Day').size().reset_index(name='Number of Rides')\n",
+        "\n",
+        "# Statistiques descriptives\n",
+        "print(\"\\nStatistiques descriptives des trajets par jour:\")\n",
+        "print(daily_rides['Number of Rides'].describe())\n",
+        "\n",
+        "# Créer un graphique interactif\n",
+        "fig = px.bar(daily_rides, x='Day', y='Number of Rides', title='Nombre total de trajets par jour',\n",
+        "             labels={'Day': 'Jour', 'Number of Rides': 'Nombre de trajets'},\n",
+        "             text='Number of Rides')  # Affiche les valeurs sur les barres\n",
+        "\n",
+        "fig.update_layout(xaxis_title='Jour', yaxis_title='Nombre de trajets', showlegend=False)\n",
+        "fig.show()"
+      ],
+      "id": "cb2c201e",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/opt/anaconda3/envs/hax712_env/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
