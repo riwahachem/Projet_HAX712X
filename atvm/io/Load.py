@@ -3,8 +3,7 @@ import pandas as pd
 import pooch
 import zipfile
 
-from atvm.io import url_courses_24, url_zip, url_EcoCompt_zip, path_csv_target, path_zip_target, path_EcoCompt_zip_target
-
+from atvm.io import *
 
 class LoadData:
     """
@@ -45,4 +44,3 @@ class LoadData:
     def save_as_df(self):
         df = pd.read_csv(self.fname)
         return df
-

@@ -1,7 +1,7 @@
 import os 
 url_courses_24 ="https://data.montpellier3m.fr/sites/default/files/ressources/TAM_MMM_CoursesVelomagg.csv"
 url_zip = "https://data.montpellier3m.fr/dataset/courses-des-velos-velomagg-de-montpellier-mediterranee-metropole/resource/edf37027-143f-4c39"
-url_EcoCompt_zip = "https://data.montpellier3m.fr/dataset/comptages-velo-et-pieton-issus-des-eco-compteurs/resource/1a6d90b6-6ba7-4ed9-a092"
+url_EcoCompt_zip = "https://data.montpellier3m.fr/node/12038/download"
 
 data_dir = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),  
