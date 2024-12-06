@@ -28,7 +28,7 @@
     "href": "index.html#installer-le-package-atvm",
     "title": "ATVM : Analyse du trafic VéloMagg de Montpellier",
     "section": "Installer le package ATVM",
-    "text": "Installer le package ATVM\nPour installer ce package, utilisez simplement la commande suivante dans votre terminal :\n\npip install git+https://github.com/riwahachem/atvm"
+    "text": "Installer le package ATVM\nPour installer ce package, utilisez simplement la commande suivante dans votre terminal :\n\npip install git+https://github.com/riwahachem/atvm\n\nDocumentation"
   },
   {
     "objectID": "pagesweb/Video/tp.html#visualisation-du-trafic-journalier",
