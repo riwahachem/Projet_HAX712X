@@ -4,7 +4,7 @@ project:
     - index.qmd
     - pagesweb/Video/tp.qmd
     - pagesweb/Map/tp.qmd
-    - doc/_build/html/index.html
+    - _build/html/index.html
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
@@ -35,7 +35,7 @@ website:
       title: "Documentation"
       collapse-level: 3
       contents: 
-      - doc/_build/html/index.html
+      - _build/html/index.html
 format:
   html:
     execute:
