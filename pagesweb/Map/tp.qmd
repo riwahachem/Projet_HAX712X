@@ -1,37 +1,6 @@
 ---
 title: Prédiction du traffic VéloMagg
 format:html
-server:shiny
 ---
 
-```{python}
-import pandas as pd
-data = pd.read_csv("data/TAM_MMM_CoursesVelomagg.csv")
-
-def corriger_encodage(station_name):
-    if isinstance(station_name, str):
-        try:
-            station_name = station_name.encode('latin1').decode('utf-8')
-        except (UnicodeEncodeError, UnicodeDecodeError):
-            station_name = unidecode(station_name)
-        station_name = re.sub(r'^\d+\s*', '', station_name).strip()  # Supprime les numéros en début
-        return station_name
-    return station_name
-
-data['Departure station'] = data['Departure station'].apply(corriger_encodage)
-data['Return station'] = data['Return station'].apply(corriger_encodage)
-
-# Extraction des stations uniques corrigées
-stations_uniques = pd.concat([data['Departure station'], data['Return station']]).unique()
-stations_uniques = [station for station in stations_uniques if isinstance(station, str)]
-stations_uniques = [station.replace("FacdesSciences", "Faculté des sciences") for station in stations_uniques]
-
-```
-
-## {.sidebar}
-
-```{python}
-from shiny.express import render, ui
-dates = 
-ui.input_select("d","Date :",choices=[str(d) for d in dates]))
-```
+# AJout carte
