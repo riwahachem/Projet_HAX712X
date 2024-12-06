@@ -1,33 +1,26 @@
 name: Deploy Quarto Site
+
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
+  push:
+    branches: main
 
 jobs:
-  deploy:
+  build-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write
     steps:
-      - uses: actions/checkout@v3
-      
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.12"
-      
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          pip install nbformat jupyter
-      
-      - uses: quarto-dev/quarto-actions/setup@v2
+      - name: Check out repository
+        uses: actions/checkout@v3
+    
+      - name: Set up quarto
+        uses: quarto-dev/quarto-actions/setup@v2
       
       - name: Build Site
-        run: quarto render
-      
-      - uses: peaceiris/actions-gh-pages@v3
+        uses: quarto-dev/quarto-actions/publish@v2 
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          path: ./pagesweb
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
