@@ -462,6 +462,7 @@ samedi_map=route_prediction_jour(samedi_trajet)
 dimanche_map=route_prediction_jour(dimanche_trajet)
 semaine_carte=[lundi_map,mardi_map,mercredi_map,jeudi_map,vendredi_map,samedi_map,dimanche_map]
 
+semaine=['lundi','mardi','mercredi','jeudi','vendredi','samedi','dimanche']
 #%%
 ''' fonctions permettants de générer les carte de prédiction '''
 
