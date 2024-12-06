@@ -6,9 +6,9 @@ import plotly.express as px
 
 
 # Charger le fichier de données 
-df = pd.read_csv("C:\\Users\\Clara\\Desktop\\dossier Projet\\TAM_MMM_CoursesVelomagg.csv")
-df =pd.read_csv("C:\\Users\\Clara\\Desktop\\dossier Projet\\TAM_MMM_CoursesVelomagg_2022.csv")
-df =pd.read_csv("C:\\Users\\Clara\\Desktop\\dossier Projet\\TAM_MMM_CoursesVelomagg_2023.csv")
+df_24 = pd.read_csv("data/TAM_MMM_CoursesVelomagg.csv")
+#df =pd.read_csv("C:\\Users\\Clara\\Desktop\\dossier Projet\\TAM_MMM_CoursesVelomagg_2022.csv")
+#df =pd.read_csv("C:\\Users\\Clara\\Desktop\\dossier Projet\\TAM_MMM_CoursesVelomagg_2023.csv")
 
 def afficher_graphe(df):
 # Convertir la colonne 'Departure' en type datetime (ajuste le nom de la colonne si nécessaire)
@@ -37,9 +37,9 @@ def afficher_graphe(df):
    fig.write_image("nombre_trajets_par_jour.png")
 
 print("Année 2022")
-print(afficher_graphe(df_22))
+#print(afficher_graphe(df_22))
 print("Année 2023")
-print(afficher_graphe(df_23))
+#print(afficher_graphe(df_23))
 print("Année 2024")
 print(afficher_graphe(df_24))
 
