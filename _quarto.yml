@@ -35,7 +35,7 @@ website:
       title: "Documentation"
       collapse-level: 3
       contents: 
-      - _build/html/index.html
+      - doc/_build/html/index.html
 format:
   html:
     execute:
