@@ -4,7 +4,6 @@ project:
     - index.qmd
     - pagesweb/Video/tp.qmd
     - pagesweb/Map/tp.qmd
-    - Documentation/_build/html/index.html
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
@@ -19,7 +18,6 @@ website:
     left:
       - sidebar:map
       - sidebar:video
-      - sidebar:docs
   sidebar:
     - id: map
       title: "Info trafic"
@@ -31,11 +29,6 @@ website:
       collapse-level: 3
       contents: 
       - pagesweb/Video/tp.qmd
-    - id: docs
-      title: "Documentation"
-      collapse-level: 3
-      contents: 
-      - Documentation/_build/html/index.html
 format:
   html:
     execute:
