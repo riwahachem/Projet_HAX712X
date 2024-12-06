@@ -1,6 +1,6 @@
 ---
-title: Prédiction du traffic VéloMagg
-format:html
+title: "Prédiction du traffic VéloMagg"
+format: html
 ---
 
 # AJout carte
