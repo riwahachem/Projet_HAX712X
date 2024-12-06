@@ -424,43 +424,43 @@ def route_prediction_jour(jour):
 
 #%%
 
-#lundi_trajet=stats_jour_semaine(17,1,2022)
-#mardi_trajet=stats_jour_semaine(18,1,2022)
-#mercredi_trajet=stats_jour_semaine(19,1,2022)
-#jeudi_trajet=stats_jour_semaine(13,1,2022)
-#vendredi_trajet=stats_jour_semaine(14,1,2022)
-#samedi_trajet=stats_jour_semaine(15,1,2022)
-#dimanche_trajet=stats_jour_semaine(16,1,2022)
-#semaine_trajet=[lundi_trajet,mardi_trajet,mercredi_trajet,jeudi_trajet,vendredi_trajet,samedi_trajet,dimanche_trajet]
+lundi_trajet=stats_jour_semaine(17,1,2022)
+mardi_trajet=stats_jour_semaine(18,1,2022)
+mercredi_trajet=stats_jour_semaine(19,1,2022)
+jeudi_trajet=stats_jour_semaine(13,1,2022)
+vendredi_trajet=stats_jour_semaine(14,1,2022)
+samedi_trajet=stats_jour_semaine(15,1,2022)
+dimanche_trajet=stats_jour_semaine(16,1,2022)
+semaine_trajet=[lundi_trajet,mardi_trajet,mercredi_trajet,jeudi_trajet,vendredi_trajet,samedi_trajet,dimanche_trajet]
 
 
-#lundi_intensity = intensity_jour_stats(22,4,2024)
-#mardi_intensity = intensity_jour_stats(23,4,2024)
-#mercredi_intensity = intensity_jour_stats(24,4,2024)
-#jeudi_intensity = intensity_jour_stats(25,4,2024)
-#vendredi_intensity = intensity_jour_stats(26,4,2024)
-#samedi_intensity = intensity_jour_stats(27,4,2024)
-#dimanche_intensity = intensity_jour_stats(28,4,2024)
-#semaine_intensity = [lundi_intensity,mardi_intensity,mercredi_intensity,jeudi_intensity,vendredi_intensity,samedi_intensity,dimanche_intensity]
+lundi_intensity = intensity_jour_stats(22,4,2024)
+mardi_intensity = intensity_jour_stats(23,4,2024)
+mercredi_intensity = intensity_jour_stats(24,4,2024)
+jeudi_intensity = intensity_jour_stats(25,4,2024)
+vendredi_intensity = intensity_jour_stats(26,4,2024)
+samedi_intensity = intensity_jour_stats(27,4,2024)
+dimanche_intensity = intensity_jour_stats(28,4,2024)
+semaine_intensity = [lundi_intensity,mardi_intensity,mercredi_intensity,jeudi_intensity,vendredi_intensity,samedi_intensity,dimanche_intensity]
 
 
-#lundi_heure=poids_heure(17, 1, 2022)
-#mardi_heure=poids_heure(18, 1, 2022)
-#mercredi_heure=poids_heure(19, 1, 2022)
-#jeudi_heure=poids_heure(13, 1, 2022)
-#vendredi_heure=poids_heure(14, 1, 2022)
-#samedi_heure=poids_heure(15, 1, 2022)
-#dimanche_heure=poids_heure(16, 1, 2022)
-#semaine_heure=[lundi_heure,mardi_heure,mercredi_heure,jeudi_heure,vendredi_heure,samedi_heure,dimanche_heure]
+lundi_heure=poids_heure(17, 1, 2022)
+mardi_heure=poids_heure(18, 1, 2022)
+mercredi_heure=poids_heure(19, 1, 2022)
+jeudi_heure=poids_heure(13, 1, 2022)
+vendredi_heure=poids_heure(14, 1, 2022)
+samedi_heure=poids_heure(15, 1, 2022)
+dimanche_heure=poids_heure(16, 1, 2022)
+semaine_heure=[lundi_heure,mardi_heure,mercredi_heure,jeudi_heure,vendredi_heure,samedi_heure,dimanche_heure]
 
-#lundi_map=route_prediction_jour(lundi_trajet)
-#mardi_map=route_prediction_jour(mardi_trajet)
-#mercredi_map=route_prediction_jour(mercredi_trajet)
-#jeudi_map=route_prediction_jour(jeudi_trajet)
-#vendredi_map=route_prediction_jour(vendredi_trajet)
-#samedi_map=route_prediction_jour(samedi_trajet)
-#dimanche_map=route_prediction_jour(dimanche_trajet)
-#semaine_carte=[lundi_map,mardi_map,mercredi_map,jeudi_map,vendredi_map,samedi_map,dimanche_map]
+lundi_map=route_prediction_jour(lundi_trajet)
+mardi_map=route_prediction_jour(mardi_trajet)
+mercredi_map=route_prediction_jour(mercredi_trajet)
+jeudi_map=route_prediction_jour(jeudi_trajet)
+vendredi_map=route_prediction_jour(vendredi_trajet)
+samedi_map=route_prediction_jour(samedi_trajet)
+dimanche_map=route_prediction_jour(dimanche_trajet)
+semaine_carte=[lundi_map,mardi_map,mercredi_map,jeudi_map,vendredi_map,samedi_map,dimanche_map]
 
 #%%
 ''' fonctions permettants de générer les carte de prédiction '''
