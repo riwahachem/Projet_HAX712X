@@ -1,6 +1,6 @@
 project:
   type: website
-  include:
+  resources:
     - "docs/_build/html/**"
     
   render:
