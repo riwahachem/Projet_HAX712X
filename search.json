@@ -4,7 +4,17 @@
     "href": "pagesweb/Map/tp.html",
     "title": "Prédiction du traffic VéloMagg",
     "section": "",
-    "text": "Veuillez sélectionnez un jour de la semaine pour afficher la carte prédictive correspondante.\n Lundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche \n\n\n\n\n\n\n Back to top",
+    "text": "Veuillez sélectionnez un jour de la semaine pour afficher la carte prédictive correspondante.\nLundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche",
+    "crumbs": [
+      "Prédiction du traffic VéloMagg"
+    ]
+  },
+  {
+    "objectID": "pagesweb/Map/tp.html#prédiction-du-traffic-par-heure",
+    "href": "pagesweb/Map/tp.html#prédiction-du-traffic-par-heure",
+    "title": "Prédiction du traffic VéloMagg",
+    "section": "Prédiction du traffic par heure",
+    "text": "Prédiction du traffic par heure\nJour :  Lundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche \nHeure :  0h 1h 2h 3h 4h 5h 6h 7h 8h 9h 10h 11h 12h 13h 14h 15h 16h 17h 18h 19h 20h 21h 22h 23h",
     "crumbs": [
       "Prédiction du traffic VéloMagg"
     ]
