@@ -1,0 +1,8 @@
+---
+title: "Disponibilité des vélos"
+format: html
+execute: 
+  enable: false
+---
+
+<iframe src="../Map/montpellier_bike_stations_same_color.html" width="100%" height="600"></iframe>

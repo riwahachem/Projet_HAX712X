@@ -15,6 +15,7 @@ project:
     - index.qmd
     - pagesweb/Video/tp.qmd
     - pagesweb/Map/tp.qmd
+    - pagesweb/Map/tp2.qmd
 website:
   back-to-top-navigation: true
   page-navigation: true # true not working in website
@@ -35,6 +36,7 @@ website:
       collapse-level: 3
       contents: 
       - pagesweb/Map/tp.qmd
+      - pagesweb/Map/tp2.qmd
     - id: video
       title: "Visualisation"
       collapse-level: 3
