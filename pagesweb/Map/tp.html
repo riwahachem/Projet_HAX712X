@@ -143,14 +143,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#ajout-carte" id="toc-ajout-carte" class="nav-link active" data-scroll-target="#ajout-carte">AJout carte</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/riwahachem/Projet_HAX712X/blob/main/pagesweb/Map/tp.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/riwahachem/Projet_HAX712X/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -174,11 +168,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="ajout-carte" class="level1">
-<h1>AJout carte</h1>
+<p>Veuillez sélectionnez un jour de la semaine pour afficher la carte prédictive correspondante.</p>
+<p><select id="day-select"> <option value="carte_prediction_lundi.html">Lundi</option> <option value="carte_prediction_mardi.html">Mardi</option> <option value="carte_prediction_mercredi.html">Mercredi</option> <option value="carte_prediction_jeudi.html">Jeudi</option> <option value="carte_prediction_vendredi.html">Vendredi</option> <option value="carte_prediction_samedi.html">Samedi</option> <option value="carte_prediction_dimanche.html">Dimanche</option> </select></p>
+<iframe id="map-frame" src="carte_prediction_semaine/carte_prediction_lundi.html" width="800" height="600">
+</iframe>
+<script>
+  document.getElementById('day-select').addEventListener('change', function() {
+    var selectedDay = this.value;
+    document.getElementById('map-frame').src = "carte_prediction_semaine/" + selectedDay;
+  });
+</script>
 
 
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -603,4 +604,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/riwahachem/Projet_HAX712X/blob/main/pagesweb/Map/tp.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/riwahachem/Projet_HAX712X/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/riwahachem/Projet_HAX712X/blob/main/pagesweb/Map/tp.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/riwahachem/Projet_HAX712X/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
