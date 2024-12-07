@@ -22,4 +22,4 @@ Pour installer ce package, utilisez simplement la commande suivante dans votre t
 pip install git+https://github.com/riwahachem/atvm
 ```
 
-[Documentation](Documentation/_build/html/index.html)
+[Documentation](docs/_build/html/index.html)
