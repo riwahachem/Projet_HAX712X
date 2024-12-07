@@ -109,44 +109,6 @@ archives =['MMM_EcoCompt_ED223110495_archive.json','MMM_EcoCompt_ED223110496_arc
            'MMM_EcoCompt_X2H20063164_2020.json','MMM_EcoCompt_XTH19101158_2020.json']
 
 
-def trajets_jour(j,m,a):
-    if j<10:
-        jj='0'+str(j)
-    else :
-        jj=str(j)
-    if m<10:
-        mm='0'+str(m)
-    else :
-        mm=str(m)
-    aaaa=str(a)
-    L=[]
-    with open(filename) as f:
-        for ligne in f :
-            if ligne.split(",")[2]!='Deperture':
-                x=ligne.split(",")
-                if x[2].split('-')[0]==aaaa:
-                    if x[2].split('-')[1]==mm:
-                        if x[2].split('-')[2].split(' ')[0]==jj:
-                            L.append([x[5],x[6]])
-    M=[]
-    for i in L:
-        c=0
-        n=0
-        k=0
-        for j in L:
-            if j==i:
-                c+=1
-        if len(M)>0:
-            while n==0 and k<len(M):
-                if i==[M[k][0],M[k][1]]:
-                    n=1 
-                k+=1 
-        if n==0:
-            i.append(c)
-            M.append(i)
-    return M
-  
-
 def determination_jour(j,m,a):
     nombre_jour=0
     for k in range(2020,a):
@@ -322,8 +284,8 @@ def poids_heure(j,m,a):
     P=[j/len(M) for j in P]
     return P
 
-def route_prediction_jour(jour):
-    for i in jour :
+def route_prediction_jour(jour_trajet):
+    for i in jour_trajet :
         if len(i[0][0])>1:
             c=i[0][0].split(' ')[1]
             i[0][0]=i[0][0].split(' ')[2:]
@@ -391,7 +353,7 @@ def route_prediction_jour(jour):
             
     A=[]
     B=[]
-    for i in jour :
+    for i in jour_trajet :
         if i[0][1]!="Pérols Etang de l'Or":
             depart_station = i[0][0]
             retour_station = i[0][1] 
@@ -408,7 +370,7 @@ def route_prediction_jour(jour):
                 # Calculer le chemin le plus court
                 route = nx.shortest_path(G, source=depart_node, target=retour_node, weight='length')
                 
-                # Tracer la route sur la carte avec la couleur dynamique
+                # détermination de la liste des segments de route à tracer sur la carte
                 route_coords = [(G.nodes[node]['y'], G.nodes[node]['x']) for node in route]
                 
                 for j in range(len(route_coords)):
