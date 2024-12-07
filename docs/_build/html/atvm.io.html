@@ -19,7 +19,9 @@
       <script src="_static/translations.js?v=e6b791cb"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Recherche" href="search.html" /> 
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="atvm.preprocess package" href="atvm.preprocess.html" />
+    <link rel="prev" title="atvm package" href="atvm.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,23 +43,27 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">atvm.io package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-atvm.io.Load">atvm.io.Load module</a><ul>
-<li><a class="reference internal" href="#atvm.io.Load.LoadData"><code class="docutils literal notranslate"><span class="pre">LoadData</span></code></a><ul>
-<li><a class="reference internal" href="#atvm.io.Load.LoadData.extract_zip"><code class="docutils literal notranslate"><span class="pre">LoadData.extract_zip()</span></code></a></li>
-<li><a class="reference internal" href="#atvm.io.Load.LoadData.save_as_df"><code class="docutils literal notranslate"><span class="pre">LoadData.save_as_df()</span></code></a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Projet</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="atvm.html">atvm package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="atvm.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">atvm.io package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="atvm.preprocess.html">atvm.preprocess package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="atvm.vis.html">atvm.vis package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="atvm.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atvm.html#atvm-main-module">atvm.main module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atvm.html#atvm-setup-module">atvm.setup module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atvm.html#module-atvm">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">data package</a></li>
 </ul>
 </li>
 </ul>
-</li>
-<li><a class="reference internal" href="#module-atvm.io">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>
@@ -72,6 +78,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Projet</a></li>
+          <li class="breadcrumb-item"><a href="atvm.html">atvm package</a></li>
       <li class="breadcrumb-item active">atvm.io package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/atvm.io.rst.txt" rel="nofollow"> Afficher la source de la page</a>
@@ -87,33 +95,8 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Lien vers cette rubrique"></a></h2>
 </section>
-<section id="module-atvm.io.Load">
-<span id="atvm-io-load-module"></span><h2>atvm.io.Load module<a class="headerlink" href="#module-atvm.io.Load" title="Lien vers cette rubrique"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="atvm.io.Load.LoadData">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">atvm.io.Load.</span></span><span class="sig-name descname"><span class="pre">LoadData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/atvm/io/Load.html#LoadData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#atvm.io.Load.LoadData" title="Lien vers cette définition"></a></dt>
-<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Cette classe télécharge toutes les données.</p>
-<section id="parametres">
-<h3>Paramètres:<a class="headerlink" href="#parametres" title="Lien vers cette rubrique"></a></h3>
-<p>url : (string) URL des données à télécharger
-target_name : (string) Chemin local pour stocker les données téléchargées</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="atvm.io.Load.LoadData.extract_zip">
-<span class="sig-name descname"><span class="pre">extract_zip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">extract_to</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/atvm/io/Load.html#LoadData.extract_zip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#atvm.io.Load.LoadData.extract_zip" title="Lien vers cette définition"></a></dt>
-<dd><p>Extrait un fichier .zip vers un dossier spécifié.
-:param extract_to: Chemin du dossier cible pour les fichiers extraits.
-:return: Liste des fichiers extraits.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="atvm.io.Load.LoadData.save_as_df">
-<span class="sig-name descname"><span class="pre">save_as_df</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/atvm/io/Load.html#LoadData.save_as_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#atvm.io.Load.LoadData.save_as_df" title="Lien vers cette définition"></a></dt>
-<dd></dd></dl>
-
-</section>
-</dd></dl>
-
+<section id="atvm-io-load-module">
+<h2>atvm.io.Load module<a class="headerlink" href="#atvm-io-load-module" title="Lien vers cette rubrique"></a></h2>
 </section>
 <section id="module-atvm.io">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-atvm.io" title="Lien vers cette rubrique"></a></h2>
@@ -123,7 +106,10 @@ target_name : (string) Chemin local pour stocker les données téléchargées</p
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="atvm.html" class="btn btn-neutral float-left" title="atvm package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="atvm.preprocess.html" class="btn btn-neutral float-right" title="atvm.preprocess package" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
