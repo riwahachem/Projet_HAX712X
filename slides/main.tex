@@ -1,0 +1,207 @@
+\documentclass[10pt,svgnames,fragile]{beamer}
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{etex}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage{textcomp}
+\usepackage{pdflscape}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{qtree}
+\usepackage{bussproofs}
+\usepackage{proof}
+\usepackage{fitch}
+\usepackage{cancel}
+\usepackage{url}
+\usepackage{smfthm}
+%% Le code qui suit permet le rappel du plan à chaque changement de section :
+\AtBeginSection[]{\begin{frame}<beamer>\frametitle{}\tableofcontents[currentsection,hideothersubsections]\end{frame}}
+
+\titlegraphic{\includegraphics[height=1.5cm]{ssd}}
+\institute[Université de Montpellier]{Master 1 SSD}
+\usetheme{CambridgeUS}
+\usepackage{beamer_udl_theme}
+\setbeamertemplate{navigation symbols}{}
+\author{} % Auteurs supprimés de la zone en bas à gauche
+\date{}
+\title{ATVM \\ 
+\vspace{0.5cm}
+\small Wahel El Mazzouji, Riwa Hachem, Reda Lucien Duigou, Lamia Oulebsir}
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:introduction}
+\begin{frame}[label={sec:orge9abdcb}]{Introduction}
+\begin{itemize}
+    \item Projet centré sur l’analyse et la visualisation des trajets Velomagg à Montpellier.
+    \item Objectifs principaux :
+    \begin{itemize}
+        \item Traiter et analyser des données pour mieux comprendre les trajets.
+        \item Créer des visualisations interactives et dynamiques.
+        \item Prédictions
+    \end{itemize}
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PEUT ETRE PARLER DU SITE AVANT
+\section{Données utilisées}
+\label{sec:data}
+\begin{frame}[label={sec:dataframe}]{Données utilisées}
+\begin{block}{Sources des données}
+\begin{itemize}
+    \item Données des trajets des vélos VéloMagg : Informations détaillées sur les trajets effectués avec les vélos en libre-service de Montpellier Méditerranée Métropole.
+    \item Données de comptage : Statistiques issues des compteurs de vélos et piétons installés dans la ville, permettant d'analyser les flux de trafic.
+    \item Données OpenStreetMap : Cartes et informations géographiques pour la localisation et la représentation des stations et des trajets.
+    \item Données ouvertes d'Open Data Montpellier.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org88fd8be}]{Prétraitement des données}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+        \begin{block}{Étapes clés}
+        \begin{itemize}
+            \item Modification des encodages pour corriger les caractères spéciaux et filtrage des stations non pertinentes.
+            \item Attribution des coordonnées GPS aux stations restantes.
+            \item Sauvegarde des résultats dans un fichier JSON.
+        \end{itemize}
+        \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \begin{center}
+            \resizebox{\textwidth}{!}{\includegraphics{coord_stations.png}}  % Image dans la deuxième colonne
+        \end{center}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\section{Visualisations interactives}
+\label{sec:visualizations}
+\begin{frame}[label={sec:visualizationsday}]{Cartes des trajets d’une journée}
+\begin{block}{Présentation}
+\begin{itemize}
+    \item Carte affichant tous les trajets effectués en une journée.
+    \item Date : 13/07/2024.
+    \item Nombre de trajets affichés : 60 pour 580 au total.
+\end{itemize}
+\end{block}
+
+\begin{columns}
+    \begin{column}{0.6\textwidth}
+        \includegraphics[width=\textwidth]{map_1.png} 
+    \end{column}
+
+    % Deuxième colonne : légende
+    \begin{column}{0.4\textwidth}
+        \begin{block}{Légende}
+            \begin{itemize}
+                \item \textcolor{green}{\textbullet} Moins de 1 km : Trajets courts, en vert.
+                \item \textcolor{blue}{\textbullet} Entre 1 et 2 km : Trajets moyens, en bleu.
+                \item \textcolor{orange}{\textbullet} Entre 2 et 3 km : Trajets longs, en orange.
+                \item \textcolor{red}{\textbullet} Plus de 5 km : Trajets très longs, en rouge.
+            \end{itemize}
+        \end{block}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}[label={sec:visualizationspath}]{Carte des trajets entre deux stations}
+\begin{columns}
+    \begin{column}{0.45\textwidth}
+        \begin{block}{Description}
+            \begin{itemize}
+                \item Permet de saisir une station de départ et une station d’arrivée.
+                \item Trace le chemin le plus court entre ces deux points.
+                \item La carte montre le trajet entre les deux stations spécifiées.
+                \item Exemple avec "Boutonnet" comme départ et "Garcia Lorca" comme arrivée.
+            \end{itemize}
+        \end{block}
+    \end{column}
+
+    % Deuxième colonne : la carte
+    \begin{column}{0.55\textwidth}
+        \includegraphics[width=\textwidth]{map_2.png}  % Assurez-vous que l'image est bien dans le même dossier
+    \end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[label={sec:visualizationspath}]{Carte informative}
+\begin{columns}
+    \begin{column}{0.45\textwidth}
+        \begin{block}{Description}
+            \begin{itemize}
+                \item Les stations de vélos sont affichées avec des marqueurs contenant
+des informations sur la disponibilité des vélos et des places de stationnement.
+            \end{itemize}
+        \end{block}
+    \end{column}
+
+    % Deuxième colonne : la carte
+    \begin{column}{0.55\textwidth}
+        \includegraphics[width=\textwidth]{map_info.png}  % Assurez-vous que l'image est bien dans le même dossier
+    \end{column}
+\end{columns}
+
+\end{frame}
+
+\section{Animation et vidéo}
+\label{sec:animation}
+\begin{frame}[label={sec:animationframe}]{Animation dynamique des trajets}
+\begin{block}{Vidéo des trajets}
+    \begin{columns} % Bloc de colonnes
+        \begin{column}{0.5\textwidth} % Colonne gauche pour le texte
+            \begin{itemize}
+                \item \textbf{Vidéo affichant tous les trajets effectués sur une journée.}
+                \item \textbf{Date :} 20/09/2024
+                \item \textbf{Nombre de trajets affichés :} 75 trajets
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth} % Colonne droite pour l'image
+            \begin{center}
+                \includegraphics[width=\textwidth]{video.png} % Affiche l'image
+            \end{center}
+        \end{column}
+    \end{columns}
+\end{block}
+\end{frame}
+
+\section{Défis et perspectives}
+\label{sec:challenges}
+\begin{frame}[label={sec:challengesframe}]{Défis et perspectives}
+\begin{columns}
+    \begin{column}{0.45\textwidth} % Colonne pour les défis
+        \textbf{Défis rencontrés :}
+        \begin{itemize}
+            \item Gestion des encodages et des données incomplètes.
+            \item Optimisation des temps de calcul pour les visualisations et animations.
+        \end{itemize}
+    \end{column}
+    \begin{column}{0.55\textwidth} % Colonne pour les perspectives
+        \textbf{Perspectives :}
+        \begin{itemize}
+            \item Étendre le projet à d’autres villes ou périodes pour des analyses comparatives.
+            \item Intégrer des prédictions en temps réel pour anticiper les flux de trajets.
+        \end{itemize}
+    \end{column}
+\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% A REMPLIR (PARTIE PREDICTION ET ANALYSE DES DONNEES (graphe, croquis etc))
+
+\begin{frame}[label={sec:conclusion}]{Conclusion}
+\begin{itemize}
+    \item Analyse approfondie des trajets et création d'outils interactifs.
+    \item Perspectives prometteuses pour améliorer la gestion des Velomagg.
+\end{itemize}
+\end{frame}
+
+\end{document}
