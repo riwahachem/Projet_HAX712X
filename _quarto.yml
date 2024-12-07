@@ -3,7 +3,14 @@ project:
   resources:
     - "docs/_build/html/**"
     - "pagesweb/Map/carte_prediction_semaine/**"
-    
+    - "pagesweb/Map/carte_prediction_dimanche_heure"
+    - "pagesweb/Map/carte_prediction_lundi_heure"
+    - "pagesweb/Map/carte_prediction_mardi_heure"
+    - "pagesweb/Map/carte_prediction_mercredi_heure"
+    - "pagesweb/Map/carte_prediction_jeudi_heure"
+    - "pagesweb/Map/carte_prediction_vendredi_heure"
+    - "pagesweb/Map/carte_prediction_samedi_heure"
+
   render:
     - index.qmd
     - pagesweb/Video/tp.qmd
