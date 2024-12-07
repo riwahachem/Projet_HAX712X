@@ -1,5 +1,8 @@
 project:
   type: website
+  include:
+    - "docs/_build/html/**"
+    
   render:
     - index.qmd
     - pagesweb/Video/tp.qmd
