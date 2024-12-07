@@ -22,7 +22,12 @@ jobs:
       - name: Install Sphinx and dependencies
         run: |
           pip install --upgrade pip
-          pip install sphinx
+          pip install sphinx sphinx_rtd_theme
+
+      - name: Clean Sphinx build directory
+        run: |
+          cd docs
+          make clean
       
       - name: Generate Sphinx documentation
         run: |
