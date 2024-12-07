@@ -1,6 +1,27 @@
 ---
 title: "Prédiction du traffic VéloMagg"
 format: html
+execute: 
+  enable: false
 ---
+Veuillez sélectionnez un jour de la semaine pour afficher la carte prédictive correspondante.
 
-# AJout carte
+```{=html}
+<select id="day-select">
+  <option value="carte_prediction_lundi.html">Lundi</option>
+  <option value="carte_prediction_mardi.html">Mardi</option>
+  <option value="carte_prediction_mercredi.html">Mercredi</option>
+  <option value="carte_prediction_jeudi.html">Jeudi</option>
+  <option value="carte_prediction_vendredi.html">Vendredi</option>
+  <option value="carte_prediction_samedi.html">Samedi</option>
+  <option value="carte_prediction_dimanche.html">Dimanche</option>
+</select>
+
+<iframe id="map-frame" src="carte_prediction_semaine/carte_prediction_lundi.html" width="800" height="600"></iframe>
+
+<script>
+  document.getElementById('day-select').addEventListener('change', function() {
+    var selectedDay = this.value;
+    document.getElementById('map-frame').src = "carte_prediction_semaine/" + selectedDay;
+  });
+</script>

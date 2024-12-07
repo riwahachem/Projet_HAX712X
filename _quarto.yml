@@ -2,6 +2,7 @@ project:
   type: website
   resources:
     - "docs/_build/html/**"
+    - "pagesweb/Map/carte_prediction_semaine/**"
     
   render:
     - index.qmd
