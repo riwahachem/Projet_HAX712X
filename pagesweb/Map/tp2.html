@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Le trafic VéloMagg – ATVM : Analyse du trafic velomagg de Montpellier</title>
+<title>Disponibilité des vélos – ATVM : Analyse du trafic velomagg de Montpellier</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../pagesweb/Map/tp.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -124,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pagesweb/Video/tp.html">Le trafic VéloMagg</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pagesweb/Map/tp2.html">Disponibilité des vélos</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -138,8 +139,14 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pagesweb/Video/tp.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Le trafic VéloMagg</span></a>
+  <a href="../../pagesweb/Map/tp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prédiction du traffic VéloMagg</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pagesweb/Map/tp2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Disponibilité des vélos</span></a>
   </div>
 </li>
     </ul>
@@ -147,26 +154,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#les-stations-vélomagg-de-montpellier" id="toc-les-stations-vélomagg-de-montpellier" class="nav-link active" data-scroll-target="#les-stations-vélomagg-de-montpellier">Les stations VéloMagg de Montpellier</a></li>
-  <li><a href="#visualisation-du-trafic-journalier" id="toc-visualisation-du-trafic-journalier" class="nav-link" data-scroll-target="#visualisation-du-trafic-journalier">Visualisation du trafic journalier</a>
-  <ul class="collapse">
-  <li><a href="#vidéo-1-simulation-statique" id="toc-vidéo-1-simulation-statique" class="nav-link" data-scroll-target="#vidéo-1-simulation-statique">Vidéo 1 : Simulation Statique</a></li>
-  <li><a href="#vidéo-2-simulation-dynamique" id="toc-vidéo-2-simulation-dynamique" class="nav-link" data-scroll-target="#vidéo-2-simulation-dynamique">Vidéo 2 : Simulation Dynamique</a></li>
-  </ul></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/riwahachem/Projet_HAX712X/blob/main/pagesweb/Video/tp.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/riwahachem/Projet_HAX712X/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Le trafic VéloMagg</h1>
+<h1 class="title">Disponibilité des vélos</h1>
 </div>
 
 
@@ -183,24 +179,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="les-stations-vélomagg-de-montpellier" class="level2">
-<h2 class="anchored" data-anchor-id="les-stations-vélomagg-de-montpellier">Les stations VéloMagg de Montpellier</h2>
-<iframe src="../Video/map_stations.html" width="100%" height="600">
+<iframe src="../Map/montpellier_bike_stations_same_color.html" width="100%" height="600">
 </iframe>
-</section>
-<section id="visualisation-du-trafic-journalier" class="level2">
-<h2 class="anchored" data-anchor-id="visualisation-du-trafic-journalier">Visualisation du trafic journalier</h2>
-<section id="vidéo-1-simulation-statique" class="level3">
-<h3 class="anchored" data-anchor-id="vidéo-1-simulation-statique">Vidéo 1 : Simulation Statique</h3>
-<p><video src="simulation_trajets.mp4" class="img-fluid" controls=""><a href="simulation_trajets.mp4">Video</a></video></p>
-</section>
-<section id="vidéo-2-simulation-dynamique" class="level3">
-<h3 class="anchored" data-anchor-id="vidéo-2-simulation-dynamique">Vidéo 2 : Simulation Dynamique</h3>
-<p><video src="simulation_trajets_dynamique.mp4" class="img-fluid" controls=""><a href="simulation_trajets_dynamique.mp4">Video</a></video></p>
 
 
-</section>
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -620,9 +602,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../pagesweb/Map/tp.html" class="pagination-link" aria-label="Prédiction du traffic VéloMagg">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prédiction du traffic VéloMagg</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/riwahachem/Projet_HAX712X/blob/main/pagesweb/Video/tp.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/riwahachem/Projet_HAX712X/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/riwahachem/Projet_HAX712X/blob/main/pagesweb/Map/tp2.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/riwahachem/Projet_HAX712X/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

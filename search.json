@@ -1,22 +1,22 @@
 [
   {
-    "objectID": "pagesweb/Map/tp.html",
-    "href": "pagesweb/Map/tp.html",
-    "title": "Prédiction du traffic VéloMagg",
+    "objectID": "pagesweb/Map/tp2.html",
+    "href": "pagesweb/Map/tp2.html",
+    "title": "Disponibilité des vélos",
     "section": "",
-    "text": "Veuillez sélectionnez un jour de la semaine pour afficher la carte prédictive correspondante.\nLundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche",
+    "text": "Back to top",
     "crumbs": [
-      "Prédiction du traffic VéloMagg"
+      "Disponibilité des vélos"
     ]
   },
   {
-    "objectID": "pagesweb/Map/tp.html#prédiction-du-traffic-par-heure",
-    "href": "pagesweb/Map/tp.html#prédiction-du-traffic-par-heure",
-    "title": "Prédiction du traffic VéloMagg",
-    "section": "Prédiction du traffic par heure",
-    "text": "Prédiction du traffic par heure\nJour :  Lundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche \nHeure :  0h 1h 2h 3h 4h 5h 6h 7h 8h 9h 10h 11h 12h 13h 14h 15h 16h 17h 18h 19h 20h 21h 22h 23h",
+    "objectID": "pagesweb/Video/tp.html#visualisation-du-trafic-journalier",
+    "href": "pagesweb/Video/tp.html#visualisation-du-trafic-journalier",
+    "title": "Le trafic VéloMagg",
+    "section": "Visualisation du trafic journalier",
+    "text": "Visualisation du trafic journalier\n\nVidéo 1 : Simulation Statique\nVideo\n\n\nVidéo 2 : Simulation Dynamique\nVideo",
     "crumbs": [
-      "Prédiction du traffic VéloMagg"
+      "Le trafic VéloMagg"
     ]
   },
   {
@@ -41,13 +41,23 @@
     "text": "Installer le package ATVM\nPour installer ce package, utilisez simplement la commande suivante dans votre terminal :\n\npip install git+https://github.com/riwahachem/atvm\n\nDocumentation"
   },
   {
-    "objectID": "pagesweb/Video/tp.html#visualisation-du-trafic-journalier",
-    "href": "pagesweb/Video/tp.html#visualisation-du-trafic-journalier",
-    "title": "Le trafic VéloMagg",
-    "section": "Visualisation du trafic journalier",
-    "text": "Visualisation du trafic journalier\n\nVidéo 1 : Simulation Statique\nVideo\n\n\nVidéo 2 : Simulation Dynamique\nVideo",
+    "objectID": "pagesweb/Map/tp.html",
+    "href": "pagesweb/Map/tp.html",
+    "title": "Prédiction du traffic VéloMagg",
+    "section": "",
+    "text": "Veuillez sélectionnez un jour de la semaine pour afficher la carte prédictive correspondante.\nLundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche",
     "crumbs": [
-      "Le trafic VéloMagg"
+      "Prédiction du traffic VéloMagg"
+    ]
+  },
+  {
+    "objectID": "pagesweb/Map/tp.html#prédiction-du-traffic-par-heure",
+    "href": "pagesweb/Map/tp.html#prédiction-du-traffic-par-heure",
+    "title": "Prédiction du traffic VéloMagg",
+    "section": "Prédiction du traffic par heure",
+    "text": "Prédiction du traffic par heure\nJour :  Lundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche \nHeure :  0h 1h 2h 3h 4h 5h 6h 7h 8h 9h 10h 11h 12h 13h 14h 15h 16h 17h 18h 19h 20h 21h 22h 23h",
+    "crumbs": [
+      "Prédiction du traffic VéloMagg"
     ]
   }
 ]
