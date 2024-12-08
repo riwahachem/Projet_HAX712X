@@ -164,7 +164,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#bienvenue-sur-atvm" id="toc-bienvenue-sur-atvm" class="nav-link active" data-scroll-target="#bienvenue-sur-atvm">🚴‍♂️ Bienvenue sur <strong>ATVM</strong> !</a></li>
-  <li><a href="#installer-le-package-atvm" id="toc-installer-le-package-atvm" class="nav-link" data-scroll-target="#installer-le-package-atvm">Installer le package ATVM</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#données-et-ressources" id="toc-données-et-ressources" class="nav-link" data-scroll-target="#données-et-ressources">Données et Ressources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/riwahachem/Projet_HAX712X/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/riwahachem/Projet_HAX712X/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -193,18 +194,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="bienvenue-sur-atvm" class="level2">
 <h2 class="anchored" data-anchor-id="bienvenue-sur-atvm">🚴‍♂️ Bienvenue sur <strong>ATVM</strong> !</h2>
 <p><strong>ATVM</strong> est un projet dédié à l’étude des données liées aux vélos du réseau VéloMagg de la Métropole de Montpellier.</p>
-<p>Dans le cadre de ce projet, nous nous sommes concentrés sur :<br>
-- 🗂 <strong>Collecte et traitement des données</strong><br>
-- 📊 <strong>Analyses statistiques</strong><br>
-- 📈 <strong>Visualisations interactives</strong></p>
+<p>Dans le cadre de ce projet, nous nous sommes concentrés sur :</p>
+<ol type="1">
+<li><p><strong>Collecte des données</strong> :<br>
+Les données proviennent du service Open Data de de Montpellier Méditerranée Métropole, récupérées sous forme de fichiers CSV, JSON ou ZIP contenant les informations sur les trajets.</p></li>
+<li><p><strong>Nettoyage et Prétraitement</strong> :</p>
+<ul>
+<li>Correction de l’encodage des noms de stations</li>
+<li>Filtrage des stations non pertinentes</li>
+<li>Mise en forme des données horaires (jour, heure, etc.)</li>
+</ul></li>
+<li><p><strong>Analyse</strong> :</p>
+<ul>
+<li>Construction d’un graphe à partir des données OpenStreetMap via OSMNX</li>
+<li>Calcul du plus court chemin entre stations pour évaluer la cohérence des trajets</li>
+</ul></li>
+<li><p><strong>Prédictions</strong> :<br>
+Utilisation de modèles statistiques pour prédire la fréquentation et la disponibilité des vélos selon le jour de la semaine et l’heure.</p></li>
+</ol>
 </section>
-<section id="installer-le-package-atvm" class="level2">
-<h2 class="anchored" data-anchor-id="installer-le-package-atvm">Installer le package ATVM</h2>
-<p>Pour installer ce package, utilisez simplement la commande suivante dans votre terminal :</p>
-<div id="2ad229a1" class="cell">
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<p>Pour installer le package ATVM, utilisez simplement la commande suivante dans votre terminal :</p>
+<div id="2a08e2f8" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pip install git<span class="op">+</span>https:<span class="op">//</span>github.com<span class="op">/</span>riwahachem<span class="op">/</span>atvm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><a href="docs/_build/html/index.html">Documentation</a></p>
+</section>
+<section id="données-et-ressources" class="level2">
+<h2 class="anchored" data-anchor-id="données-et-ressources">Données et Ressources</h2>
+<ul>
+<li><strong>Données brutes</strong> : <a href="https://data.montpellier3m.fr">OpenData</a></li>
+<li><strong>OpenStreetMap</strong> : <a href="https://www.openstreetmap.org/">https://www.openstreetmap.org/</a></li>
+<li><strong>Dépôt GitHub</strong> : <a href="https://github.com/riwahachem/Projet_HAX712X">ATVM sur GitHub</a></li>
+<li><strong>Documentation</strong> : <a href="docs/_build/html/index.html">Index</a></li>
+</ul>
 
 
 </section>
