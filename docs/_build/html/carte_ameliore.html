@@ -11,6 +11,7 @@
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
+    <link rel="canonical" href="https://riwahachem.github.io/Projet_HAX712X/carte_ameliore.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="_static/documentation_options.js?v=7a28dfa3"></script>
@@ -57,10 +58,7 @@
 <li class="toctree-l1"><a class="reference internal" href="map_informative.html">map_informative</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carte_stations.html">carte_stations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carte.html">carte</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">carte_ameliore</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#preprocess.map.couleur_par_distance"><code class="docutils literal notranslate"><span class="pre">couleur_par_distance()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">carte_ameliore</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Vidéo</span></p>
 <ul>
@@ -91,47 +89,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-preprocess.map">
-<span id="carte-ameliore"></span><h1>carte_ameliore<a class="headerlink" href="#module-preprocess.map" title="Lien vers cette rubrique"></a></h1>
-<p>Module pour la génération d’une carte interactive basée sur des trajets de vélos.</p>
-<p>Ce module utilise des données CSV contenant les trajets de vélos partagés, corrige les noms des stations, calcule les trajets les plus courts en utilisant un graphe routier d’OSMNX, et affiche les trajets sur une carte interactive à l’aide de Folium.</p>
-<p>Fonctionnalités :
-- Chargement et filtrage des données de trajets de vélos
-- Calcul du chemin le plus court entre stations en fonction du graphe routier
-- Affichage des trajets sur une carte interactive avec des marqueurs pour les stations
-- Code couleur des trajets en fonction de leur distance
-- Interaction avec l’utilisateur (choix de la date, du nombre de trajets à afficher)</p>
-<p>Dépendances :
-- osmnx
-- folium
-- networkx
-- json
-- pandas
-- geopy
-- time
-- sys
-- os</p>
-<dl class="simple">
-<dt>Auteur :</dt><dd><p>El Mazzouji Wahel</p>
-</dd>
-</dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="preprocess.map.couleur_par_distance">
-<span class="sig-prename descclassname"><span class="pre">preprocess.map.</span></span><span class="sig-name descname"><span class="pre">couleur_par_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/preprocess/map.html#couleur_par_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#preprocess.map.couleur_par_distance" title="Lien vers cette définition"></a></dt>
-<dd><p>Associe une couleur à un trajet en fonction de sa distance.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>param</strong> – distance (float): Distance du trajet en mètres.</p>
-</dd>
-<dt class="field-even">Renvoie<span class="colon">:</span></dt>
-<dd class="field-even"><p>Couleur associée au trajet (“green”, “blue”, “orange”, “red”).</p>
-</dd>
-<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
+  <section id="carte-ameliore">
+<h1>carte_ameliore<a class="headerlink" href="#carte-ameliore" title="Lien vers cette rubrique"></a></h1>
 </section>
 
 

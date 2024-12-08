@@ -18,7 +18,7 @@ release = '1.0'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx.ext.todo","sphinx.ext.viewcode","sphinx.ext.autodoc","sphinx.ext.napoleon"]
+extensions = ["sphinx.ext.todo","sphinx.ext.viewcode","sphinx.ext.autodoc","sphinx.ext.napoleon","sphinx.ext.githubpages"]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -26,9 +26,18 @@ html_baseurl = "https://riwahachem.github.io/Projet_HAX712X/"
 
 language = 'fr'
 
+autodoc_default_options = {
+    'members': True,               
+    'undoc-members': True,         
+    'private-members': True,       
+    'special-members': '__init__', 
+    'show-inheritance': True,      
+}
+
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme'
+html_static_path = []
 
 autodoc_member_order = 'groupwise'
