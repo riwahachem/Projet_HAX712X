@@ -1,7 +1,7 @@
-carte
+video
 =====
 
-.. automodule:: preprocess.carte
+.. automodule:: preprocess.visualisation
    :members:
    :undoc-members:
    :show-inheritance:

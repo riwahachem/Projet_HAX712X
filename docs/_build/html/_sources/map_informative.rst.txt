@@ -1,5 +1,6 @@
-Map Informative
+map_informative
 ===============
+
 .. automodule:: preprocess.map_informative
    :members:
    :undoc-members:

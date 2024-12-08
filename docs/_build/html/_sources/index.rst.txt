@@ -6,7 +6,7 @@
 ATVM documentation
 ==================
 
-Bienvenue dans la documentation du projet ATVM, développé par Riwa Hachem Reda, Wahel El Mazzouji, Lucien Duigo et Lamia Oulebsir.
+Bienvenue dans la documentation du projet ATVM, développé par Riwa Hachem Reda, Wahel El Mazzouji, Lucien Duigou et Lamia Oulebsir.
 
 Ce projet vise à analyser et visualiser les trajets à vélo dans la ville de Montpellier.
 Dans cette documentation, vous trouverez des informations sur la structure du projet, le code source, ainsi que des exemples d'utilisation.
@@ -16,9 +16,28 @@ Table des matières
 
 .. toctree::
    :maxdepth: 2
-   :caption: Preprocess:
+   :caption: Classe:
 
-   carte_ameliore
+   classe
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Traitement des données
+
+   coord_arrets
+   utils
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Map
+
+   map_informative
    carte_stations
    carte
-   map_informative
+   carte_ameliore
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Vidéo
+
+   video

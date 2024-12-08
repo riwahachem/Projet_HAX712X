@@ -1,8 +1,0 @@
-Projet_HAX712X
-==============
-
-.. toctree::
-   :maxdepth: 4
-
-   atvm
-   data
