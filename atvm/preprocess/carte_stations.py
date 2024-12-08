@@ -1,18 +1,16 @@
 """
 Module pour la génération d'une carte des stations de vélos à Montpellier.
 
-Ce script utilise les bibliothèques `osmnx` et `folium` pour créer une carte interactive
+Ce module utilise les bibliothèques `osmnx` et `folium` pour créer une carte interactive
 affichant les stations de vélos de la ville de Montpellier. Les stations sont récupérées
-via OpenStreetMap en fonction du tag `bicycle_rental`. Les informations incluent :
-- La localisation de chaque station de vélos sous forme de marqueurs sur la carte.
-- Un polygone représentant les limites de la ville.
+via OpenStreetMap en fonction du tag `bicycle_rental`.
 
-Les fonctionnalités principales incluent :
-1. Récupération des limites géographiques de Montpellier via OpenStreetMap.
-2. Extraction des coordonnées et informations des stations de vélos.
-3. Génération d'une carte interactive avec des marqueurs représentant les stations.
-4. Ajout d'un polygone pour délimiter la ville.
-5. Sauvegarde de la carte générée sous forme de fichier HTML.
+Fonctionnalités principales :
+1. Récupération des limites géographiques de Montpellier via OpenStreetMap
+2. Extraction des coordonnées et informations des stations de vélos
+3. Génération d'une carte interactive avec des marqueurs représentant les stations
+4. Ajout d'un polygone pour délimiter la ville
+5. Sauvegarde de la carte générée sous forme de fichier HTML
 
 Dépendances :
 - osmnx
@@ -22,7 +20,8 @@ Dépendances :
 Chemin de sortie :
 Le fichier HTML généré est sauvegardé dans le répertoire `../../pagesweb/Video/map_stations.html`.
 
-Auteur : Riwa Hachem Reda
+Auteur :
+    Riwa Hachem Reda
 """
 
 import osmnx as ox

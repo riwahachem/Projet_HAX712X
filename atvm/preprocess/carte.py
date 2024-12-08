@@ -1,9 +1,12 @@
 """
 Module pour la génération d'une carte interactive entre deux stations.
 
-Ce script permet à l'utilisateur de visualiser le chemin le plus court entre deux stations de vélos à Montpellier. 
-Il utilise des données CSV contenant les trajets de vélos partagés, les coordonnées des stations stockées dans un fichier JSON, 
-et un graphe routier OSMNX pour calculer le chemin optimal.
+Ce module permet à l'utilisateur de visualiser le chemin le plus court entre deux stations de vélos. 
+
+Il utilise :
+- Des données CSV contenant les trajets de vélos partagés
+- Les coordonnées des stations stockées dans un fichier JSON 
+- Un graphe routier OSMNX pour calculer le chemin optimal
 
 Dépendances :
 - osmnx
@@ -19,6 +22,7 @@ Dépendances :
 Auteur :
     El Mazzouji Wahel
 """
+
 import osmnx as ox
 import folium
 import networkx as nx

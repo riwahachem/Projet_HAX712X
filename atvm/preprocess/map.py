@@ -1,8 +1,14 @@
 """
 Module pour la génération d'une carte interactive basée sur des trajets de vélos.
 
-Ce script utilise des données CSV contenant les trajets de vélos partagés, corrige les noms des stations,
-calcule les trajets les plus courts en utilisant un graphe routier d'OSMNX, et affiche les trajets sur une carte interactive.
+Ce module utilise des données CSV contenant les trajets de vélos partagés, corrige les noms des stations, calcule les trajets les plus courts en utilisant un graphe routier d'OSMNX, et affiche les trajets sur une carte interactive à l'aide de Folium.
+
+Fonctionnalités :
+- Chargement et filtrage des données de trajets de vélos
+- Calcul du chemin le plus court entre stations en fonction du graphe routier
+- Affichage des trajets sur une carte interactive avec des marqueurs pour les stations
+- Code couleur des trajets en fonction de leur distance
+- Interaction avec l'utilisateur (choix de la date, du nombre de trajets à afficher)
 
 Dépendances :
 - osmnx
@@ -18,6 +24,7 @@ Dépendances :
 Auteur :
     El Mazzouji Wahel
 """
+
 import osmnx as ox
 import folium
 import networkx as nx

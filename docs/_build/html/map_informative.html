@@ -77,22 +77,24 @@
   <section id="module-preprocess.map_informative">
 <span id="map-informative"></span><h1>Map Informative<a class="headerlink" href="#module-preprocess.map_informative" title="Lien vers cette rubrique"></a></h1>
 <p>Module pour la génération d’une carte interactive des stations de vélos à Montpellier.</p>
-<p>Ce script crée une carte interactive de la ville de Montpellier en utilisant la bibliothèque Folium.
-Il récupère les informations géographiques de la ville via OpenStreetMap (OSM) et les stations de vélos
-via l’API de la ville de Montpellier. Les stations de vélos sont affichées avec des marqueurs contenant
-des informations sur la disponibilité des vélos et des places de stationnement.</p>
-<p>Le processus comprend les étapes suivantes :
-- Récupération des coordonnées géographiques de Montpellier et du polygone des limites de la ville.
-- Création d’une carte centrée sur Montpellier avec les limites de la ville tracées sous forme de polygone.
-- Récupération des données JSON des stations de vélos via une API externe et sauvegarde dans un fichier.
-- Ajout de marqueurs sur la carte pour chaque station de vélos, incluant des informations détaillées dans un popup.
-- Sauvegarde de la carte résultante sous forme de fichier HTML pour affichage dans un navigateur.</p>
+<p>Ce module crée une carte interactive de la ville de Montpellier en utilisant la bibliothèque Folium.
+Il récupère les informations géographiques de la ville via OpenStreetMap (OSM) et les stations de vélos via l’API de la ville de Montpellier.</p>
+<p>Fonctionnalités :
+- Récupération des coordonnées et du polygone des limites de la ville de Montpellier
+- Création d’une carte centrée sur Montpellier
+- Ajout d’un polygone représentant les limites de la ville
+- Récupération des données des stations de vélos (via une API), et sauvegarde dans un fichier JSON
+- Ajout de marqueurs sur la carte pour chaque station, incluant un popup avec le nombre de vélos disponibles et de places libres
+- Sauvegarde de la carte résultante dans un fichier HTML</p>
 <p>Dépendances :
 - osmnx
 - folium
 - requests
 - json</p>
-<p>Auteur : Wahel El Mazzouji</p>
+<dl class="simple">
+<dt>Auteur :</dt><dd><p>Wahel El Mazzouji</p>
+</dd>
+</dl>
 </section>
 
 
