@@ -1,15 +1,24 @@
-.. ATVM documentation master file, created by
-   sphinx-quickstart on Sat Dec  7 12:28:41 2024.
+.. ATVM documentation documentation master file, created by
+   sphinx-quickstart on Sun Dec  8 12:37:55 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 ATVM documentation
 ==================
 
+Bienvenue dans la documentation du projet ATVM, développé par Riwa Hachem Reda, Wahel El Mazzouji, Lucien Duigo et Lamia Oulebsir.
+
+Ce projet vise à analyser et visualiser les trajets à vélo dans la ville de Montpellier.
+Dans cette documentation, vous trouverez des informations sur la structure du projet, le code source, ainsi que des exemples d'utilisation.
+
+Table des matières
+==================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
-   
-   modules
+   :caption: Preprocess:
 
+   carte_ameliore
+   carte_stations
+   carte
+   map_informative

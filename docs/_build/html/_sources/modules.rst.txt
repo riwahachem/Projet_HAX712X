@@ -1,5 +1,5 @@
-Projet
-======
+Projet_HAX712X
+==============
 
 .. toctree::
    :maxdepth: 4

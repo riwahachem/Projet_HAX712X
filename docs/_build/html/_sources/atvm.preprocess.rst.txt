@@ -4,10 +4,34 @@ atvm.preprocess package
 Submodules
 ----------
 
+atvm.preprocess.carte module
+----------------------------
+
+.. automodule:: atvm.preprocess.carte
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 atvm.preprocess.carte\_stations module
 --------------------------------------
 
 .. automodule:: atvm.preprocess.carte_stations
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+atvm.preprocess.map module
+--------------------------
+
+.. automodule:: atvm.preprocess.map
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+atvm.preprocess.map\_informative module
+---------------------------------------
+
+.. automodule:: atvm.preprocess.map_informative
    :members:
    :undoc-members:
    :show-inheritance:
