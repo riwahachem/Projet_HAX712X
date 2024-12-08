@@ -22,6 +22,7 @@ extensions = ["sphinx.ext.todo","sphinx.ext.viewcode","sphinx.ext.autodoc","sphi
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+html_baseurl = "https://github.com/riwahachem/Projet_HAX712X/"
 
 language = 'fr'
 
