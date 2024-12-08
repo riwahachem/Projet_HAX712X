@@ -36,11 +36,11 @@ import sys
 import os
 
 # Ajouter le dossier parent (data) au chemin
-sys.path.append(os.path.abspath("C:/Users/welma/HAX712X_WAHEL/Projet_HAX712X/data"))
+sys.path.append(os.path.abspath("../data_atvm"))
 
 from traitement_donnees.utils import corriger_encodage
 # Chemin vers le fichier CSV
-file_path = 'C:/Users/welma/HAX712X_Wahel/Projet_HAX712X/data/TAM_MMM_CoursesVelomagg.csv'
+file_path =  os.path.abspath(os.path.join(os.path.dirname(__file__),'../data_atvm/TAM_MMM_CoursesVelomagg.csv'))
 data = pd.read_csv(file_path)
 
 data['Departure station'] = data['Departure station'].apply(corriger_encodage)
@@ -88,7 +88,7 @@ def couleur_par_distance(distance):
     Associe une couleur à un trajet en fonction de sa distance.
 
     Args:
-        distance (float): Distance du trajet en mètres.
+        param: distance (float): Distance du trajet en mètres.
 
     Returns:
         str: Couleur associée au trajet ('green', 'blue', 'orange', 'red').

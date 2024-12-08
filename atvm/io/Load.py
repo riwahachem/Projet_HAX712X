@@ -9,15 +9,19 @@ class LoadData:
     """
     Cette classe télécharge toutes les données.
 
-    Paramètres:
-    -----------
-    url : (string) URL des données à télécharger
-    target_name : (string) Chemin local pour stocker les données téléchargées
+    :param url : (string) URL des données à télécharger
+    :param target_name : (string) Chemin local pour stocker les données téléchargées
     """
 
     def __init__(self, url, target_name):
+        """
+        Initialise la classe DataProcessing avec les paramètres nécessaires.
+
+        :param url : (string) URL des données à télécharger
+        :param target_name : (string) Chemin local pour stocker les données téléchargées
+        """
         path, fname_compressed = os.path.split(target_name)
-        # Téléchargement des données avec pooch
+       
         pooch.retrieve(url, path=path, fname=fname_compressed, known_hash=None)
         self.fname = target_name
 
@@ -42,5 +46,8 @@ class LoadData:
 
     
     def save_as_df(self):
+        """
+        Sauvegarde le DataFrame.
+        """
         df = pd.read_csv(self.fname)
         return df

@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>traitement_donnees.coord_arrets &mdash; Documentation ATVM documentation 1.0</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=7a28dfa3"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/translations.js?v=e6b791cb"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            ATVM documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Classe:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../classe.html">Classe Load</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Traitement des données</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../coord_arrets.html">coord_arrets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../utils.html">corriger_encodage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Map</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../map_informative.html">map_informative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../carte_stations.html">carte_stations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../carte.html">carte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../carte_ameliore.html">carte_ameliore</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vidéo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../video.html">video</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ATVM documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Code du module</a></li>
+      <li class="breadcrumb-item active">traitement_donnees.coord_arrets</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Code source de traitement_donnees.coord_arrets</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module pour récupérer les coordonnées géographiques des stations de vélos à Montpellier.</span>
+
+<span class="sd">Ce script prend un fichier CSV contenant des données de stations de vélos, corrige les encodages des noms de stations, </span>
+<span class="sd">puis obtient les coordonnées géographiques de chaque station unique à l&#39;aide de l&#39;API Nominatim de Geopy.</span>
+
+<span class="sd">Les étapes du processus sont les suivantes :</span>
+<span class="sd">- Lecture des données depuis un fichier CSV contenant des stations de vélos.</span>
+<span class="sd">- Correction des encodages des noms de stations avec la fonction `corriger_encodage`.</span>
+<span class="sd">- Extraction des stations uniques et suppression des doublons.</span>
+<span class="sd">- Renommage des stations spécifiques (par exemple, &quot;FacdesSciences&quot; devient &quot;Faculté des sciences&quot;).</span>
+<span class="sd">- Exclusion de certaines stations de la liste des stations à traiter.</span>
+<span class="sd">- Recherche des coordonnées géographiques des stations uniques en utilisant le service de géocodage de Nominatim.</span>
+<span class="sd">- Sauvegarde des coordonnées obtenues dans un fichier JSON.</span>
+<span class="sd">- Affichage du nombre de stations avec coordonnées et de celles qui ont été exclues.</span>
+
+<span class="sd">Entrées :</span>
+<span class="sd">- Un fichier CSV (`TAM_MMM_CoursesVelomagg.csv`) contenant des informations sur les stations de vélos.</span>
+<span class="sd">- La fonction `corriger_encodage` pour corriger les noms de stations.</span>
+
+<span class="sd">Sorties :</span>
+<span class="sd">- Un fichier JSON (`station_coords.json`) contenant les coordonnées géographiques des stations de vélos qui ont été géocodées avec succès.</span>
+
+<span class="sd">Exclusions :</span>
+<span class="sd">- Certaines stations comme &quot;Smoove_Test&quot;, &quot;AtelierTAM&quot;, &quot;Station SAV&quot;, et &quot;Pérols Etang de l&#39;Or&quot; sont explicitement exclues.</span>
+
+<span class="sd">Dépendances :</span>
+<span class="sd">- pandas</span>
+<span class="sd">- geopy</span>
+<span class="sd">- json</span>
+<span class="sd">- time</span>
+<span class="sd">- sys</span>
+<span class="sd">- os</span>
+
+<span class="sd">Auteur : Wahel El Mazzouji</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">geopy.geocoders</span> <span class="kn">import</span> <span class="n">Nominatim</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Ajouter le dossier parent (data) au chemin</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;../data_atvm&quot;</span><span class="p">))</span>
+
+<span class="kn">from</span> <span class="nn">traitement_donnees.utils</span> <span class="kn">import</span> <span class="n">corriger_encodage</span>
+<span class="c1"># Chemin vers le fichier CSV</span>
+<span class="n">file_path</span> <span class="o">=</span>  <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span><span class="s1">&#39;../data_atvm/TAM_MMM_CoursesVelomagg.csv&#39;</span><span class="p">))</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Departure station&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Departure station&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">corriger_encodage</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Return station&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Return station&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">corriger_encodage</span><span class="p">)</span>
+
+<span class="c1"># Extraction des stations uniques corrigées</span>
+<span class="n">stations_uniques</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Departure station&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Return station&#39;</span><span class="p">]])</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">stations_uniques</span> <span class="o">=</span> <span class="p">[</span><span class="n">station</span> <span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">stations_uniques</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">station</span><span class="p">,</span> <span class="nb">str</span><span class="p">)]</span>
+
+<span class="c1"># Renommer &quot;FacdesSciences&quot; en &quot;Faculté des sciences&quot;</span>
+<span class="n">stations_uniques</span> <span class="o">=</span> <span class="p">[</span><span class="n">station</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;FacdesSciences&quot;</span><span class="p">,</span> <span class="s2">&quot;Faculté des sciences&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">stations_uniques</span><span class="p">]</span>
+
+<span class="c1"># Exclure explicitement certaines stations</span>
+<span class="n">stations_a_exclure</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Smoove_Test&#39;</span><span class="p">,</span> <span class="s1">&#39;AtelierTAM&#39;</span><span class="p">,</span> <span class="s1">&#39;Station SAV&#39;</span><span class="p">,</span> <span class="s1">&#39;Pérols Etang de l</span><span class="se">\&#39;</span><span class="s1">Or&#39;</span><span class="p">]</span>
+<span class="n">stations_uniques</span> <span class="o">=</span> <span class="p">[</span><span class="n">station</span> <span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">stations_uniques</span> <span class="k">if</span> <span class="n">station</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stations_a_exclure</span><span class="p">]</span>
+
+<span class="c1"># Initialiser le géocodeur et charger le JSON existant</span>
+<span class="n">geolocator</span> <span class="o">=</span> <span class="n">Nominatim</span><span class="p">(</span><span class="n">user_agent</span><span class="o">=</span><span class="s2">&quot;velomagg_locator&quot;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;station_coords.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+        <span class="n">coordonnees_stations</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="n">coordonnees_stations</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="get_station_coordinates">
+<a class="viewcode-back" href="../../coord_arrets.html#traitement_donnees.coord_arrets.get_station_coordinates">[docs]</a>
+<span class="k">def</span> <span class="nf">get_station_coordinates</span><span class="p">(</span><span class="n">station_name</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">station_name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">station_name</span><span class="si">}</span><span class="s2">, Montpellier, France&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">station_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">, Montpellier, France&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">station_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, Montpellier, France&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">station_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, Montpellier, France&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">station_name</span><span class="si">}</span><span class="s2">, France&quot;</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="s2">&quot;Fac&quot;</span> <span class="ow">in</span> <span class="n">station_name</span><span class="p">:</span>
+        <span class="n">options</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">station_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Fac&quot;</span><span class="p">,</span> <span class="s2">&quot;Faculté&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, Montpellier, France&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">options</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">location</span> <span class="o">=</span> <span class="n">geolocator</span><span class="o">.</span><span class="n">geocode</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">location</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;latitude&quot;</span><span class="p">:</span> <span class="n">location</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">:</span> <span class="n">location</span><span class="o">.</span><span class="n">longitude</span><span class="p">}</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur pour </span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<span class="c1"># Boucle pour obtenir et sauvegarder les coordonnées</span>
+<span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">stations_uniques</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">station</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">coordonnees_stations</span> <span class="ow">and</span> <span class="n">station</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stations_a_exclure</span><span class="p">:</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="n">get_station_coordinates</span><span class="p">(</span><span class="n">station</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">coords</span><span class="p">:</span>
+            <span class="n">coordonnees_stations</span><span class="p">[</span><span class="n">station</span><span class="p">]</span> <span class="o">=</span> <span class="n">coords</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coordonnées trouvées pour </span><span class="si">{</span><span class="n">station</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">coords</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Coordonnées non trouvées pour </span><span class="si">{</span><span class="n">station</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;station_coords.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">coordonnees_stations</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Filtrer les stations avec coordonnées non nulles</span>
+<span class="n">coordonnees_stations_filtrees</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">coordonnees_stations</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> 
+    <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stations_a_exclure</span> <span class="ow">and</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="p">}</span>
+
+<span class="c1"># Sauvegarder le dictionnaire filtré dans le fichier JSON</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;station_coords.json&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">coordonnees_stations_filtrees</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Affichage du nombre de stations avec des coordonnées trouvées</span>
+<span class="n">nombre_stations_avec_coords</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">coordonnees_stations_filtrees</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nombre de stations avec coordonnées : </span><span class="si">{</span><span class="n">nombre_stations_avec_coords</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coordonnées des stations sauvegardées dans station_coords.json&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Les stations exclues : </span><span class="si">{</span><span class="n">stations_a_exclure</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, Riwa Hachem Reda, Wahel El Mazzouji, Lucien Duigo, Lamia Oulebsir.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -66,4 +66,3 @@ folium.Polygon(
 ).add_to(m)
 
 m.save(output_path)
-
