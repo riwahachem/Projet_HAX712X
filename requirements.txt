@@ -11,3 +11,6 @@ sphinx_rtd_theme
 ffmpeg==1.4
 Unidecode==1.3.8
 networkx==3.3
+seaborn
+plotly==5.10.0 
+requests==2.31.0
