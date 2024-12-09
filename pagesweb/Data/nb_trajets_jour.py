@@ -62,7 +62,7 @@ else:
 
 
 def afficher_graphe(df):
-# Convertir la colonne 'Departure' en type datetime (ajuste le nom de la colonne si nécessaire)
+# Convertir la colonne 'Departure' en type datetime 
    df['Departure'] = pd.to_datetime(df['Departure'], errors='coerce')
 
 # Filtrer les lignes avec des dates valides
@@ -88,9 +88,9 @@ def afficher_graphe(df):
    fig.write_image("nombre_trajets_par_jour.png")
 
 print("Année 2022")
-#print(afficher_graphe(df_2022))
+print(afficher_graphe(df_2022))
 print("Année 2023")
-#print(afficher_graphe(df_2023))
+print(afficher_graphe(df_2023))
 print("Année 2024")
 print(afficher_graphe(df_2024))
 
