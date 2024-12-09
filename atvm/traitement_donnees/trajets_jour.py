@@ -1,3 +1,21 @@
+"""
+Ce script permet de télécharger, extraire et analyser des données de trajets de vélos pour les années 2022, 2023 et 2024. 
+Il commence par télécharger un fichier ZIP contenant les données des deux premières années, 
+puis le décompresse pour charger les fichiers correspondants dans des DataFrames. 
+
+Ensuite, il traite les données en convertissant les dates de départ des trajets 
+en format datetime et en regroupant les trajets par jour. 
+
+Le script calcule le nombre total de trajets par jour pour chaque année 
+et génère des statistiques descriptives sur ces données.
+
+ Enfin, il crée des graphiques interactifs représentant le nombre de trajets par jour pour chaque année
+ et enregistre ces graphiques sous forme d'images PNG.
+
+ """
+
+
+
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
