@@ -17,3 +17,5 @@ requests==2.31.0
 PyYAML
 jupyter
 quarto
+copy
+json
