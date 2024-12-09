@@ -1,0 +1,42 @@
+name: Deploy Sphinx Doc
+
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install Sphinx and dependencies
+        run: |
+          pip install --upgrade pip
+          pip install sphinx sphinx_rtd_theme
+          pip install -r requirements.txt
+      
+      - name: Generate Sphinx documentation
+        run: |
+          cd docs
+          make clean
+          sphinx-apidoc -o docs . -f -e -M
+          make html
+    
+      - name: Set up quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: docs/build
+          github_token: ${{ secrets.GITHUB_TOKEN }}

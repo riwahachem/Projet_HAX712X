@@ -1,4 +1,4 @@
-name: Deploy Quarto Site and Sphinx Doc
+name: Deploy Quarto Site 
 
 on:
   workflow_dispatch:
@@ -18,19 +18,6 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      
-      - name: Install Sphinx and dependencies
-        run: |
-          pip install --upgrade pip
-          pip install sphinx sphinx_rtd_theme
-          pip install -r requirements.txt
-      
-      - name: Generate Sphinx documentation
-        run: |
-          cd docs
-          make clean
-          sphinx-apidoc -o docs . -f -e -M
-          make html
     
       - name: Set up quarto
         uses: quarto-dev/quarto-actions/setup@v2
