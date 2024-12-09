@@ -20,11 +20,6 @@ clean:
 	@echo "Suppression des fichiers générés..."
 	@rm -rf "$(BUILDDIR)"/*
 
-backup:
-	@echo "Sauvegarde du contenu actuel de $(DESTDIR)..."
-	@mkdir -p "$(DESTDIR)_backup"
-	@cp -r "$(DESTDIR)"/* "$(DESTDIR)_backup"/ || echo "Aucun fichier à sauvegarder."
-
 html:
 	@echo "Génération de la documentation au format HTML..."
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(BUILDDIR)/html" $(SPHINXOPTS)
