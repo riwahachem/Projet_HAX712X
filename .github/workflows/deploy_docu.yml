@@ -29,14 +29,11 @@ jobs:
         run: |
           cd docs
           make clean
-          sphinx-apidoc -o docs . -f -e -M
+          sphinx-apidoc -o . ../atvm -f -e -M
           make html
-    
-      - name: Set up quarto
-        uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: docs/build
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/_build/html
