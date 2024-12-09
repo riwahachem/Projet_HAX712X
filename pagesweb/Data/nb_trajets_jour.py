@@ -61,7 +61,7 @@ else:
 
 
 
-def afficher_graphe(df):
+def trajets_analys(df):
 # Convertir la colonne 'Departure' en type datetime 
    df['Departure'] = pd.to_datetime(df['Departure'], errors='coerce')
 
@@ -88,9 +88,9 @@ def afficher_graphe(df):
    fig.write_image("nombre_trajets_par_jour.png")
 
 print("Année 2022")
-print(afficher_graphe(df_2022))
+print(trajets_analys(df_2022))
 print("Année 2023")
-print(afficher_graphe(df_2023))
+print(trajets_analys(df_2023))
 print("Année 2024")
-print(afficher_graphe(df_2024))
+print(trajets_analys(df_2024))
 
