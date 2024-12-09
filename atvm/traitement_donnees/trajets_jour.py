@@ -9,7 +9,7 @@ en format datetime et en regroupant les trajets par jour.
 Le script calcule le nombre total de trajets par jour pour chaque année 
 et génère des statistiques descriptives sur ces données.
 
- Enfin, il crée des graphiques interactifs représentant le nombre de trajets par jour pour chaque année
+ Enfin, il crée des graphiques interactifs représentant le nombre de trajets par jour pour chaque année :2022,2023 et 2024
  et enregistre ces graphiques sous forme d'images PNG.
 
  """
