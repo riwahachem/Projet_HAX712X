@@ -1,0 +1,90 @@
+[
+  {
+    "objectID": "pagesweb/Map/tp2.html",
+    "href": "pagesweb/Map/tp2.html",
+    "title": "Disponibilité des vélos",
+    "section": "",
+    "text": "La carte ci-dessous présente la localisation des stations de vélos en libre-service sur Montpellier.\nEn cliquant sur un marqueur, vous pouvez accéder à plus d’informations, telles que :\n- Le nom de la station\n- Le nombre de vélos disponibles\n- Le nombre de places libres pour déposer un vélo\n\n\nNote : Les données affichées ne reflètent pas nécessairement la disponibilité en temps réel. Vérifiez régulièrement les informations ou consultez le site officiel de VéloMagg pour des mises à jour plus fréquentes.\n\n\n\n Back to top",
+    "crumbs": [
+      "Disponibilité des vélos"
+    ]
+  },
+  {
+    "objectID": "pagesweb/Video/tp.html",
+    "href": "pagesweb/Video/tp.html",
+    "title": "Le trafic VéloMagg",
+    "section": "",
+    "text": "La carte ci-dessous affiche les emplacements des stations de vélos en libre-service dans la ville de Montpellier. Ces stations sont essentielles pour les déplacements urbains, offrant aux utilisateurs un moyen pratique et écologique de se déplacer.",
+    "crumbs": [
+      "Le trafic VéloMagg"
+    ]
+  },
+  {
+    "objectID": "pagesweb/Video/tp.html#les-stations-vélomagg-de-montpellier",
+    "href": "pagesweb/Video/tp.html#les-stations-vélomagg-de-montpellier",
+    "title": "Le trafic VéloMagg",
+    "section": "",
+    "text": "La carte ci-dessous affiche les emplacements des stations de vélos en libre-service dans la ville de Montpellier. Ces stations sont essentielles pour les déplacements urbains, offrant aux utilisateurs un moyen pratique et écologique de se déplacer.",
+    "crumbs": [
+      "Le trafic VéloMagg"
+    ]
+  },
+  {
+    "objectID": "pagesweb/Video/tp.html#visualisation-du-trafic-journalier",
+    "href": "pagesweb/Video/tp.html#visualisation-du-trafic-journalier",
+    "title": "Le trafic VéloMagg",
+    "section": "Visualisation du trafic journalier",
+    "text": "Visualisation du trafic journalier\nNous avons développé deux vidéos basées sur les données collectées, elles offrent un aperçu des trajets les plus fréquents dans la journée.\n\nVidéo 1 : Simulation des trajets\nVideo\n\n\nVidéo 2 : Simulation dynamique\nVideo",
+    "crumbs": [
+      "Le trafic VéloMagg"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ATVM : Analyse du trafic VéloMagg de Montpellier",
+    "section": "",
+    "text": "ATVM est un projet dédié à l’étude des données liées aux vélos du réseau VéloMagg de la Métropole de Montpellier.\nDans le cadre de ce projet, nous nous sommes concentrés sur :\n\nCollecte des données :\nLes données proviennent du service Open Data de de Montpellier Méditerranée Métropole, récupérées sous forme de fichiers CSV, JSON ou ZIP contenant les informations sur les trajets.\nNettoyage et Prétraitement :\n\nCorrection de l’encodage des noms de stations\nFiltrage des stations non pertinentes\nMise en forme des données horaires (jour, heure, etc.)\n\nAnalyse :\n\nConstruction d’un graphe à partir des données OpenStreetMap via OSMNX\nCalcul du plus court chemin entre stations pour évaluer la cohérence des trajets\n\nPrédictions :\nUtilisation de modèles statistiques pour prédire la fréquentation et la disponibilité des vélos selon le jour de la semaine et l’heure."
+  },
+  {
+    "objectID": "index.html#bienvenue-sur-atvm",
+    "href": "index.html#bienvenue-sur-atvm",
+    "title": "ATVM : Analyse du trafic VéloMagg de Montpellier",
+    "section": "",
+    "text": "ATVM est un projet dédié à l’étude des données liées aux vélos du réseau VéloMagg de la Métropole de Montpellier.\nDans le cadre de ce projet, nous nous sommes concentrés sur :\n\nCollecte des données :\nLes données proviennent du service Open Data de de Montpellier Méditerranée Métropole, récupérées sous forme de fichiers CSV, JSON ou ZIP contenant les informations sur les trajets.\nNettoyage et Prétraitement :\n\nCorrection de l’encodage des noms de stations\nFiltrage des stations non pertinentes\nMise en forme des données horaires (jour, heure, etc.)\n\nAnalyse :\n\nConstruction d’un graphe à partir des données OpenStreetMap via OSMNX\nCalcul du plus court chemin entre stations pour évaluer la cohérence des trajets\n\nPrédictions :\nUtilisation de modèles statistiques pour prédire la fréquentation et la disponibilité des vélos selon le jour de la semaine et l’heure."
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "ATVM : Analyse du trafic VéloMagg de Montpellier",
+    "section": "Installation",
+    "text": "Installation\nPour installer le package ATVM, utilisez simplement la commande suivante dans votre terminal :\n\npip install git+https://github.com/riwahachem/atvm"
+  },
+  {
+    "objectID": "index.html#données-et-ressources",
+    "href": "index.html#données-et-ressources",
+    "title": "ATVM : Analyse du trafic VéloMagg de Montpellier",
+    "section": "Données et Ressources",
+    "text": "Données et Ressources\n\nDonnées brutes : OpenData\nOpenStreetMap : https://www.openstreetmap.org/\nDépôt GitHub : ATVM sur GitHub\nDocumentation : Index"
+  },
+  {
+    "objectID": "pagesweb/Map/tp.html",
+    "href": "pagesweb/Map/tp.html",
+    "title": "Prédiction du traffic VéloMagg",
+    "section": "",
+    "text": "L’analyse des données historiques permet d’anticiper l’affluence et la disponibilité des vélos selon le jour de la semaine et l’heure.\nVeuillez sélectionnez un jour de la semaine pour afficher la carte prédictive correspondante.\nLundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche",
+    "crumbs": [
+      "Prédiction du traffic VéloMagg"
+    ]
+  },
+  {
+    "objectID": "pagesweb/Map/tp.html#prédiction-du-traffic-par-heure",
+    "href": "pagesweb/Map/tp.html#prédiction-du-traffic-par-heure",
+    "title": "Prédiction du traffic VéloMagg",
+    "section": "Prédiction du traffic par heure",
+    "text": "Prédiction du traffic par heure\nPour affiner votre exploration, sélectionnez un jour et une heure spécifique. Vous pourrez ainsi visualiser le niveau de trafic estimé.\nJour :  Lundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche \nHeure :  0h 1h 2h 3h 4h 5h 6h 7h 8h 9h 10h 11h 12h 13h 14h 15h 16h 17h 18h 19h 20h 21h 22h 23h",
+    "crumbs": [
+      "Prédiction du traffic VéloMagg"
+    ]
+  }
+]
