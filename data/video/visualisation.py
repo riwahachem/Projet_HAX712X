@@ -188,6 +188,6 @@ max_frames = max(len(chemin) for chemin in trajets_valides_calcules)
 ani = FuncAnimation(fig, mettre_a_jour_trajets, frames=max_frames, init_func=init, blit=True, repeat=False)
 
 # Sauvegarder l'animation sous forme de fichier MP4
-output_file = "simulation_trajets.mp4"
+output_file = "simulation2.mp4"
 ani.save(output_file, writer=FFMpegWriter(fps=10))
 print(f"La simulation a été sauvegardée sous forme de fichier MP4 : {output_file}")

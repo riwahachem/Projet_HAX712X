@@ -60,7 +60,7 @@ stations_uniques = [station for station in stations_uniques if isinstance(statio
 stations_uniques = [station.replace("FacdesSciences", "Faculté des sciences") for station in stations_uniques]
 
 # Exclure explicitement certaines stations
-stations_a_exclure = ['Smoove_Test', 'AtelierTAM', 'Station SAV', 'Pérols Etang de l\'Or']
+stations_a_exclure = ['Smoove_Test', 'AtelierTAM', 'Station SAV', 'Pérols Etang de l\'Or', 'Plan Cabanes']
 stations_uniques = [station for station in stations_uniques if station not in stations_a_exclure]
 
 # Initialiser le géocodeur et charger le JSON existant
