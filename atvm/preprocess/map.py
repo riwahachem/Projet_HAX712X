@@ -1,8 +1,14 @@
 """
 Module pour la génération d'une carte interactive basée sur des trajets de vélos.
 
-Ce script utilise des données CSV contenant les trajets de vélos partagés, corrige les noms des stations,
-calcule les trajets les plus courts en utilisant un graphe routier d'OSMNX, et affiche les trajets sur une carte interactive.
+Ce module utilise des données CSV contenant les trajets de vélos partagés, corrige les noms des stations, calcule les trajets les plus courts en utilisant un graphe routier d'OSMNX, et affiche les trajets sur une carte interactive à l'aide de Folium.
+
+Fonctionnalités :
+- Chargement et filtrage des données de trajets de vélos
+- Calcul du chemin le plus court entre stations en fonction du graphe routier
+- Affichage des trajets sur une carte interactive avec des marqueurs pour les stations
+- Code couleur des trajets en fonction de leur distance
+- Interaction avec l'utilisateur (choix de la date, du nombre de trajets à afficher)
 
 Dépendances :
 - osmnx
@@ -18,6 +24,7 @@ Dépendances :
 Auteur :
     El Mazzouji Wahel
 """
+
 import osmnx as ox
 import folium
 import networkx as nx
@@ -29,11 +36,11 @@ import sys
 import os
 
 # Ajouter le dossier parent (data) au chemin
-sys.path.append(os.path.abspath("C:/Users/welma/HAX712X_WAHEL/Projet_HAX712X/data"))
+sys.path.append(os.path.abspath("../data_atvm"))
 
 from traitement_donnees.utils import corriger_encodage
 # Chemin vers le fichier CSV
-file_path = 'C:/Users/welma/HAX712X_Wahel/Projet_HAX712X/data/TAM_MMM_CoursesVelomagg.csv'
+file_path =  os.path.abspath(os.path.join(os.path.dirname(__file__),'../data_atvm/TAM_MMM_CoursesVelomagg.csv'))
 data = pd.read_csv(file_path)
 
 data['Departure station'] = data['Departure station'].apply(corriger_encodage)
@@ -81,7 +88,7 @@ def couleur_par_distance(distance):
     Associe une couleur à un trajet en fonction de sa distance.
 
     Args:
-        distance (float): Distance du trajet en mètres.
+        param: distance (float): Distance du trajet en mètres.
 
     Returns:
         str: Couleur associée au trajet ('green', 'blue', 'orange', 'red').

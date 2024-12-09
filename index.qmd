@@ -10,16 +10,34 @@ execute:
 **ATVM**  est un projet dédié à l’étude des données liées aux vélos du réseau VéloMagg de la Métropole de Montpellier. 
 
 Dans le cadre de ce projet, nous nous sommes concentrés sur :  
-- 🗂 **Collecte et traitement des données**   
-- 📊 **Analyses statistiques**  
-- 📈 **Visualisations interactives**  
 
-##  Installer le package ATVM 
+1. **Collecte des données** :  
+   Les données proviennent du service Open Data de de Montpellier Méditerranée Métropole, récupérées sous forme de fichiers CSV, JSON ou ZIP contenant les informations sur les trajets.
 
-Pour installer ce package, utilisez simplement la commande suivante dans votre terminal :  
+2. **Nettoyage et Prétraitement** :  
+   - Correction de l’encodage des noms de stations
+   - Filtrage des stations non pertinentes
+   - Mise en forme des données horaires (jour, heure, etc.)
+
+3. **Analyse** :  
+   - Construction d’un graphe à partir des données OpenStreetMap via OSMNX
+   - Calcul du plus court chemin entre stations pour évaluer la cohérence des trajets
+
+4. **Prédictions** :  
+   Utilisation de modèles statistiques pour prédire la fréquentation et la disponibilité des vélos selon le jour de la semaine et l’heure.
+
+
+##  Installation
+
+Pour installer le package ATVM, utilisez simplement la commande suivante dans votre terminal :  
 
 ```{python}
 pip install git+https://github.com/riwahachem/atvm
 ```
 
-[Documentation](docs/_build/html/index.html)
+## Données et Ressources
+
+- **Données brutes** : [OpenData](https://data.montpellier3m.fr)
+- **OpenStreetMap** : [https://www.openstreetmap.org/](https://www.openstreetmap.org/)
+- **Dépôt GitHub** : [ATVM sur GitHub](https://github.com/riwahachem/Projet_HAX712X)
+- **Documentation** : [Index](docs/_build/html/index.html)

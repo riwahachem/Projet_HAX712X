@@ -4,14 +4,18 @@ title: Le trafic VéloMagg
 
 ## Les stations VéloMagg de Montpellier  
 
+La carte ci-dessous affiche les emplacements des stations de vélos en libre-service dans la ville de Montpellier. Ces stations sont essentielles pour les déplacements urbains, offrant aux utilisateurs un moyen pratique et écologique de se déplacer.
+
 <iframe src="../Video/map_stations.html" width="100%" height="600"></iframe>
 
 ## Visualisation du trafic journalier
 
-### Vidéo 1 : Simulation Statique
+Nous avons développé deux vidéos basées sur les données collectées, elles offrent un aperçu des trajets les plus fréquents dans la journée.
+
+### Vidéo 1 : Simulation des trajets
 
 ![](simulation_trajets.mp4)
 
-### Vidéo 2 : Simulation Dynamique
+### Vidéo 2 : Simulation dynamique
 
 ![](simulation_trajets_dynamique.mp4)

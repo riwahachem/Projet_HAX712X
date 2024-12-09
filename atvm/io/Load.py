@@ -9,23 +9,33 @@ class LoadData:
     """
     Cette classe télécharge toutes les données.
 
-    Paramètres:
-    -----------
-    url : (string) URL des données à télécharger
-    target_name : (string) Chemin local pour stocker les données téléchargées
+    Attributes:
+        url : (string) URL des données à télécharger
+        target_name : (string) Chemin local pour stocker les données téléchargées
     """
 
     def __init__(self, url, target_name):
+        """
+        Initialise l'instance LoadData.
+
+        Args:
+            url : (string) URL des données à télécharger
+            target_name : (string) Chemin local pour stocker les données téléchargées
+        """
         path, fname_compressed = os.path.split(target_name)
-        # Téléchargement des données avec pooch
+       
         pooch.retrieve(url, path=path, fname=fname_compressed, known_hash=None)
         self.fname = target_name
 
     def extract_zip(self, extract_to):
         """
         Extrait un fichier .zip vers un dossier spécifié.
-        :param extract_to: Chemin du dossier cible pour les fichiers extraits.
-        :return: Liste des fichiers extraits.
+
+        Args:
+            extract_to: Chemin du dossier cible pour les fichiers extraits.
+
+        Return:
+            Liste des fichiers extraits.
         """
         if not self.fname.endswith(".zip"):
             raise ValueError("Le fichier cible n'est pas une archive .zip")
@@ -42,5 +52,8 @@ class LoadData:
 
     
     def save_as_df(self):
+        """
+        Sauvegarde le DataFrame.
+        """
         df = pd.read_csv(self.fname)
         return df

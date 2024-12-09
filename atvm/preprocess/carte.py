@@ -1,9 +1,12 @@
 """
 Module pour la génération d'une carte interactive entre deux stations.
 
-Ce script permet à l'utilisateur de visualiser le chemin le plus court entre deux stations de vélos à Montpellier. 
-Il utilise des données CSV contenant les trajets de vélos partagés, les coordonnées des stations stockées dans un fichier JSON, 
-et un graphe routier OSMNX pour calculer le chemin optimal.
+Ce module permet à l'utilisateur de visualiser le chemin le plus court entre deux stations de vélos. 
+
+Il utilise :
+- Des données CSV contenant les trajets de vélos partagés
+- Les coordonnées des stations stockées dans un fichier JSON 
+- Un graphe routier OSMNX pour calculer le chemin optimal
 
 Dépendances :
 - osmnx
@@ -19,6 +22,7 @@ Dépendances :
 Auteur :
     El Mazzouji Wahel
 """
+
 import osmnx as ox
 import folium
 import networkx as nx
@@ -30,12 +34,12 @@ import sys
 import os
 
 # Ajouter le dossier parent (data) au chemin
-sys.path.append(os.path.abspath("C:/Users/welma/HAX712X_WAHEL/Projet_HAX712X/data"))
+sys.path.append(os.path.abspath("../data_atvm"))
 
 from traitement_donnees.utils import corriger_encodage
 
 # Chemin vers le fichier CSV
-file_path = 'C:/Users/welma/HAX712X_Wahel/Projet_HAX712X/data/TAM_MMM_CoursesVelomagg.csv'
+file_path =  os.path.abspath(os.path.join(os.path.dirname(__file__),'../data_atvm/TAM_MMM_CoursesVelomagg.csv'))
 data = pd.read_csv(file_path)
 
 data['Departure station'] = data['Departure station'].apply(corriger_encodage)

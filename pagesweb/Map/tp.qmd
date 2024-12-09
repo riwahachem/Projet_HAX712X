@@ -4,6 +4,8 @@ format: html
 execute: 
   enable: false
 ---
+L’analyse des données historiques permet d’anticiper l’affluence et la disponibilité des vélos selon le jour de la semaine et l’heure.
+
 Veuillez sélectionnez un jour de la semaine pour afficher la carte prédictive correspondante.
 
 ```{=html}
@@ -21,6 +23,8 @@ Veuillez sélectionnez un jour de la semaine pour afficher la carte prédictive 
 
 
 ## Prédiction du traffic par heure
+
+Pour affiner votre exploration, sélectionnez un jour et une heure spécifique. Vous pourrez ainsi visualiser le niveau de trafic estimé.
 
 <label for="day-hour-select">Jour :</label>
 <select id="day-hour-select">
