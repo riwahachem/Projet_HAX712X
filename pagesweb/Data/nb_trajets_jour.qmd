@@ -1,9 +1,8 @@
 ---
-title: "Analyse du trafic VéloMagg à Montpellier"
-author: "   "
+title: "Analyse graphique"
 format: html
 execute:
-  echo: true  # Affiche le code
+  echo: false  # Affiche le code
   output: true  # Affiche les résultats du code
 ---
 
