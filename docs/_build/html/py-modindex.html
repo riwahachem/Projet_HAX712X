@@ -3,15 +3,14 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>coord_arrets &mdash; Documentation ATVM documentation 1.0</title>
+  <title>Index des modules Python &mdash; Documentation ATVM documentation 1.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-    <link rel="canonical" href="https://riwahachem.github.io/Projet_HAX712X/coord_arrets.html" />
+    <link rel="canonical" href="https://riwahachem.github.io/Projet_HAX712X/py-modindex.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="_static/documentation_options.js?v=7a28dfa3"></script>
@@ -21,8 +20,9 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="corriger_encodage" href="utils.html" />
-    <link rel="prev" title="Classe Load" href="classe.html" /> 
+ 
+
+
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,11 +49,8 @@
 <li class="toctree-l1"><a class="reference internal" href="classe.html">Classe Load</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Traitement des données</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">coord_arrets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#traitement_donnees.coord_arrets.get_station_coordinates"><code class="docutils literal notranslate"><span class="pre">get_station_coordinates()</span></code></a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="coord_arrets.html">coord_arrets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">corriger_encodage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Map</span></p>
@@ -82,7 +79,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">coord_arrets</li>
+      <li class="breadcrumb-item active">Index des modules Python</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -91,49 +88,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-traitement_donnees.coord_arrets">
-<span id="coord-arrets"></span><h1>coord_arrets<a class="headerlink" href="#module-traitement_donnees.coord_arrets" title="Lien vers cette rubrique"></a></h1>
-<p>Module pour récupérer les coordonnées géographiques des stations de vélos à Montpellier.</p>
-<p>Ce script prend un fichier CSV contenant des données de stations de vélos, corrige les encodages des noms de stations,
-puis obtient les coordonnées géographiques de chaque station unique à l’aide de l’API Nominatim de Geopy.</p>
-<p>Les étapes du processus sont les suivantes :
-- Lecture des données depuis un fichier CSV contenant des stations de vélos.
-- Correction des encodages des noms de stations avec la fonction <cite>corriger_encodage</cite>.
-- Extraction des stations uniques et suppression des doublons.
-- Renommage des stations spécifiques (par exemple, « FacdesSciences » devient « Faculté des sciences »).
-- Exclusion de certaines stations de la liste des stations à traiter.
-- Recherche des coordonnées géographiques des stations uniques en utilisant le service de géocodage de Nominatim.
-- Sauvegarde des coordonnées obtenues dans un fichier JSON.
-- Affichage du nombre de stations avec coordonnées et de celles qui ont été exclues.</p>
-<p>Entrées :
-- Un fichier CSV (<cite>TAM_MMM_CoursesVelomagg.csv</cite>) contenant des informations sur les stations de vélos.
-- La fonction <cite>corriger_encodage</cite> pour corriger les noms de stations.</p>
-<p>Sorties :
-- Un fichier JSON (<cite>station_coords.json</cite>) contenant les coordonnées géographiques des stations de vélos qui ont été géocodées avec succès.</p>
-<p>Exclusions :
-- Certaines stations comme « Smoove_Test », « AtelierTAM », « Station SAV », et « Pérols Etang de l’Or » sont explicitement exclues.</p>
-<p>Dépendances :
-- pandas
-- geopy
-- json
-- time
-- sys
-- os</p>
-<p>Auteur : Wahel El Mazzouji</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="traitement_donnees.coord_arrets.get_station_coordinates">
-<span class="sig-prename descclassname"><span class="pre">traitement_donnees.coord_arrets.</span></span><span class="sig-name descname"><span class="pre">get_station_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/traitement_donnees/coord_arrets.html#get_station_coordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#traitement_donnees.coord_arrets.get_station_coordinates" title="Lien vers cette définition"></a></dt>
-<dd></dd></dl>
 
-</section>
+   <h1>Index des modules Python</h1>
+
+   <div class="modindex-jumpbox">
+   <a href="#cap-p"><strong>p</strong></a> | 
+   <a href="#cap-t"><strong>t</strong></a>
+   </div>
+
+   <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-p"><td></td><td>
+       <strong>p</strong></td><td></td></tr>
+     <tr>
+       <td><img src="_static/minus.png" class="toggler"
+              id="toggle-1" style="display: none" alt="-" /></td>
+       <td>
+       <code class="xref">preprocess</code></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="carte_stations.html#module-preprocess.carte_stations"><code class="xref">preprocess.carte_stations</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="map_informative.html#module-preprocess.map_informative"><code class="xref">preprocess.map_informative</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-t"><td></td><td>
+       <strong>t</strong></td><td></td></tr>
+     <tr>
+       <td><img src="_static/minus.png" class="toggler"
+              id="toggle-2" style="display: none" alt="-" /></td>
+       <td>
+       <code class="xref">traitement_donnees</code></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="coord_arrets.html#module-traitement_donnees.coord_arrets"><code class="xref">traitement_donnees.coord_arrets</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="utils.html#module-traitement_donnees.utils"><code class="xref">traitement_donnees.utils</code></a></td><td>
+       <em></em></td></tr>
+   </table>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="classe.html" class="btn btn-neutral float-left" title="Classe Load" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="utils.html" class="btn btn-neutral float-right" title="corriger_encodage" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

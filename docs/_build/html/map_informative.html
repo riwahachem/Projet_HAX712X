@@ -81,7 +81,6 @@
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">map_informative</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/map_informative.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -89,8 +88,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="map-informative">
-<h1>map_informative<a class="headerlink" href="#map-informative" title="Lien vers cette rubrique"></a></h1>
+  <section id="module-preprocess.map_informative">
+<span id="map-informative"></span><h1>map_informative<a class="headerlink" href="#module-preprocess.map_informative" title="Lien vers cette rubrique"></a></h1>
+<p>Module pour la génération d’une carte interactive des stations de vélos à Montpellier.</p>
+<p>Ce module crée une carte interactive de la ville de Montpellier en utilisant la bibliothèque Folium.
+Il récupère les informations géographiques de la ville via OpenStreetMap (OSM) et les stations de vélos via l’API de la ville de Montpellier.</p>
+<p>Fonctionnalités :
+- Récupération des coordonnées et du polygone des limites de la ville de Montpellier
+- Création d’une carte centrée sur Montpellier
+- Ajout d’un polygone représentant les limites de la ville
+- Récupération des données des stations de vélos (via une API), et sauvegarde dans un fichier JSON
+- Ajout de marqueurs sur la carte pour chaque station, incluant un popup avec le nombre de vélos disponibles et de places libres
+- Sauvegarde de la carte résultante dans un fichier HTML</p>
+<p>Dépendances :
+- osmnx
+- folium
+- requests
+- json</p>
+<dl class="simple">
+<dt>Auteur :</dt><dd><p>Wahel El Mazzouji</p>
+</dd>
+</dl>
 </section>
 
 
