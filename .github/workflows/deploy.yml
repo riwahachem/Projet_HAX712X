@@ -23,17 +23,13 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install sphinx sphinx_rtd_theme
-
-      - name: Clean Sphinx build directory
-        run: |
-          cd docs
-          make clean
+          pip install -r requirements.txt
       
       - name: Generate Sphinx documentation
         run: |
-          sphinx-apidoc -o docs .
           cd docs
-          make backup
+          make clean
+          sphinx-apidoc -o docs .
           make html
     
       - name: Set up quarto

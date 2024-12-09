@@ -27,17 +27,18 @@ html_baseurl = "https://riwahachem.github.io/Projet_HAX712X/"
 language = 'fr'
 
 autodoc_default_options = {
-    'members': True,               
-    'undoc-members': True,         
-    'private-members': True,       
-    'special-members': '__init__', 
-    'show-inheritance': True,      
+    'members': True,
+    'undoc-members': True,
+    'private-members': True,
+    'show-inheritance': True,
+    'inherited-members': True
 }
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme'
+html_show_sourcelink = False  # Pour GitHub Pages
 html_static_path = []
 
 autodoc_member_order = 'groupwise'
