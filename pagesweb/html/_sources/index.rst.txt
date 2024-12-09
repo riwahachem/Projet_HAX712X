@@ -38,6 +38,12 @@ Table des matières
 
 .. toctree::
    :maxdepth: 2
+   :caption: Prédiction
+
+   data
+
+.. toctree::
+   :maxdepth: 2
    :caption: Vidéo
 
    video

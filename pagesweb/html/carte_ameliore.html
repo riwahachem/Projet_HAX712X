@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="video" href="video.html" />
+    <link rel="next" title="data &amp; prédiction" href="data.html" />
     <link rel="prev" title="carte" href="carte.html" /> 
 </head>
 
@@ -58,10 +58,11 @@
 <li class="toctree-l1"><a class="reference internal" href="map_informative.html">map_informative</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carte_stations.html">carte_stations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="carte.html">carte</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">carte_ameliore</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#preprocess.map.couleur_par_distance"><code class="docutils literal notranslate"><span class="pre">couleur_par_distance()</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">carte_ameliore</a></li>
 </ul>
-</li>
+<p class="caption" role="heading"><span class="caption-text">Prédiction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data.html">data &amp; prédiction</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Vidéo</span></p>
 <ul>
@@ -91,47 +92,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-preprocess.map">
-<span id="carte-ameliore"></span><h1>carte_ameliore<a class="headerlink" href="#module-preprocess.map" title="Lien vers cette rubrique"></a></h1>
-<p>Module pour la génération d’une carte interactive basée sur des trajets de vélos.</p>
-<p>Ce module utilise des données CSV contenant les trajets de vélos partagés, corrige les noms des stations, calcule les trajets les plus courts en utilisant un graphe routier d’OSMNX, et affiche les trajets sur une carte interactive à l’aide de Folium.</p>
-<p>Fonctionnalités :
-- Chargement et filtrage des données de trajets de vélos
-- Calcul du chemin le plus court entre stations en fonction du graphe routier
-- Affichage des trajets sur une carte interactive avec des marqueurs pour les stations
-- Code couleur des trajets en fonction de leur distance
-- Interaction avec l’utilisateur (choix de la date, du nombre de trajets à afficher)</p>
-<p>Dépendances :
-- osmnx
-- folium
-- networkx
-- json
-- pandas
-- geopy
-- time
-- sys
-- os</p>
-<dl class="simple">
-<dt>Auteur :</dt><dd><p>El Mazzouji Wahel</p>
-</dd>
-</dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="preprocess.map.couleur_par_distance">
-<span class="sig-prename descclassname"><span class="pre">preprocess.map.</span></span><span class="sig-name descname"><span class="pre">couleur_par_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/preprocess/map.html#couleur_par_distance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#preprocess.map.couleur_par_distance" title="Lien vers cette définition"></a></dt>
-<dd><p>Associe une couleur à un trajet en fonction de sa distance.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>param</strong> – distance (float): Distance du trajet en mètres.</p>
-</dd>
-<dt class="field-even">Renvoie<span class="colon">:</span></dt>
-<dd class="field-even"><p>Couleur associée au trajet (“green”, “blue”, “orange”, “red”).</p>
-</dd>
-<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
+  <section id="carte-ameliore">
+<h1>carte_ameliore<a class="headerlink" href="#carte-ameliore" title="Lien vers cette rubrique"></a></h1>
 </section>
 
 
@@ -139,7 +101,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="carte.html" class="btn btn-neutral float-left" title="carte" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="video.html" class="btn btn-neutral float-right" title="video" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="data.html" class="btn btn-neutral float-right" title="data &amp; prédiction" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

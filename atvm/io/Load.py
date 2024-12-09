@@ -9,16 +9,18 @@ class LoadData:
     """
     Cette classe télécharge toutes les données.
 
-    :param url : (string) URL des données à télécharger
-    :param target_name : (string) Chemin local pour stocker les données téléchargées
+    Attributes:
+        url : (string) URL des données à télécharger
+        target_name : (string) Chemin local pour stocker les données téléchargées
     """
 
     def __init__(self, url, target_name):
         """
-        Initialise la classe DataProcessing avec les paramètres nécessaires.
+        Initialise l'instance LoadData.
 
-        :param url : (string) URL des données à télécharger
-        :param target_name : (string) Chemin local pour stocker les données téléchargées
+        Args:
+            url : (string) URL des données à télécharger
+            target_name : (string) Chemin local pour stocker les données téléchargées
         """
         path, fname_compressed = os.path.split(target_name)
        
@@ -28,8 +30,12 @@ class LoadData:
     def extract_zip(self, extract_to):
         """
         Extrait un fichier .zip vers un dossier spécifié.
-        :param extract_to: Chemin du dossier cible pour les fichiers extraits.
-        :return: Liste des fichiers extraits.
+
+        Args:
+            extract_to: Chemin du dossier cible pour les fichiers extraits.
+
+        Return:
+            Liste des fichiers extraits.
         """
         if not self.fname.endswith(".zip"):
             raise ValueError("Le fichier cible n'est pas une archive .zip")
