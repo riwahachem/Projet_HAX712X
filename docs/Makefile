@@ -7,6 +7,7 @@ SPHINXOPTS    ?=
 SPHINXBUILD   = sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = _build
+DESTDIR = ../pagesweb
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -19,9 +20,17 @@ clean:
 	@echo "Suppression des fichiers générés..."
 	@rm -rf "$(BUILDDIR)"/*
 
+backup:
+	@echo "Sauvegarde du contenu actuel de $(DESTDIR)..."
+	@mkdir -p "$(DESTDIR)_backup"
+	@cp -r "$(DESTDIR)"/* "$(DESTDIR)_backup"/ || echo "Aucun fichier à sauvegarder."
+
 html:
 	@echo "Génération de la documentation au format HTML..."
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(BUILDDIR)/html" $(SPHINXOPTS)
+	@echo "Copie des fichiers générés vers $(DESTDIR)"
+	@mkdir -p "$(DESTDIR)"
+	@rsync -av "$(BUILDDIR)/" "$(DESTDIR)/"
 
 
 # Catch-all target: route all unknown targets to Sphinx using the new

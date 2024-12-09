@@ -33,6 +33,7 @@ jobs:
         run: |
           sphinx-apidoc -o docs .
           cd docs
+          make backup
           make html
     
       - name: Set up quarto
