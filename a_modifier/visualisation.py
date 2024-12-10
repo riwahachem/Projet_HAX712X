@@ -45,8 +45,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, FFMpegWriter
 
 # Charger les données
-file_path = 'C:/Users/welma/HAX712X_WAHEL/Projet_HAX712X/atvm/data_atvm/TAM_MMM_CoursesVelomagg.csv'
-#file_path =  os.path.abspath(os.path.join(os.path.dirname(__file__),'../data_atvm/TAM_MMM_CoursesVelomagg.csv'))
+file_path =  os.path.abspath(os.path.join(os.path.dirname(__file__),'../atvm/data_atvm/TAM_MMM_CoursesVelomagg.csv'))
 data = pd.read_csv(file_path)
 
 # Convertir la colonne "Departure" en format datetime
@@ -173,9 +172,7 @@ lignes = [ax.plot([], [], '-', color='white', linewidth=1)[0] for _ in trajets_v
 
 # Fonction d'initialisation de l'animation
 def init():
-    """
-    Initialise les objets graphiques pour l'animation.
-    """
+    """ Initialise les objets graphiques pour l'animation. """
     for point, ligne in zip(points, lignes):
         point.set_data([], [])
         ligne.set_data([], [])
@@ -202,6 +199,6 @@ max_frames = max(len(chemin) for chemin in trajets_valides_calcules)
 ani = FuncAnimation(fig, mettre_a_jour_trajets, frames=max_frames, init_func=init, blit=True, repeat=False)
 
 # Sauvegarder l'animation sous forme de fichier MP4
-output_file = "simulation.mp4"
+output_file = "simulation2.mp4"
 ani.save(output_file, writer=FFMpegWriter(fps=10))
 print(f"La simulation a été sauvegardée sous forme de fichier MP4 : {output_file}")
