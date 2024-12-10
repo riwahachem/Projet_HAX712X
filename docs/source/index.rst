@@ -11,41 +11,13 @@ Bienvenue dans la documentation du projet ATVM, développé par Riwa Hachem Reda
 Ce projet vise à analyser et visualiser les trajets à vélo dans la ville de Montpellier.
 Dans cette documentation, vous trouverez des informations sur la structure du projet, le code source, ainsi que des exemples d'utilisation.
 
-Table des matières
-==================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Classe:
+   :caption: Table des matières
 
    classe
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Traitement des données
-
-   coord_arrets
-   utils
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Map
-
-   map_informative
-   carte_stations
-   carte
-   carte_ameliore
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Prédiction
-
-   data
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Vidéo
-
-   video
+   atvm
+   code
 
 * :ref:`genindex`

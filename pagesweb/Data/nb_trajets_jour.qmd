@@ -1,9 +1,6 @@
 ---
 title: "Analyse graphique"
 format: html
-execute:
-  echo: false 
-  output: true  
 ---
 
 ![](nb_trajets_2022.png)

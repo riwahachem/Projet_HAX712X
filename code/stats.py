@@ -39,7 +39,7 @@ import sys
 import os
 
 # Ajouter le dossier parent (data) au chemin
-sys.path.append(os.path.abspath("../data_atvm"))
+sys.path.append(os.path.abspath("../atvm/data_atvm"))
 
 from ..atvm.preprocess.utils import corriger_encodage
 #Charge le fichier CSV contenant les données des trajets.

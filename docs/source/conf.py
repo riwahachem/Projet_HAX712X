@@ -8,7 +8,8 @@
 import os 
 import sys 
 
-sys.path.insert(0,os.path.abspath('../../atvm'))
+sys.path.insert(0,os.path.abspath('../../code'))
+sys.path.insert(0, os.path.abspath('../../atvm'))
 
 project = 'ATVM documentation'
 copyright = '2024, Riwa Hachem Reda, Wahel El Mazzouji, Lucien Duigo, Lamia Oulebsir'
