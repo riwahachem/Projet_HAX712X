@@ -12,10 +12,15 @@ La carte ci-dessous affiche les emplacements des stations de vélos en libre-ser
 
 Nous avons développé deux vidéos basées sur les données collectées, elles offrent un aperçu des trajets les plus fréquents dans la journée.
 
-### Vidéo 1 : Simulation des trajets
+### Vidéo des trajets effectués le 13/07/2024
 
-![](simulation_trajets.mp4)
+![](simulation1.mp4)
 
-### Vidéo 2 : Simulation dynamique
+### Vidéo des trajets effectués le 20/03/2024
 
-![](simulation_trajets_dynamique.mp4)
+![](simulation2.mp4)
+
+### Vidéo des trajets effectués le 01/05/2024
+![](simulation3.mp4)
+
+Ces vidéos tracent les 500 premiers trajets pour les jours indiqués. 

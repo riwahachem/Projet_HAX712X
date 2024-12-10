@@ -16,6 +16,7 @@ project:
     - pagesweb/Video/tp.qmd
     - pagesweb/Map/tp.qmd
     - pagesweb/Map/tp2.qmd
+    - pagesweb/Data/nb_trajets_jour.qmd
 
 website:
   back-to-top-navigation: true
@@ -43,6 +44,7 @@ website:
       collapse-level: 3
       contents: 
       - pagesweb/Video/tp.qmd
+      - pagesweb/Data/nb_trajets_jour.qmd
 format:
   html:
     execute:

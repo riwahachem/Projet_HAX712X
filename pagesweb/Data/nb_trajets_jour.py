@@ -6,6 +6,7 @@ import plotly.express as px
 import os
 import requests
 import zipfile
+import io
 
 # URL des fichiers
 url_2022_2023 = "https://data.montpellier3m.fr/node/12668/download"  # Fichier ZIP contenant 2022 et 2023
