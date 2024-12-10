@@ -64,7 +64,8 @@ G = ox.graph_from_place(ville, network_type="all")
 m = folium.Map(location=[43.6114, 3.8767], zoom_start=13)
 
 # Interaction avec l'utilisateur pour choisir la date et le nombre de trajets
-date = input("Veuillez choisir une date (format YYYY-MM-DD) : ")
+#date = input("Veuillez choisir une date (format YYYY-MM-DD) : ")
+date = os.getenv("USER_DATE", input("Veuillez choisir une date (format YYYY-MM-DD) : "))
 trajets_du_jour = data[data['Departure'].str.startswith(date)]
 nombre_trajets = len(trajets_du_jour)
 
@@ -73,7 +74,8 @@ print(f"Nous avons trouvé {nombre_trajets} trajets à cette date.")
 # Demander à l'utilisateur combien de trajets afficher
 nb_trajets_max = min(nombre_trajets, nombre_trajets)  # Pas de limite imposée
 try:
-    nb_trajets_a_afficher = int(input(f"Combien de trajets voulez-vous afficher (entre 1 et {nb_trajets_max}) ? "))
+    #nb_trajets_a_afficher = int(input(f"Combien de trajets voulez-vous afficher (entre 1 et {nb_trajets_max}) ? "))
+    nb_trajets_a_afficher = int(os.getenv("USER_TRAJETS", input(f"Combien de trajets voulez-vous afficher (entre 1 et {nb_trajets_max}) ? ")))
     if nb_trajets_a_afficher > nb_trajets_max or nb_trajets_a_afficher < 1:
         raise ValueError("Nombre hors limites.")
 except (ValueError, TypeError):
