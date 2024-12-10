@@ -1,42 +1,32 @@
 [
   {
-    "objectID": "pagesweb/Map/tp2.html",
-    "href": "pagesweb/Map/tp2.html",
-    "title": "Disponibilité des vélos",
+    "objectID": "pagesweb/Data/nb_trajets_jour.html",
+    "href": "pagesweb/Data/nb_trajets_jour.html",
+    "title": "Analyse graphique",
     "section": "",
-    "text": "La carte ci-dessous présente la localisation des stations de vélos en libre-service sur Montpellier.\nEn cliquant sur un marqueur, vous pouvez accéder à plus d’informations, telles que :\n- Le nom de la station\n- Le nombre de vélos disponibles\n- Le nombre de places libres pour déposer un vélo\n\n\nNote : Les données affichées ne reflètent pas nécessairement la disponibilité en temps réel. Vérifiez régulièrement les informations ou consultez le site officiel de VéloMagg pour des mises à jour plus fréquentes.\n\n\n\n Back to top",
+    "text": "Back to top",
     "crumbs": [
-      "Disponibilité des vélos"
+      "Analyse graphique"
     ]
   },
   {
-    "objectID": "pagesweb/Video/tp.html",
-    "href": "pagesweb/Video/tp.html",
-    "title": "Le trafic VéloMagg",
+    "objectID": "pagesweb/Map/tp.html",
+    "href": "pagesweb/Map/tp.html",
+    "title": "Prédiction du traffic VéloMagg",
     "section": "",
-    "text": "La carte ci-dessous affiche les emplacements des stations de vélos en libre-service dans la ville de Montpellier. Ces stations sont essentielles pour les déplacements urbains, offrant aux utilisateurs un moyen pratique et écologique de se déplacer.",
+    "text": "L’analyse des données historiques permet d’anticiper l’affluence des vélos selon le jour de la semaine et l’heure.\nVeuillez sélectionnez un jour pour afficher la carte prédictive correspondante.\nLundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche",
     "crumbs": [
-      "Le trafic VéloMagg"
+      "Prédiction du traffic VéloMagg"
     ]
   },
   {
-    "objectID": "pagesweb/Video/tp.html#les-stations-vélomagg-de-montpellier",
-    "href": "pagesweb/Video/tp.html#les-stations-vélomagg-de-montpellier",
-    "title": "Le trafic VéloMagg",
-    "section": "",
-    "text": "La carte ci-dessous affiche les emplacements des stations de vélos en libre-service dans la ville de Montpellier. Ces stations sont essentielles pour les déplacements urbains, offrant aux utilisateurs un moyen pratique et écologique de se déplacer.",
+    "objectID": "pagesweb/Map/tp.html#prédiction-du-traffic-par-heure",
+    "href": "pagesweb/Map/tp.html#prédiction-du-traffic-par-heure",
+    "title": "Prédiction du traffic VéloMagg",
+    "section": "Prédiction du traffic par heure",
+    "text": "Prédiction du traffic par heure\nPour affiner votre exploration, sélectionnez un jour et une heure spécifique. Vous pourrez ainsi visualiser le niveau de trafic estimé.\nJour :  Lundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche \nHeure :  0h 1h 2h 3h 4h 5h 6h 7h 8h 9h 10h 11h 12h 13h 14h 15h 16h 17h 18h 19h 20h 21h 22h 23h",
     "crumbs": [
-      "Le trafic VéloMagg"
-    ]
-  },
-  {
-    "objectID": "pagesweb/Video/tp.html#visualisation-du-trafic-journalier",
-    "href": "pagesweb/Video/tp.html#visualisation-du-trafic-journalier",
-    "title": "Le trafic VéloMagg",
-    "section": "Visualisation du trafic journalier",
-    "text": "Visualisation du trafic journalier\nNous avons développé deux vidéos basées sur les données collectées, elles offrent un aperçu des trajets les plus fréquents dans la journée.\n\nVidéo 1 : Simulation des trajets\nVideo\n\n\nVidéo 2 : Simulation dynamique\nVideo",
-    "crumbs": [
-      "Le trafic VéloMagg"
+      "Prédiction du traffic VéloMagg"
     ]
   },
   {
@@ -75,23 +65,43 @@
     "text": "Documentation : Index"
   },
   {
-    "objectID": "pagesweb/Map/tp.html",
-    "href": "pagesweb/Map/tp.html",
-    "title": "Prédiction du traffic VéloMagg",
+    "objectID": "pagesweb/Video/tp.html",
+    "href": "pagesweb/Video/tp.html",
+    "title": "Le trafic VéloMagg",
     "section": "",
-    "text": "L’analyse des données historiques permet d’anticiper l’affluence des vélos selon le jour de la semaine et l’heure.\nVeuillez sélectionnez un jour pour afficher la carte prédictive correspondante.\nLundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche",
+    "text": "La carte ci-dessous affiche les emplacements des stations de vélos en libre-service dans la ville de Montpellier. Ces stations sont essentielles pour les déplacements urbains, offrant aux utilisateurs un moyen pratique et écologique de se déplacer.",
     "crumbs": [
-      "Prédiction du traffic VéloMagg"
+      "Le trafic VéloMagg"
     ]
   },
   {
-    "objectID": "pagesweb/Map/tp.html#prédiction-du-traffic-par-heure",
-    "href": "pagesweb/Map/tp.html#prédiction-du-traffic-par-heure",
-    "title": "Prédiction du traffic VéloMagg",
-    "section": "Prédiction du traffic par heure",
-    "text": "Prédiction du traffic par heure\nPour affiner votre exploration, sélectionnez un jour et une heure spécifique. Vous pourrez ainsi visualiser le niveau de trafic estimé.\nJour :  Lundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche \nHeure :  0h 1h 2h 3h 4h 5h 6h 7h 8h 9h 10h 11h 12h 13h 14h 15h 16h 17h 18h 19h 20h 21h 22h 23h",
+    "objectID": "pagesweb/Video/tp.html#les-stations-vélomagg-de-montpellier",
+    "href": "pagesweb/Video/tp.html#les-stations-vélomagg-de-montpellier",
+    "title": "Le trafic VéloMagg",
+    "section": "",
+    "text": "La carte ci-dessous affiche les emplacements des stations de vélos en libre-service dans la ville de Montpellier. Ces stations sont essentielles pour les déplacements urbains, offrant aux utilisateurs un moyen pratique et écologique de se déplacer.",
     "crumbs": [
-      "Prédiction du traffic VéloMagg"
+      "Le trafic VéloMagg"
+    ]
+  },
+  {
+    "objectID": "pagesweb/Video/tp.html#visualisation-du-trafic-journalier",
+    "href": "pagesweb/Video/tp.html#visualisation-du-trafic-journalier",
+    "title": "Le trafic VéloMagg",
+    "section": "Visualisation du trafic journalier",
+    "text": "Visualisation du trafic journalier\nNous avons développé deux vidéos basées sur les données collectées, elles offrent un aperçu des trajets les plus fréquents dans la journée.\n\nVidéo des trajets effectués le 13/07/2024\nVideo\n\n\nVidéo des trajets effectués le 20/03/2024\nVideo\n\n\nVidéo des trajets effectués le 01/05/2024\nVideo\nCes vidéos tracent les 500 premiers trajets pour les jours indiqués.",
+    "crumbs": [
+      "Le trafic VéloMagg"
+    ]
+  },
+  {
+    "objectID": "pagesweb/Map/tp2.html",
+    "href": "pagesweb/Map/tp2.html",
+    "title": "Disponibilité des vélos",
+    "section": "",
+    "text": "La carte ci-dessous présente la localisation des stations de vélos en libre-service sur Montpellier.\nEn cliquant sur un marqueur, vous pouvez accéder à plus d’informations, telles que :\n- Le nom de la station\n- Le nombre de vélos disponibles\n- Le nombre de places libres pour déposer un vélo\n\n\nNote : Les données affichées ne reflètent pas nécessairement la disponibilité en temps réel. Vérifiez régulièrement les informations ou consultez le site officiel de VéloMagg pour des mises à jour plus fréquentes.\n\n\n\n Back to top",
+    "crumbs": [
+      "Disponibilité des vélos"
     ]
   }
 ]

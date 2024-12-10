@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Prédiction du traffic VéloMagg – ATVM : Analyse du trafic velomagg de Montpellier</title>
+<title>Analyse graphique – ATVM : Analyse du trafic velomagg de Montpellier</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../pagesweb/Map/tp2.html" rel="next">
+<link href="../../pagesweb/Video/tp.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pagesweb/Map/tp.html">Prédiction du traffic VéloMagg</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pagesweb/Data/nb_trajets_jour.html">Analyse graphique</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -143,14 +143,14 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pagesweb/Map/tp.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Prédiction du traffic VéloMagg</span></a>
+  <a href="../../pagesweb/Video/tp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Le trafic VéloMagg</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pagesweb/Map/tp2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Disponibilité des vélos</span></a>
+  <a href="../../pagesweb/Data/nb_trajets_jour.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Analyse graphique</span></a>
   </div>
 </li>
     </ul>
@@ -158,21 +158,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#prédiction-du-traffic-par-heure" id="toc-prédiction-du-traffic-par-heure" class="nav-link active" data-scroll-target="#prédiction-du-traffic-par-heure">Prédiction du traffic par heure</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/riwahachem/Projet_HAX712X/blob/main/pagesweb/Map/tp.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/riwahachem/Projet_HAX712X/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Prédiction du traffic VéloMagg</h1>
+<h1 class="title">Analyse graphique</h1>
 </div>
 
 
@@ -189,51 +183,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>L’analyse des données historiques permet d’anticiper l’affluence des vélos selon le jour de la semaine et l’heure.</p>
-<p>Veuillez sélectionnez un jour pour afficher la carte prédictive correspondante.</p>
-<p><select id="day-only-select"> <option value="lundi">Lundi</option> <option value="mardi">Mardi</option> <option value="mercredi">Mercredi</option> <option value="jeudi">Jeudi</option> <option value="vendredi">Vendredi</option> <option value="samedi">Samedi</option> <option value="dimanche" selected="">Dimanche</option> </select></p>
-<iframe id="day-only-frame" width="800" height="600" style="border:1px solid #ccc; margin-top:20px;">
-</iframe>
-<section id="prédiction-du-traffic-par-heure" class="level2">
-<h2 class="anchored" data-anchor-id="prédiction-du-traffic-par-heure">Prédiction du traffic par heure</h2>
-<p>Pour affiner votre exploration, sélectionnez un jour et une heure spécifique. Vous pourrez ainsi visualiser le niveau de trafic estimé.</p>
-<p><label for="day-hour-select">Jour :</label> <select id="day-hour-select"> <option value="lundi">Lundi</option> <option value="mardi">Mardi</option> <option value="mercredi">Mercredi</option> <option value="jeudi">Jeudi</option> <option value="vendredi">Vendredi</option> <option value="samedi">Samedi</option> <option value="dimanche" selected="">Dimanche</option> </select></p>
-<p><label for="hour-select">Heure :</label> <select id="hour-select"> <option value="0h">0h</option> <option value="1h">1h</option> <option value="2h">2h</option> <option value="3h">3h</option> <option value="4h">4h</option> <option value="5h">5h</option> <option value="6h">6h</option> <option value="7h">7h</option> <option value="8h">8h</option> <option value="9h">9h</option> <option value="10h">10h</option> <option value="11h">11h</option> <option value="12h">12h</option> <option value="13h">13h</option> <option value="14h">14h</option> <option value="15h">15h</option> <option value="16h">16h</option> <option value="17h">17h</option> <option value="18h">18h</option> <option value="19h">19h</option> <option value="20h">20h</option> <option value="21h">21h</option> <option value="22h">22h</option> <option value="23h">23h</option> </select></p>
-<iframe id="day-hour-frame" width="800" height="600" style="border:1px solid #ccc; margin-top:20px;">
-</iframe>
-<script>
-  const dayOnlySelect = document.getElementById('day-only-select');
-  const dayOnlyFrame = document.getElementById('day-only-frame');
-
-  function updateDayOnlyMap() {
-    const day = dayOnlySelect.value;
-    const path = "carte_prediction_semaine/carte_prediction_" + day + ".html";
-    dayOnlyFrame.src = path;
-  }
-
-  dayOnlySelect.addEventListener('change', updateDayOnlyMap);
-  updateDayOnlyMap(); 
+<p><img src="nb_trajets_2022.png" class="img-fluid"></p>
+<p><img src="nb_trajets_2023.png" class="img-fluid"></p>
+<p><img src="nb_trajets_2024.png" class="img-fluid"></p>
 
 
-  
-  const dayHourSelect = document.getElementById('day-hour-select');
-  const hourSelect = document.getElementById('hour-select');
-  const dayHourFrame = document.getElementById('day-hour-frame');
-
-  function updateDayHourMap() {
-    const day = dayHourSelect.value;
-    const hour = hourSelect.value;
-    const path = "carte_prediction_" + day + "_heure/carte_prediction_" + day + "_" + hour + ".html";
-    dayHourFrame.src = path;
-  }
-
-  dayHourSelect.addEventListener('change', updateDayHourMap);
-  hourSelect.addEventListener('change', updateDayHourMap);
-  updateDayHourMap(); 
-</script>
-
-
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -655,11 +609,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../pagesweb/Video/tp.html" class="pagination-link" aria-label="Le trafic VéloMagg">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Le trafic VéloMagg</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../pagesweb/Map/tp2.html" class="pagination-link" aria-label="Disponibilité des vélos">
-        <span class="nav-page-text">Disponibilité des vélos</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -667,4 +621,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/riwahachem/Projet_HAX712X/blob/main/pagesweb/Map/tp.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/riwahachem/Projet_HAX712X/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/riwahachem/Projet_HAX712X/blob/main/pagesweb/Data/nb_trajets_jour.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/riwahachem/Projet_HAX712X/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
