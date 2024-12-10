@@ -32,7 +32,13 @@ Dans le cadre de ce projet, nous nous sommes concentrés sur :
 Pour installer le package ATVM, utilisez simplement la commande suivante dans votre terminal :  
 
 ```{python}
-pip install git+https://github.com/riwahachem/atvm
+pip install git+https://github.com/riwahachem/Projet_HAX712X
+```
+
+Si vous souhaitez exécuter nos codes, des packages supplémentaires sont nécessaires, ils sont répertoriés dans le fichier requirements.txt :
+
+```{python}
+pip install -r requirements.txt
 ```
 
 ## Données et Ressources
@@ -40,4 +46,7 @@ pip install git+https://github.com/riwahachem/atvm
 - **Données brutes** : [OpenData](https://data.montpellier3m.fr)
 - **OpenStreetMap** : [https://www.openstreetmap.org/](https://www.openstreetmap.org/)
 - **Dépôt GitHub** : [ATVM sur GitHub](https://github.com/riwahachem/Projet_HAX712X)
-- **Documentation** : [Index](docs/_build/html/index.html)
+- **Documentation Sphinx** : [vidéo](https://www.youtube.com/watch?v=BWIrhgCAae0&t=27s)  
+- **Package json** : [vidéo](https://www.youtube.com/watch?v=gmfnN-dSVHM)
+
+## Documentation : [Index](docs/_build/html/index.html)
