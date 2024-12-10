@@ -47,3 +47,5 @@ Table des matières
    :caption: Vidéo
 
    video
+
+* :ref:`genindex`

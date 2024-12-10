@@ -50,10 +50,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Traitement des données</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">coord_arrets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#traitement_donnees.coord_arrets.get_station_coordinates"><code class="docutils literal notranslate"><span class="pre">get_station_coordinates()</span></code></a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">coord_arrets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">corriger_encodage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Map</span></p>
@@ -95,40 +92,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-traitement_donnees.coord_arrets">
-<span id="coord-arrets"></span><h1>coord_arrets<a class="headerlink" href="#module-traitement_donnees.coord_arrets" title="Lien vers cette rubrique"></a></h1>
-<p>Module pour récupérer les coordonnées géographiques des stations de vélos à Montpellier.</p>
-<p>Ce script prend un fichier CSV contenant des données de stations de vélos, corrige les encodages des noms de stations,
-puis obtient les coordonnées géographiques de chaque station unique à l’aide de l’API Nominatim de Geopy.</p>
-<p>Les étapes du processus sont les suivantes :
-- Lecture des données depuis un fichier CSV contenant des stations de vélos.
-- Correction des encodages des noms de stations avec la fonction <cite>corriger_encodage</cite>.
-- Extraction des stations uniques et suppression des doublons.
-- Renommage des stations spécifiques (par exemple, « FacdesSciences » devient « Faculté des sciences »).
-- Exclusion de certaines stations de la liste des stations à traiter.
-- Recherche des coordonnées géographiques des stations uniques en utilisant le service de géocodage de Nominatim.
-- Sauvegarde des coordonnées obtenues dans un fichier JSON.
-- Affichage du nombre de stations avec coordonnées et de celles qui ont été exclues.</p>
-<p>Entrées :
-- Un fichier CSV (<cite>TAM_MMM_CoursesVelomagg.csv</cite>) contenant des informations sur les stations de vélos.
-- La fonction <cite>corriger_encodage</cite> pour corriger les noms de stations.</p>
-<p>Sorties :
-- Un fichier JSON (<cite>station_coords.json</cite>) contenant les coordonnées géographiques des stations de vélos qui ont été géocodées avec succès.</p>
-<p>Exclusions :
-- Certaines stations comme « Smoove_Test », « AtelierTAM », « Station SAV », et « Pérols Etang de l’Or » sont explicitement exclues.</p>
-<p>Dépendances :
-- pandas
-- geopy
-- json
-- time
-- sys
-- os</p>
-<p>Auteur : Wahel El Mazzouji</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="traitement_donnees.coord_arrets.get_station_coordinates">
-<span class="sig-prename descclassname"><span class="pre">traitement_donnees.coord_arrets.</span></span><span class="sig-name descname"><span class="pre">get_station_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/traitement_donnees/coord_arrets.html#get_station_coordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#traitement_donnees.coord_arrets.get_station_coordinates" title="Lien vers cette définition"></a></dt>
-<dd></dd></dl>
-
+  <section id="coord-arrets">
+<h1>coord_arrets<a class="headerlink" href="#coord-arrets" title="Lien vers cette rubrique"></a></h1>
 </section>
 
 
