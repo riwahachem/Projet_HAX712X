@@ -12,8 +12,8 @@ sys.path.insert(0,os.path.abspath('../../code'))
 sys.path.insert(0, os.path.abspath('../../atvm'))
 
 project = 'ATVM documentation'
-copyright = '2024, Riwa Hachem Reda, Wahel El Mazzouji, Lucien Duigo, Lamia Oulebsir'
-author = 'Riwa Hachem Reda, Wahel El Mazzouji, Lucien Duigo, Lamia Oulebsir'
+copyright = '2024, Riwa Hachem Reda, Wahel El Mazzouji, Lucien Duigou, Lamia Oulebsir'
+author = 'Riwa Hachem Reda, Wahel El Mazzouji, Lucien Duigou, Lamia Oulebsir'
 release = '1.0'
 
 # -- General configuration ---------------------------------------------------
