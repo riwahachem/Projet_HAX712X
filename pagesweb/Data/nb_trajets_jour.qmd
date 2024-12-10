@@ -13,3 +13,16 @@ Les graphiques présentés ci-dessus ont pour but de visualiser et d'analyser l'
 
 Les graphiques montrent une tendance globale de hausse des trajets pendant les mois de printemps et d'été, avec une baisse notable durant l'hiver, ce qui pourrait être lié aux conditions climatiques moins favorables. En outre, on remarque des périodes avec des valeurs nulles de trajets, ce qui suggère des manques ou des lacunes dans les données fournies par la TaM, ce qui rend l’analyse de certains mois ou périodes difficile.
 
+
+# Etude du temps et de la mémoire
+Tout d'abord, nous utilisons le package `memory-profiler`. En effet, il est possible de suivre la consommation de temps et de mémoire d’une méthode.
+En utilisant la commande `mprof run`, suivie de `mprof plot`, nous avons généré des graphiques illustrant l'évolution de l'utilisation de la mémoire en mébibytes (axe des ordonnées) en fonction du temps en secondes (axe des abscisses). Les tests ont été réalisés sur deux scénarios distincts : 500 trajets simulés pour le traitement vidéo et 200 trajets calculés pour la carte.
+Pour la carte `map.py` : la mémoire augmente rapidement au début, atteignant un pic d’environ 800 Mo, correspondant à une phase de chargement intensif. Une chute brutale de mémoire est ensuite observée, marquant la fin de l’exécution.
+![](map_evalmemory.png)
+Pour le traitement vidéo (500 trajets) : la mémoire croît progressivement jusqu’à un pic autour de 800 Mo, représentant le chargement des données et le calcul des trajets. Après cette phase, la mémoire reste stable entre 750 et 800 Mo, indiquant une gestion efficace des ressources. Enfin, la mémoire est libérée à la fin du processus.
+![](video_evalmemory.png)
+Pour le traitement vidéo (100 trajets) : la mémoire évolue par étapes et atteint un pic d’environ 700 Mo, soit une diminution notable par rapport aux 800 Mo pour 500 trajets. Après le pic, la mémoire se stabilise entre 650 et 700 Mo, témoignant également d’une gestion efficace des ressources. Comme pour les 500 trajets, une chute brutale de mémoire survient à la fin de l'exécution.
+![](video_memory100.png)
+Ainsi, la comparaison entre les deux scénarios vidéo montre que le traitement avec 100 trajets consomme moins de mémoire, proportionnellement à la charge de travail. Ces résultats confirment que l'algorithme est capable de s’adapter efficacement à différents niveaux de charge tout en optimisant l’utilisation des ressources.
+
+
