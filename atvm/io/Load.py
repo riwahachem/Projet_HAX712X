@@ -3,24 +3,20 @@ import pandas as pd
 import pooch
 import zipfile
 
-from atvm.io import *
-
 class LoadData:
     """
     Classe pour télécharger et gérer des données.
 
-    Attributes:
-        url : (string) URL des données à télécharger
-        target_name : (string) Chemin local pour stocker les données téléchargées
+    :param url: (string) URL des données à télécharger
+    :param target_name: (string) Chemin local pour stocker les données téléchargées
     """
 
     def __init__(self, url, target_name):
         """
         Initialise l'instance LoadData.
 
-        Args:
-            url : (string) URL des données à télécharger
-            target_name : (string) Chemin local pour stocker les données téléchargées
+        :param url : (string) URL des données à télécharger
+        :param target_name : (string) Chemin local pour stocker les données téléchargées
         """
         path, fname_compressed = os.path.split(target_name)
        
@@ -31,11 +27,9 @@ class LoadData:
         """
         Extrait un fichier .zip vers un dossier spécifié.
 
-        Args:
-            extract_to: Chemin du dossier cible pour les fichiers extraits.
+        :param extract_to: Chemin du dossier cible pour les fichiers extraits.
 
-        Return:
-            Liste des fichiers extraits.
+        :return: Liste des fichiers extraits.
         """
         if not self.fname.endswith(".zip"):
             raise ValueError("Le fichier cible n'est pas une archive .zip")
@@ -55,8 +49,7 @@ class LoadData:
         """
         Charge le fichier CSV en DataFrame.
 
-        Returns:
-            pd.DataFrame: Données chargées
+        :return: pd.DataFrame: Données chargées
         """
         df = pd.read_csv(self.fname)
         return df
