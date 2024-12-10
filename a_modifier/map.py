@@ -38,7 +38,7 @@ import os
 # Ajouter le dossier parent (data) au chemin
 sys.path.append(os.path.abspath("../data_atvm"))
 
-from .utils import corriger_encodage
+from ..atvm.preprocess.utils import corriger_encodage
 # Chemin vers le fichier CSV
 file_path =  os.path.abspath(os.path.join(os.path.dirname(__file__),'../data_atvm/TAM_MMM_CoursesVelomagg.csv'))
 data = pd.read_csv(file_path)
@@ -74,6 +74,7 @@ print(f"Nous avons trouvé {nombre_trajets} trajets à cette date.")
 nb_trajets_max = min(nombre_trajets, nombre_trajets)  # Pas de limite imposée
 try:
     nb_trajets_a_afficher = int(input(f"Combien de trajets voulez-vous afficher (entre 1 et {nb_trajets_max}) ? "))
+
     if nb_trajets_a_afficher > nb_trajets_max or nb_trajets_a_afficher < 1:
         raise ValueError("Nombre hors limites.")
 except (ValueError, TypeError):
