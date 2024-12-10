@@ -1,4 +1,5 @@
-# Analyse du trafic velomagg de Montpellier
+# Analyse du trafic velomagg de Montpellier  
+
 ## Lien du site :
 <https://riwahachem.github.io/Projet_HAX712X/>
 
@@ -15,6 +16,7 @@ Package python regroupant diverses fonctionnalités que nous avons créer durant
 Contient les scripts nécessaires à la génération :  
 - Des cartes prédictives  
 - Des vidéos démonstratives  
+Le sous-dossier donnees_EcoCompt contient le script (`prediction.py`) qui nous donne les cartes prédictives.
 
 ## `docs`
 Dossier contenant les fichiers pour générer la documentation avec Sphinx.

@@ -20,8 +20,3 @@ Code Module
    :members:
    :undoc-members:
    :show-inheritance:
-
-.. automodule:: donnees_EcoCompt.prediction
-   :members:
-   :undoc-members:
-   :show-inheritance:
