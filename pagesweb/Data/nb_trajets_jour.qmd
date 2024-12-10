@@ -3,7 +3,7 @@ title: "Analyse graphique"
 format: html
 ---
 
-Ces graphique représentent le nombre de trajets effectués chaque jour pour les années 2022, 2023 et 2024. On peut observer que le nombre de trajets varie d'un jour à l'autre, ce qui pourrait être influencé par des facteurs externes tels que la météo ou des événements locaux.
+Ces graphiques représentent le nombre de trajets effectués chaque jour pour les années 2022, 2023 et 2024. On peut observer que le nombre de trajets varie d'un jour à l'autre, ce qui pourrait être influencé par des facteurs externes tels que la météo ou des événements locaux.
 
 ![](nb_trajets_2022.png)
 
