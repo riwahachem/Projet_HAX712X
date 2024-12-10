@@ -9,10 +9,6 @@ data_dir = os.path.join(
     "data_atvm"                                  
 )
 
-#path_target= os.path.join(
-#    os.path.dirname(os.path.realpath(__file__)),"..","data"
-#)
-
 path_csv_target = os.path.join(data_dir, "TAM_MMM_CoursesVelomagg.csv")
 path_zip_target = os.path.join(data_dir, "TAM_MMM_CoursesVelomagg_Archives.zip")
 path_EcoCompt_zip_target = os.path.join(data_dir, "MMM_EcoCompt_Archives.zip")

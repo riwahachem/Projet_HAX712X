@@ -41,7 +41,7 @@ import os
 # Ajouter le dossier parent (data) au chemin
 sys.path.append(os.path.abspath("../data_atvm"))
 
-from traitement_donnees.utils import corriger_encodage
+from .utils import corriger_encodage
 #Charge le fichier CSV contenant les données des trajets.
 def charger_donnees(file_path):
     return pd.read_csv(file_path).dropna()

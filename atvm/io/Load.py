@@ -7,7 +7,7 @@ from atvm.io import *
 
 class LoadData:
     """
-    Cette classe télécharge toutes les données.
+    Classe pour télécharger et gérer des données.
 
     Attributes:
         url : (string) URL des données à télécharger
@@ -53,7 +53,10 @@ class LoadData:
     
     def save_as_df(self):
         """
-        Sauvegarde le DataFrame.
+        Charge le fichier CSV en DataFrame.
+
+        Returns:
+            pd.DataFrame: Données chargées
         """
         df = pd.read_csv(self.fname)
         return df

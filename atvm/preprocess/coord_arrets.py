@@ -44,7 +44,7 @@ import os
 # Ajouter le dossier parent (data) au chemin
 sys.path.append(os.path.abspath("../data_atvm"))
 
-from utils import corriger_encodage
+from .utils import corriger_encodage
 # Chemin vers le fichier CSV
 file_path =  os.path.abspath(os.path.join(os.path.dirname(__file__),'../data_atvm/TAM_MMM_CoursesVelomagg.csv'))
 data = pd.read_csv(file_path)
