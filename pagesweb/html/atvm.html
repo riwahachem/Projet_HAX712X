@@ -1,0 +1,235 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATVM Module &mdash; Documentation ATVM documentation 1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="canonical" href="https://riwahachem.github.io/Projet_HAX712X/atvm.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=7a28dfa3"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/translations.js?v=e6b791cb"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Code Module" href="code.html" />
+    <link rel="prev" title="Classe Load" href="classe.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ATVM documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des matières</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="classe.html">Classe Load</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ATVM Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preprocess.coord_arrets.get_station_coordinates"><code class="docutils literal notranslate"><span class="pre">get_station_coordinates()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preprocess.trajets_jour.load_csv_from_url"><code class="docutils literal notranslate"><span class="pre">load_csv_from_url()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preprocess.trajets_jour.load_csv_from_zip"><code class="docutils literal notranslate"><span class="pre">load_csv_from_zip()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preprocess.trajets_jour.trajets_analys"><code class="docutils literal notranslate"><span class="pre">trajets_analys()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preprocess.utils.corriger_encodage"><code class="docutils literal notranslate"><span class="pre">corriger_encodage()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code.html">Code Module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ATVM documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ATVM Module</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-preprocess.carte_stations">
+<span id="atvm-module"></span><h1>ATVM Module<a class="headerlink" href="#module-preprocess.carte_stations" title="Lien vers cette rubrique"></a></h1>
+<p>Module pour la génération d’une carte des stations de vélos à Montpellier.</p>
+<p>Ce module utilise les bibliothèques <cite>osmnx</cite> et <cite>folium</cite> pour créer une carte interactive
+affichant les stations de vélos de la ville de Montpellier. Les stations sont récupérées
+via OpenStreetMap en fonction du tag <cite>bicycle_rental</cite>.</p>
+<p>Fonctionnalités principales :
+1. Récupération des limites géographiques de Montpellier via OpenStreetMap
+2. Extraction des coordonnées et informations des stations de vélos
+3. Génération d’une carte interactive avec des marqueurs représentant les stations
+4. Ajout d’un polygone pour délimiter la ville
+5. Sauvegarde de la carte générée sous forme de fichier HTML</p>
+<p>Dépendances :
+- osmnx
+- folium
+- os</p>
+<p>Chemin de sortie :
+Le fichier HTML généré est sauvegardé dans le répertoire <cite>../../pagesweb/Video/map_stations.html</cite>.</p>
+<dl class="simple">
+<dt>Auteur :</dt><dd><p>Riwa Hachem Reda</p>
+</dd>
+</dl>
+<p id="module-preprocess.coord_arrets">Module pour récupérer les coordonnées géographiques des stations de vélos à Montpellier.</p>
+<p>Ce script prend un fichier CSV contenant des données de stations de vélos, corrige les encodages des noms de stations,
+puis obtient les coordonnées géographiques de chaque station unique à l’aide de l’API Nominatim de Geopy.</p>
+<p>Les étapes du processus sont les suivantes :
+- Lecture des données depuis un fichier CSV contenant des stations de vélos.
+- Correction des encodages des noms de stations avec la fonction <cite>corriger_encodage</cite>.
+- Extraction des stations uniques et suppression des doublons.
+- Renommage des stations spécifiques (par exemple, « FacdesSciences » devient « Faculté des sciences »).
+- Exclusion de certaines stations de la liste des stations à traiter.
+- Recherche des coordonnées géographiques des stations uniques en utilisant le service de géocodage de Nominatim.
+- Sauvegarde des coordonnées obtenues dans un fichier JSON.
+- Affichage du nombre de stations avec coordonnées et de celles qui ont été exclues.</p>
+<p>Entrées :
+- Un fichier CSV (<cite>TAM_MMM_CoursesVelomagg.csv</cite>) contenant des informations sur les stations de vélos.
+- La fonction <cite>corriger_encodage</cite> pour corriger les noms de stations.</p>
+<p>Sorties :
+- Un fichier JSON (<cite>station_coords.json</cite>) contenant les coordonnées géographiques des stations de vélos qui ont été géocodées avec succès.</p>
+<p>Exclusions :
+- Certaines stations comme « Smoove_Test », « AtelierTAM », « Station SAV », et « Pérols Etang de l’Or » sont explicitement exclues.</p>
+<p>Dépendances :
+- pandas
+- geopy
+- json
+- time
+- sys
+- os</p>
+<p>Auteur : Wahel El Mazzouji</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="preprocess.coord_arrets.get_station_coordinates">
+<span class="sig-prename descclassname"><span class="pre">preprocess.coord_arrets.</span></span><span class="sig-name descname"><span class="pre">get_station_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/preprocess/coord_arrets.html#get_station_coordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#preprocess.coord_arrets.get_station_coordinates" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<p id="module-preprocess.map_informative">Module pour la génération d’une carte interactive des stations de vélos à Montpellier.</p>
+<p>Ce module crée une carte interactive de la ville de Montpellier en utilisant la bibliothèque Folium.
+Il récupère les informations géographiques de la ville via OpenStreetMap (OSM) et les stations de vélos via l’API de la ville de Montpellier.</p>
+<p>Fonctionnalités :
+- Récupération des coordonnées et du polygone des limites de la ville de Montpellier
+- Création d’une carte centrée sur Montpellier
+- Ajout d’un polygone représentant les limites de la ville
+- Récupération des données des stations de vélos (via une API), et sauvegarde dans un fichier JSON
+- Ajout de marqueurs sur la carte pour chaque station, incluant un popup avec le nombre de vélos disponibles et de places libres
+- Sauvegarde de la carte résultante dans un fichier HTML</p>
+<p>Dépendances :
+- osmnx
+- folium
+- requests
+- json</p>
+<dl class="simple">
+<dt>Auteur :</dt><dd><p>Wahel El Mazzouji</p>
+</dd>
+</dl>
+<p id="module-preprocess.trajets_jour">Ce script permet de télécharger, extraire et analyser des données de trajets de vélos pour les années 2022, 2023 et 2024.
+Il commence par télécharger un fichier ZIP contenant les données des deux premières années,
+puis le décompresse pour charger les fichiers correspondants dans des DataFrames.</p>
+<p>Ensuite, il traite les données en convertissant les dates de départ des trajets
+en format datetime et en regroupant les trajets par jour.</p>
+<p>Le script calcule le nombre total de trajets par jour pour chaque année
+et génère des statistiques descriptives sur ces données.</p>
+<blockquote>
+<div><p>Enfin, il crée des graphiques interactifs représentant le nombre de trajets par jour pour chaque année :2022,2023 et 2024
+et enregistre ces graphiques sous forme d’images PNG.</p>
+</div></blockquote>
+<dl class="py function">
+<dt class="sig sig-object py" id="preprocess.trajets_jour.load_csv_from_url">
+<span class="sig-prename descclassname"><span class="pre">preprocess.trajets_jour.</span></span><span class="sig-name descname"><span class="pre">load_csv_from_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/preprocess/trajets_jour.html#load_csv_from_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#preprocess.trajets_jour.load_csv_from_url" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="preprocess.trajets_jour.load_csv_from_zip">
+<span class="sig-prename descclassname"><span class="pre">preprocess.trajets_jour.</span></span><span class="sig-name descname"><span class="pre">load_csv_from_zip</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/preprocess/trajets_jour.html#load_csv_from_zip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#preprocess.trajets_jour.load_csv_from_zip" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="preprocess.trajets_jour.trajets_analys">
+<span class="sig-prename descclassname"><span class="pre">preprocess.trajets_jour.</span></span><span class="sig-name descname"><span class="pre">trajets_analys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/preprocess/trajets_jour.html#trajets_analys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#preprocess.trajets_jour.trajets_analys" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<p id="module-preprocess.utils">Module utilitaire contenant des fonctions réutilisables.</p>
+<p>Auteur : Wahel El Mazzouji</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="preprocess.utils.corriger_encodage">
+<span class="sig-prename descclassname"><span class="pre">preprocess.utils.</span></span><span class="sig-name descname"><span class="pre">corriger_encodage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/preprocess/utils.html#corriger_encodage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#preprocess.utils.corriger_encodage" title="Lien vers cette définition"></a></dt>
+<dd><p>Corrige les problèmes d’encodage des noms de stations et nettoie le texte.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>param</strong> – station_name (str): Nom brut de la station.</p>
+</dd>
+<dt class="field-even">Renvoie<span class="colon">:</span></dt>
+<dd class="field-even"><p>Nom corrigé de la station.</p>
+</dd>
+<dt class="field-odd">Type renvoyé<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="classe.html" class="btn btn-neutral float-left" title="Classe Load" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="code.html" class="btn btn-neutral float-right" title="Code Module" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, Riwa Hachem Reda, Wahel El Mazzouji, Lucien Duigo, Lamia Oulebsir.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -141,6 +141,15 @@ ox.plot_graph(G, ax=ax, show=False, close=False, node_size=0, edge_color="white"
 
 # Fonction pour calculer le chemin le plus court
 def calcul_chemin_vélo(row):
+    """
+    Calcule le chemin le plus court entre deux points sur un graphe routier.
+
+    Args:
+        row (pd.Series): Une ligne contenant les coordonnées GPS de départ et d'arrivée.
+
+    Returns:
+        list: Une liste de nœuds représentant le chemin le plus court.
+    """
     try:
         depart_lat, depart_lon = row['latitude_depart'], row['longitude_depart']
         arrivee_lat, arrivee_lon = row['latitude_retour'], row['longitude_retour']
@@ -163,6 +172,7 @@ lignes = [ax.plot([], [], '-', color='white', linewidth=1)[0] for _ in trajets_v
 
 # Fonction d'initialisation de l'animation
 def init():
+    """ Initialise les objets graphiques pour l'animation. """
     for point, ligne in zip(points, lignes):
         point.set_data([], [])
         ligne.set_data([], [])
@@ -170,6 +180,7 @@ def init():
 
 # Fonction de mise à jour de l'animation
 def mettre_a_jour_trajets(frame):
+    """Met à jour l'animation en fonction de la frame actuelle."""
     for i, chemin in enumerate(trajets_valides_calcules):
         if frame < len(chemin):  # Afficher le trajet en cours
             x_vals = [G.nodes[node]['x'] for node in chemin[:frame + 1]]
