@@ -18,3 +18,5 @@ PyYAML
 jupyter
 quarto
 kaleido
+ipykernel
+
