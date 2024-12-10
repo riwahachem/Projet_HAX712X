@@ -58,21 +58,28 @@
     "href": "index.html#installation",
     "title": "ATVM : Analyse du trafic VéloMagg de Montpellier",
     "section": "Installation",
-    "text": "Installation\nPour installer le package ATVM, utilisez simplement la commande suivante dans votre terminal :\n\npip install git+https://github.com/riwahachem/atvm"
+    "text": "Installation\nPour installer le package ATVM, utilisez simplement la commande suivante dans votre terminal :\n\npip install git+https://github.com/riwahachem/Projet_HAX712X\n\nSi vous souhaitez exécuter nos codes, des packages supplémentaires sont nécessaires, ils sont répertoriés dans le fichier requirements.txt :\n\npip install -r requirements.txt"
   },
   {
     "objectID": "index.html#données-et-ressources",
     "href": "index.html#données-et-ressources",
     "title": "ATVM : Analyse du trafic VéloMagg de Montpellier",
     "section": "Données et Ressources",
-    "text": "Données et Ressources\n\nDonnées brutes : OpenData\nOpenStreetMap : https://www.openstreetmap.org/\nDépôt GitHub : ATVM sur GitHub\nDocumentation : Index"
+    "text": "Données et Ressources\n\nDonnées brutes : OpenData\nOpenStreetMap : https://www.openstreetmap.org/\nDépôt GitHub : ATVM sur GitHub\nDocumentation Sphinx : vidéo\n\nPackage json : vidéo"
+  },
+  {
+    "objectID": "index.html#documentation-index",
+    "href": "index.html#documentation-index",
+    "title": "ATVM : Analyse du trafic VéloMagg de Montpellier",
+    "section": "Documentation : Index",
+    "text": "Documentation : Index"
   },
   {
     "objectID": "pagesweb/Map/tp.html",
     "href": "pagesweb/Map/tp.html",
     "title": "Prédiction du traffic VéloMagg",
     "section": "",
-    "text": "L’analyse des données historiques permet d’anticiper l’affluence et la disponibilité des vélos selon le jour de la semaine et l’heure.\nVeuillez sélectionnez un jour de la semaine pour afficher la carte prédictive correspondante.\nLundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche",
+    "text": "L’analyse des données historiques permet d’anticiper l’affluence des vélos selon le jour de la semaine et l’heure.\nVeuillez sélectionnez un jour pour afficher la carte prédictive correspondante.\nLundi Mardi Mercredi Jeudi Vendredi Samedi Dimanche",
     "crumbs": [
       "Prédiction du traffic VéloMagg"
     ]
