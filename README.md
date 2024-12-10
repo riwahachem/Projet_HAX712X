@@ -2,6 +2,23 @@
 ## Lien du site :
 <https://riwahachem.github.io/Projet_HAX712X/>
 
+## Structure du projet
+
+### `atvm`  
+Package python regroupant diverses fonctionnalités que nous avons créer durant ce projet :  
+- **`data_atvm`** : Stockage des données  
+- **`io`** : Contient une classe permettant de télécharger les données  
+- **`preprocess`** : Fonctions pour le prétraitement des données  
+- **`tests`** : Tests unitaires pour valider les fonctions 
+
+### `code`
+Contient les scripts nécessaires à la génération :  
+- Des cartes prédictives  
+- Des vidéos démonstratives  
+
+## `docs`
+Dossier contenant les fichiers pour générer la documentation avec Sphinx.
+
 # Auteurs 
 - [riwahachem](https://github.com/riwahachem)
 - [LamiaOulebsir](https://github.com/LamiaOulebsir)
