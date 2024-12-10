@@ -1,7 +1,7 @@
 data & prédiction
 =================
 
-.. automodule:: data_atvm.donnees_EcoCompt.data
+.. automodule:: preprocess.prediction
    :members:
    :undoc-members:
    :show-inheritance:

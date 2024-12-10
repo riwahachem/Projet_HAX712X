@@ -13,7 +13,7 @@ from unidecode import unidecode
 import os
 
 # Chemin vers le fichier CSV
-file_path =  os.path.abspath(os.path.join(os.path.dirname(__file__),'../TAM_MMM_CoursesVelomagg.csv'))
+file_path =  os.path.abspath(os.path.join(os.path.dirname(__file__),'../data_atvm/TAM_MMM_CoursesVelomagg.csv'))
 data = pd.read_csv(file_path)
 
 # Correction des noms de stations
@@ -85,7 +85,7 @@ for station in stations_uniques:
 ''' création des fonctions permettants d'obtenir toutes les données utiles '''
 
 
-filename =  os.path.abspath(os.path.join(os.path.dirname(__file__),'../TAM_MMM_CoursesVelomagg.csv'))
+filename =  os.path.abspath(os.path.join(os.path.dirname(__file__),'../data_atvm/TAM_MMM_CoursesVelomagg.csv'))
 
 archives=['data_atvm/donnees_EcoCompt/MMM_EcoCompt_ED223110495_archive.json','data_atvm/donnees_EcoCompt/MMM_EcoCompt_ED223110496_archive.json','data_atvm/donnees_EcoCompt/MMM_EcoCompt_ED223110497_archive.json',
            'data_atvm/donnees_EcoCompt/MMM_EcoCompt_ED223110500_archive.json','data_atvm/donnees_EcoCompt/MMM_EcoCompt_ED223110501_archive.json','data_atvm/donnees_EcoCompt/MMM_EcoCompt_X2H19070220_archive.json',

@@ -1,7 +1,7 @@
 corriger_encodage
 =================
 
-.. automodule:: traitement_donnees.utils
+.. automodule:: preprocess.utils
    :members:
    :undoc-members:
    :show-inheritance:

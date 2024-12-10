@@ -7,3 +7,4 @@ from .graphique import analyse_trajets
 from .trajets_jour import trajets_analys
 from .utils import corriger_encodage
 #from .visualisation import corriger_nom_station, calcul_chemin_vélo, init,  mettre_a_jour_trajets
+from .prediction import determination_jour,  données_jour_semaine, stats_jour_semaine, intensity_jour_stats, stat_heure_jour, poids_heure, route_prediction_jour, couleur_intensity, couleur_intensity_heure, carte_prediction_jour, carte_prediction_jour_heure
