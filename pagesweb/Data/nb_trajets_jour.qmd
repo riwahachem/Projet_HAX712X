@@ -10,3 +10,6 @@ Les graphiques présentés ci-dessus ont pour but de visualiser et d'analyser l'
 ![](nb_trajets_2023.png)
 
 ![](nb_trajets_2024.png)
+
+Les graphiques montrent une tendance globale de hausse des trajets pendant les mois de printemps et d'été, avec une baisse notable durant l'hiver, ce qui pourrait être lié aux conditions climatiques moins favorables. En outre, on remarque des périodes avec des valeurs nulles de trajets, ce qui suggère des manques ou des lacunes dans les données fournies par la TaM, ce qui rend l’analyse de certains mois ou périodes difficile.
+
