@@ -3,7 +3,7 @@ title: "Analyse graphique"
 format: html
 ---
 
-Les graphiques présentés ci-dessus ont pour but de visualiser et d'analyser l'évolution des trajets effectués à Montpellier au cours des années 2022, 2023 et 2024. Ces graphiques, qui montrent le nombre de trajets réalisés chaque jour, sont essentiels pour comprendre les tendances d'utilisation du service de vélos partagés à travers les saisons et les années.
+Les graphiques présentés ci-dessous ont pour but de visualiser et d'analyser l'évolution des trajets effectués à Montpellier au cours des années 2022, 2023 et 2024. Ces graphiques, qui montrent le nombre de trajets réalisés chaque jour, sont essentiels pour comprendre les tendances d'utilisation du service de vélos partagés à travers les saisons et les années.
 
 ![](nb_trajets_2022.png)
 
