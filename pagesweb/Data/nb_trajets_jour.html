@@ -158,8 +158,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#etude-du-temps-et-de-la-mémoire" id="toc-etude-du-temps-et-de-la-mémoire" class="nav-link active" data-scroll-target="#etude-du-temps-et-de-la-mémoire">Etude du temps et de la mémoire</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/riwahachem/Projet_HAX712X/blob/main/pagesweb/Data/nb_trajets_jour.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/riwahachem/Projet_HAX712X/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -188,8 +194,12 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="nb_trajets_2023.png" class="img-fluid"></p>
 <p><img src="nb_trajets_2024.png" class="img-fluid"></p>
 <p>Les graphiques montrent une tendance globale de hausse des trajets pendant les mois de printemps et d’été, avec une baisse notable durant l’hiver, ce qui pourrait être lié aux conditions climatiques moins favorables. En outre, on remarque des périodes avec des valeurs nulles de trajets, ce qui suggère des manques ou des lacunes dans les données fournies par la TaM, ce qui rend l’analyse de certains mois ou périodes difficile.</p>
+<section id="etude-du-temps-et-de-la-mémoire" class="level1">
+<h1>Etude du temps et de la mémoire</h1>
+<p>Tout d’abord, nous utilisons le package <code>memory-profiler</code>. En effet, il est possible de suivre la consommation de temps et de mémoire d’une méthode. En utilisant la commande <code>mprof run</code>, suivie de <code>mprof plot</code>, nous avons généré des graphiques illustrant l’évolution de l’utilisation de la mémoire en mébibytes (axe des ordonnées) en fonction du temps en secondes (axe des abscisses). Les tests ont été réalisés sur deux scénarios distincts : 500 trajets simulés pour le traitement vidéo et 200 trajets calculés pour la carte. Pour la carte <code>map.py</code> : la mémoire augmente rapidement au début, atteignant un pic d’environ 800 Mo, correspondant à une phase de chargement intensif. Une chute brutale de mémoire est ensuite observée, marquant la fin de l’exécution. <img src="map_evalmemory.png" class="img-fluid"> Pour le traitement vidéo (500 trajets) : la mémoire croît progressivement jusqu’à un pic autour de 800 Mo, représentant le chargement des données et le calcul des trajets. Après cette phase, la mémoire reste stable entre 750 et 800 Mo, indiquant une gestion efficace des ressources. Enfin, la mémoire est libérée à la fin du processus. <img src="video_evalmemory.png" class="img-fluid"> Pour le traitement vidéo (100 trajets) : la mémoire évolue par étapes et atteint un pic d’environ 700 Mo, soit une diminution notable par rapport aux 800 Mo pour 500 trajets. Après le pic, la mémoire se stabilise entre 650 et 700 Mo, témoignant également d’une gestion efficace des ressources. Comme pour les 500 trajets, une chute brutale de mémoire survient à la fin de l’exécution. <img src="video_memory100.png" class="img-fluid"> Ainsi, la comparaison entre les deux scénarios vidéo montre que le traitement avec 100 trajets consomme moins de mémoire, proportionnellement à la charge de travail. Ces résultats confirment que l’algorithme est capable de s’adapter efficacement à différents niveaux de charge tout en optimisant l’utilisation des ressources.</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -623,4 +633,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/riwahachem/Projet_HAX712X/blob/main/pagesweb/Data/nb_trajets_jour.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/riwahachem/Projet_HAX712X/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/riwahachem/Projet_HAX712X/blob/main/pagesweb/Data/nb_trajets_jour.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/riwahachem/Projet_HAX712X/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
