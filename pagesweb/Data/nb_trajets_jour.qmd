@@ -11,13 +11,13 @@ execute:
 
 ```{python}
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 import plotly.express as px
 import os
 import requests
 import zipfile
+import io
 
 
 # URL des fichiers
