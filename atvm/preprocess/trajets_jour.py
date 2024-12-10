@@ -98,7 +98,7 @@ def trajets_analys(df):
 
         fig.update_layout(xaxis_title='Jour', yaxis_title='Nombre de trajets', showlegend=False)
         fig.show()
-        fig.write_image("nombre_trajets_par_jour.png")
+        #fig.write_image("nombre_trajets_par_jour.png")
 
     except KeyError as e:
         print(f"Erreur dans les colonnes : {e}")
