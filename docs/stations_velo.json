@@ -13,17 +13,17 @@
         },
         "availableBikeNumber": {
             "type": "Number",
-            "value": 8,
+            "value": 7,
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
         "freeSlotNumber": {
             "type": "Number",
-            "value": 4,
+            "value": 5,
             "metadata": {}
         },
         "location": {
@@ -66,7 +66,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -115,7 +115,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -160,17 +160,17 @@
         },
         "availableBikeNumber": {
             "type": "Number",
-            "value": 3,
+            "value": 5,
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
         "freeSlotNumber": {
             "type": "Number",
-            "value": 9,
+            "value": 7,
             "metadata": {}
         },
         "location": {
@@ -209,17 +209,17 @@
         },
         "availableBikeNumber": {
             "type": "Number",
-            "value": 5,
+            "value": 4,
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
         "freeSlotNumber": {
             "type": "Number",
-            "value": 22,
+            "value": 23,
             "metadata": {}
         },
         "location": {
@@ -262,7 +262,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -311,7 +311,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -356,17 +356,17 @@
         },
         "availableBikeNumber": {
             "type": "Number",
-            "value": 2,
+            "value": 1,
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
         "freeSlotNumber": {
             "type": "Number",
-            "value": 6,
+            "value": 7,
             "metadata": {}
         },
         "location": {
@@ -409,7 +409,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -458,7 +458,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -507,7 +507,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -556,7 +556,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -605,7 +605,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -654,7 +654,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -699,17 +699,17 @@
         },
         "availableBikeNumber": {
             "type": "Number",
-            "value": 9,
+            "value": 8,
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
         "freeSlotNumber": {
             "type": "Number",
-            "value": 3,
+            "value": 4,
             "metadata": {}
         },
         "location": {
@@ -752,7 +752,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -801,7 +801,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -846,17 +846,17 @@
         },
         "availableBikeNumber": {
             "type": "Number",
-            "value": 8,
+            "value": 9,
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
         "freeSlotNumber": {
             "type": "Number",
-            "value": 8,
+            "value": 7,
             "metadata": {}
         },
         "location": {
@@ -899,7 +899,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -948,7 +948,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -997,7 +997,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1046,7 +1046,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1095,7 +1095,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1144,7 +1144,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1291,7 +1291,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1340,7 +1340,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1389,7 +1389,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1438,7 +1438,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1487,7 +1487,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1532,17 +1532,17 @@
         },
         "availableBikeNumber": {
             "type": "Number",
-            "value": 10,
+            "value": 9,
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
         "freeSlotNumber": {
             "type": "Number",
-            "value": 6,
+            "value": 7,
             "metadata": {}
         },
         "location": {
@@ -1585,7 +1585,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1630,17 +1630,17 @@
         },
         "availableBikeNumber": {
             "type": "Number",
-            "value": 6,
+            "value": 3,
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
         "freeSlotNumber": {
             "type": "Number",
-            "value": 26,
+            "value": 29,
             "metadata": {}
         },
         "location": {
@@ -1683,7 +1683,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1732,7 +1732,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1781,7 +1781,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1830,7 +1830,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1879,7 +1879,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1928,7 +1928,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -1977,7 +1977,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2026,7 +2026,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2075,7 +2075,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2124,7 +2124,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2173,7 +2173,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2222,7 +2222,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2271,7 +2271,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2320,7 +2320,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2369,7 +2369,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2418,7 +2418,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2467,7 +2467,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2516,7 +2516,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2561,17 +2561,17 @@
         },
         "availableBikeNumber": {
             "type": "Number",
-            "value": 10,
+            "value": 11,
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
         "freeSlotNumber": {
             "type": "Number",
-            "value": 2,
+            "value": 1,
             "metadata": {}
         },
         "location": {
@@ -2614,7 +2614,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2663,7 +2663,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2712,7 +2712,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
@@ -2761,7 +2761,7 @@
             "metadata": {
                 "timestamp": {
                     "type": "DateTime",
-                    "value": "2024-12-10T12:07:05.000Z"
+                    "value": "2024-12-10T12:21:04.000Z"
                 }
             }
         },
