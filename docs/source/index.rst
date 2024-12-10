@@ -19,6 +19,5 @@ Dans cette documentation, vous trouverez des informations sur la structure du pr
    classe
    atvm
    code
-   prediction
 
 * :ref:`genindex`
